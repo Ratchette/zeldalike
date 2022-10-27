@@ -6,8 +6,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Vector2Value : ScriptableObject, ISerializationCallbackReceiver {
     public Vector2 initialValue;
-
-    //[NonSerialized]
     public Vector2 runtimeValue;
 
     public void OnBeforeSerialize() {

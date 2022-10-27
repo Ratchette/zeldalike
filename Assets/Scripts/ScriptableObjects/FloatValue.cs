@@ -6,8 +6,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class FloatValue : ScriptableObject, ISerializationCallbackReceiver {
     public float initialValue;
-
-    //[NonSerialized]
     public float runtimeValue;
 
     public void OnBeforeSerialize() {
