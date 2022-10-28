@@ -19927,6 +19927,7 @@ MonoBehaviour:
   speed: 5
   startingPosition: {fileID: 11400000, guid: ff01318e6ab38db47ac9c36e065981f8, type: 2}
   startingDirection: {fileID: 11400000, guid: 2f3af4ef5ea1f954ba17fcaa67b6144e, type: 2}
+  knockbackDuration: 0.25
 --- !u!95 &788982584
 Animator:
   serializedVersion: 4
@@ -20879,6 +20880,18 @@ PrefabInstance:
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1176099448}
+    - target: {fileID: 2233295193629270485, guid: 0d5ced8399822ff42b016ee609468256, type: 3}
+      propertyPath: text.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233295193629270485, guid: 0d5ced8399822ff42b016ee609468256, type: 3}
+      propertyPath: text.Array.data[0]
+      value: '^ Lake of Mystery
+
+        -> Hyrule Castle
+
+        v Spooky woods '
+      objectReference: {fileID: 0}
     - target: {fileID: 9056865441796447976, guid: 0d5ced8399822ff42b016ee609468256, type: 3}
       propertyPath: m_Size.y
       value: 2.888867
@@ -33434,6 +33447,23 @@ PrefabInstance:
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1176099448}
+    - target: {fileID: 2233295193629270485, guid: 0d5ced8399822ff42b016ee609468256, type: 3}
+      propertyPath: text.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233295193629270485, guid: 0d5ced8399822ff42b016ee609468256, type: 3}
+      propertyPath: text.Array.data[0]
+      value: 'Welcome to Jenn''s Game!
+
+        Walk around and interact with stuff
+
+        There
+        is treasure to be found :)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233295193629270485, guid: 0d5ced8399822ff42b016ee609468256, type: 3}
+      propertyPath: text.Array.data[1]
+      value: This house is your home.
+      objectReference: {fileID: 0}
     - target: {fileID: 9056865441796447977, guid: 0d5ced8399822ff42b016ee609468256, type: 3}
       propertyPath: m_RootOrder
       value: 4
