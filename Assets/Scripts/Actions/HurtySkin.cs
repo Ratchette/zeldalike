@@ -6,6 +6,7 @@ using UnityEngine;
 public class HurtySkin : MonoBehaviour {
     public float knockbackThrust;
     public float knockbackTime;
+
     public FloatValue damage;
 
     private void OnTriggerEnter2D(Collider2D other) {

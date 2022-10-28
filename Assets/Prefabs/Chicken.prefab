@@ -201,9 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3ea371380765e4d9a0e68b0bc7fe4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
   speed: 0.5
-  knockbackForceMultiplier: 1.5
+  knockbackDuration: 0.25
   player: {fileID: 0}
   fleeSpeed: 2
   fleeRadius: 3

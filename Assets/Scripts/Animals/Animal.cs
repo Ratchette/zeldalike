@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 
 public enum AnimalState {
@@ -58,6 +59,48 @@ public class Animal : MonoBehaviour, IDamageable {
         myRigidbody.velocity = Vector2.zero;
         ChangeState(AnimalState.walk);
     }
+
+    protected void SetWalkAnimation(Vector3 delta) {
+        if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y)) {
+            if (delta.x <= 0) {
+                SetWalkAnimationXY(Vector2.left);
+            } else {
+                SetWalkAnimationXY(Vector2.right);
+            }
+        } else {
+            if (delta.y <= 0) {
+                SetWalkAnimationXY(Vector2.down);
+            } else {
+                SetWalkAnimationXY(Vector2.up);
+            }
+        }
+    }
+
+    protected void SetWalkAnimationXY(Vector2 v) {
+        animator.SetFloat("moveX", v.x);
+        animator.SetFloat("moveY", v.y);
+    }
+
+
+    protected IEnumerator WalkCoroutine(Vector2 velocity, float duration) {
+        ChangeState(AnimalState.walk);
+        animator.SetBool("moving", true);
+
+        SetWalkAnimation(velocity);
+        myRigidbody.velocity = velocity;
+
+        yield return new WaitForSeconds(duration);
+
+        if (GetState() == AnimalState.stagger) {
+            // Let the stagger animation handle movement instead.
+            yield break;
+        }
+
+        animator.SetBool("moving", false);
+        ChangeState(AnimalState.idle);
+        myRigidbody.velocity = Vector3.zero;
+    }
+
 }
 
 

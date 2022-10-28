@@ -23,9 +23,7 @@ public class Player : MonoBehaviour, IDamageable {
     public Vector2Value startingPosition;
     public Vector2Value startingDirection;
 
-
     public float knockbackDuration = 0.25f;
-
 
     // Start is called before the first frame update
     void Start() {
@@ -59,9 +57,14 @@ public class Player : MonoBehaviour, IDamageable {
         user_input.y = Input.GetAxisRaw("Vertical");
 
         if (GetState() == PlayerState.walk) {
-            UpdateAnimationAndMove();
+            Move();
         }
     }
+
+
+    /****************************************************
+     *  State Management
+     ****************************************************/
 
     private PlayerState GetState() {
         return currentState;
@@ -78,22 +81,13 @@ public class Player : MonoBehaviour, IDamageable {
     }
 
 
-    private IEnumerator AttackCoroutine() {
-        animator.SetBool("attacking", true);
-        currentState = PlayerState.attack;
+    /****************************************************
+     *  Movement
+     ****************************************************/
 
-        yield return null;
-
-        animator.SetBool("attacking", false);
-        yield return new WaitForSeconds(0.33f);
-
-        currentState = PlayerState.walk;
-    }
-
-
-    void UpdateAnimationAndMove() {
+    void Move() {
         if (user_input != Vector3.zero) {
-            MoveCharacter();
+            feet_collider.MovePosition(transform.position + user_input.normalized * speed * Time.deltaTime);
 
             animator.SetBool("moving", true);
             SetWalkAnimation(user_input);
@@ -107,14 +101,16 @@ public class Player : MonoBehaviour, IDamageable {
         animator.SetFloat("moveY", v.y);
     }
 
-    void MoveCharacter() {
-        feet_collider.MovePosition(transform.position + user_input.normalized * speed * Time.deltaTime);
-    }
+
+    /****************************************************
+     *  Damage
+     ****************************************************/
 
     public void TakeDamage(Vector2 force, float damage) {
         if (GetState() == PlayerState.stagger) {
             return;
         }
+
         ChangeState(PlayerState.stagger);
 
         Debug.LogFormat("[{0}][Hit] health={1}, damage={2}, newHealth={3}", "Player", health.runtimeValue, damage, (health.runtimeValue - damage));
@@ -135,5 +131,22 @@ public class Player : MonoBehaviour, IDamageable {
 
         feet_collider.velocity = Vector2.zero;
         ChangeState(PlayerState.walk);
+    }
+
+
+    /****************************************************
+     *  Attacking
+     ****************************************************/
+
+    private IEnumerator AttackCoroutine() {
+        animator.SetBool("attacking", true);
+        currentState = PlayerState.attack;
+
+        yield return null;
+
+        animator.SetBool("attacking", false);
+        yield return new WaitForSeconds(0.33f);
+
+        currentState = PlayerState.walk;
     }
 }

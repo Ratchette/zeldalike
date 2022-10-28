@@ -195,12 +195,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb16974262f062840bb222c154451125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
   enemyName: Log 1
   maxHealth: {fileID: 11400000, guid: 9c5f936dbf09f804cb77922547dd1d2d, type: 2}
   health: 0
+  speed: 1
   baseAttack: 0
-  moveSpeed: 1.5
+  knockbackDuration: 0.25
+  invincibilityTime: 0.5
   home: {fileID: 0}
   target: {fileID: 0}
   wakeup_duration: 0.5

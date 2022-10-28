@@ -12208,6 +12208,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1815087839}
     - target: {fileID: 4953216013653489031, guid: fef98652fc04bca459d7c580457acd61, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953216013653489031, guid: fef98652fc04bca459d7c580457acd61, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 788982581}
@@ -33313,6 +33317,10 @@ PrefabInstance:
       propertyPath: home
       value: 
       objectReference: {fileID: 1406624913}
+    - target: {fileID: 4953216013653489031, guid: fef98652fc04bca459d7c580457acd61, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4953216013653489031, guid: fef98652fc04bca459d7c580457acd61, type: 3}
       propertyPath: target
       value: 

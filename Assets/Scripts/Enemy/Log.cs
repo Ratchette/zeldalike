@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Log : Enemy {
 
@@ -26,7 +28,7 @@ public class Log : Enemy {
                 StartCoroutine(WakeUpCoroutine());
             } else if (GetState() == EnemyState.walk) {
                 if (Vector3.Distance(target.position, transform.position) >= attackRadius) {
-                   Move(transform.position, target.position);
+                    Move(CalculateNewPosition(transform.position, target.position));
                 }
             }
         } else {
@@ -52,8 +54,7 @@ public class Log : Enemy {
             ChangeState(EnemyState.idle);
             myRigidbody.bodyType = RigidbodyType2D.Static;
         } else {
-            Vector3 move = Move(transform.position, home.position);
-            myRigidbody.MovePosition(move);
+            Move(CalculateNewPosition(transform.position, home.position));
         }
     }
 }
