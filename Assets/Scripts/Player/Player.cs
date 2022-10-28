@@ -9,7 +9,7 @@ public enum PlayerState {
     stagger
 }
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour, IDamageable {
     public FloatValue health;
     public SignalSender playerHealthSignal;
     public PlayerState currentState;
@@ -22,6 +22,9 @@ public class Player : MonoBehaviour {
 
     public Vector2Value startingPosition;
     public Vector2Value startingDirection;
+
+
+    public float knockbackDuration = 0.25f;
 
 
     // Start is called before the first frame update
@@ -55,12 +58,16 @@ public class Player : MonoBehaviour {
         user_input.x = Input.GetAxisRaw("Horizontal");
         user_input.y = Input.GetAxisRaw("Vertical");
 
-        if(currentState == PlayerState.walk) {
+        if (GetState() == PlayerState.walk) {
             UpdateAnimationAndMove();
         }
     }
 
-    protected PlayerState ChangeState(PlayerState newState) {
+    private PlayerState GetState() {
+        return currentState;
+    }
+
+    private PlayerState ChangeState(PlayerState newState) {
         if (currentState != newState) {
             PlayerState previousState = currentState;
             currentState = newState;
@@ -104,24 +111,22 @@ public class Player : MonoBehaviour {
         feet_collider.MovePosition(transform.position + user_input.normalized * speed * Time.deltaTime);
     }
 
-    public void Hit(Vector2 force, float duration, float damage) {
-        if(currentState == PlayerState.stagger) {
+    public void TakeDamage(Vector2 force, float damage) {
+        if (GetState() == PlayerState.stagger) {
             return;
         }
         ChangeState(PlayerState.stagger);
 
-        TakeDamage(damage);
-        if (health.runtimeValue > 0) {
-            StartCoroutine(KnockbackCoroutine(force, duration));
-        } else {
-            this.gameObject.SetActive(false);
-        }
-    }
-
-    private void TakeDamage(float damage) {
         Debug.LogFormat("[{0}][Hit] health={1}, damage={2}, newHealth={3}", "Player", health.runtimeValue, damage, (health.runtimeValue - damage));
         health.runtimeValue -= damage;
         playerHealthSignal.Raise();
+
+        if (health.runtimeValue > 0) {
+            StartCoroutine(KnockbackCoroutine(force, knockbackDuration));
+        } else {
+            // FIXME - throw up gameover screen
+            this.gameObject.SetActive(false);
+        }
     }
 
     private IEnumerator KnockbackCoroutine(Vector2 force, float duration) {

@@ -5,15 +5,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class HeartManager : MonoBehaviour {
-    public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite threeQuartersHeart;
-    public Sprite halfHeart;
-    public Sprite quarterHeart;
-    public Sprite emptyHeart;
+    [SerializeField] private Image[] hearts;
+    [SerializeField] private Sprite fullHeart;
+    [SerializeField] private Sprite threeQuartersHeart;
+    [SerializeField] private Sprite halfHeart;
+    [SerializeField] private Sprite quarterHeart;
+    [SerializeField] private Sprite emptyHeart;
 
-    public FloatValue heartContainers;
-    public FloatValue playerHealth;
+    [SerializeField] private FloatValue heartContainers;
+    [SerializeField] private FloatValue playerHealth;
 
     private void Start() {
         InitHearts();

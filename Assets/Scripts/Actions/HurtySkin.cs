@@ -2,28 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Only the player can be hurt by HurtySkin
 public class HurtySkin : MonoBehaviour {
     public float knockbackThrust;
     public float knockbackTime;
     public FloatValue damage;
 
     private void OnTriggerEnter2D(Collider2D other) {
-        // NOTE: This allows enemies to hurt other enemies
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("enemy")) {
+        IDamageable objectHit = (IDamageable)other.gameObject.GetComponent(typeof(IDamageable));
+
+        if (objectHit != null && other.gameObject.CompareTag("Player")) {
+
             Rigidbody2D otherRigidbody = other.GetComponent<Rigidbody2D>();
+            // All objects that can be damaged must contain a rigidbody
+            Debug.Assert(otherRigidbody != null);
 
-            if (otherRigidbody != null) {
-                Vector2 forceDirection = otherRigidbody.transform.position - transform.position;
-                Vector2 force = forceDirection.normalized * knockbackThrust;
+            // Calculate where the hit came from
+            Vector2 forceDirection = otherRigidbody.transform.position - transform.position;
+            Vector2 force = forceDirection.normalized * knockbackThrust;
 
-                if (other.gameObject.CompareTag("Player")) {
-                    other.gameObject.GetComponent<Player>().Hit(force, knockbackTime, damage.runtimeValue);
-                }
-                // Enemies bumping into one another doesn't cause damage.
-                //} else if (other.gameObject.CompareTag("enemy")) {
-                //    other.gameObject.GetComponent<Enemy>().Hit(force, knockbackTime, damage.runtimeValue);
-                //}
-            }
+            objectHit.TakeDamage(force, damage.runtimeValue);
         }
     }
 }

@@ -7,33 +7,26 @@ using UnityEngine.UIElements;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class Chicken : Animal {
-    private Animator animator;
+    [SerializeField] private Transform player;
+    [SerializeField] private float fleeSpeed;
+    [SerializeField] private float fleeRadius;
+    [SerializeField] private float fleeDuration;
 
-    public Transform player;
-    public float fleeSpeed;
-    public float fleeRadius;
-    public float fleeDuration;
-
-    public float walkMaxDuration;
+    [SerializeField] private float walkMaxDuration;
 
     new void Start() {
         base.Start();
 
-        ChangeState(AnimalState.idle);
-
         player = GameObject.FindWithTag("Player").transform;
-
-        animator = gameObject.GetComponent<Animator>();
-        animator.SetFloat("moveX", 0);
-        animator.SetFloat("moveY", -1);
+        knockbackMultiplier = 2;
     }
 
     void FixedUpdate() {
         if (Vector3.Distance(player.position, transform.position) <= fleeRadius) {
-            if (currentState != AnimalState.stagger) {
+            if (GetState() != AnimalState.stagger) {
                 StartCoroutine(FleeCoroutine(transform.position, player.position));
             }
-        } else if (currentState == AnimalState.flee) {
+        } else if (GetState() == AnimalState.flee) {
             Flee(transform.position, player.position);
 
         } else { 
@@ -52,7 +45,7 @@ public class Chicken : Animal {
 
         yield return new WaitForSeconds(fleeDuration);
 
-        if (currentState == AnimalState.stagger) {
+        if (GetState() == AnimalState.stagger) {
             // Let the stagger animation handle movement instead.
             yield break;
         }
@@ -90,7 +83,7 @@ public class Chicken : Animal {
     }
 
     private void WalkRandomly() {
-        if (currentState == AnimalState.idle) {
+        if (GetState() == AnimalState.idle) {
             if (Random.value < 0.02) {
                 StartCoroutine(WalkCoroutine(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)), Random.value * walkMaxDuration));
             }
@@ -105,7 +98,7 @@ public class Chicken : Animal {
 
         yield return new WaitForSeconds(duration);
 
-        if (currentState == AnimalState.stagger) {
+        if (GetState() == AnimalState.stagger) {
             // Let the stagger animation handle movement instead.
             yield break;
         }

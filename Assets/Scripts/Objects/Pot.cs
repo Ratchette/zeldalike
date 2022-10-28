@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Pot : MonoBehaviour {
-
+public class Pot : MonoBehaviour, IDamageable {
     private Animator animator;
 
     private void Start() {
         this.animator = GetComponent<Animator>();
     }
 
-    public void Smash() {
+    public void TakeDamage(Vector2 force, float damage) {
         animator.SetBool("smash", true);
         StartCoroutine(breakCoroutine());
     }

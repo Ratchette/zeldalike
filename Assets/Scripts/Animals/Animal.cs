@@ -10,16 +10,26 @@ public enum AnimalState {
     flee
 }
 
-public class Animal : MonoBehaviour {
+public class Animal : MonoBehaviour, IDamageable {
     protected Rigidbody2D myRigidbody;
+    protected Animator animator;
+    protected float knockbackMultiplier = 1;
 
-    public AnimalState currentState;
-    public float speed;
+    [SerializeField] private float speed;
+    [SerializeField] private float knockbackDuration = 0.25f;
 
-    public float knockbackForceMultiplier = 1;
+    private AnimalState currentState = AnimalState.idle;
 
     protected void Start() {
         myRigidbody = gameObject.GetComponent<Rigidbody2D>();
+
+        animator = gameObject.GetComponent<Animator>();
+        animator.SetFloat("moveX", 0);
+        animator.SetFloat("moveY", -1);
+    }
+
+    public AnimalState GetState() {
+        return currentState;
     }
 
     protected AnimalState ChangeState(AnimalState newState) {
@@ -32,16 +42,17 @@ public class Animal : MonoBehaviour {
         }
     }
 
-    public void Hit(Vector2 force, float duration, float damage) {
-        if (currentState == AnimalState.stagger) {
+    // Animals stagger, but take no damage by default
+    public void TakeDamage(Vector2 force, float damage) {
+        if (GetState() == AnimalState.stagger) {
             return;
         }
         ChangeState(AnimalState.stagger);
-        StartCoroutine(KnockbackCoroutine(force, duration));
+        StartCoroutine(KnockbackCoroutine(force, knockbackDuration));
     }
 
     protected IEnumerator KnockbackCoroutine(Vector2 force, float duration) {
-        myRigidbody.velocity = force * knockbackForceMultiplier;
+        myRigidbody.velocity = force * knockbackMultiplier;
         yield return new WaitForSeconds(duration);
 
         myRigidbody.velocity = Vector2.zero;

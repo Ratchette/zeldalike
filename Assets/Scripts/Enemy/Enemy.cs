@@ -7,21 +7,32 @@ public enum EnemyState {
     attack,
     stagger
 }
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour, IDamageable {
     protected Rigidbody2D myRigidbody;
+    protected Animator animator;
 
-    public EnemyState currentState;
+    [SerializeField] private string enemyName;
+    [SerializeField] private FloatValue maxHealth;
+    [SerializeField] private float health;
+    [SerializeField] private float moveSpeed;
 
-    public string enemyName;
-    public FloatValue maxHealth;
-    public float health;
-    public int baseAttack;
+    [SerializeField] private int baseAttack;
+    [SerializeField] private float knockbackDuration = 0.25f;
+    [SerializeField] private float invincibilityTime = 0.5f;
 
-    public float moveSpeed;
+    private EnemyState currentState = EnemyState.idle;
 
     protected void Start() {
         myRigidbody = gameObject.GetComponent<Rigidbody2D>();
         health = maxHealth.runtimeValue;
+
+        animator = gameObject.GetComponent<Animator>();
+        animator.SetFloat("moveX", 0);
+        animator.SetFloat("moveY", -1);
+    }
+
+    public EnemyState GetState() {
+        return currentState;
     }
 
     protected EnemyState ChangeState(EnemyState newState) {
@@ -34,23 +45,21 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    public void Hit(Vector2 force, float duration, float damage) {
-        if (currentState == EnemyState.stagger) {
+    public void TakeDamage(Vector2 force, float damage) {
+        if (GetState() == EnemyState.stagger) {
             return;
         }
         ChangeState(EnemyState.stagger);
 
-        TakeDamage(damage);
+        // Loose health
+        Debug.LogFormat("[{0}][Hit] health={1}, damage={2}, newHealth={3}", enemyName, health, damage, (health - damage));
+        health = health - damage;
+
         if (health > 0) {
-            StartCoroutine(KnockbackCoroutine(force, duration));
+            StartCoroutine(KnockbackCoroutine(force, knockbackDuration));
         } else {
             gameObject.SetActive(false);
         }
-    }
-
-    private void TakeDamage(float damage) {
-        Debug.LogFormat("[{0}][Hit] health={1}, damage={2}, newHealth={3}", enemyName, health, damage, (health - damage));
-        health = health - damage;
     }
 
     private IEnumerator KnockbackCoroutine(Vector2 force, float duration) {
@@ -59,5 +68,33 @@ public class Enemy : MonoBehaviour {
 
         myRigidbody.velocity = Vector2.zero;
         ChangeState(EnemyState.walk);
+    }
+
+    // Default Moving implementation, can be overriden in subclass
+    protected Vector3 Move(Vector3 myPosition, Vector3 targetPosition) {
+        Vector3 move = Vector3.MoveTowards(myPosition, targetPosition, moveSpeed * Time.deltaTime);
+        Vector3 delta = move - myPosition;
+
+        if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y)) {
+            if (delta.x <= 0) {
+                SetWalkAnimation(Vector2.left);
+            } else {
+                SetWalkAnimation(Vector2.right);
+            }
+        } else {
+            if (delta.y <= 0) {
+                SetWalkAnimation(Vector2.down);
+            } else {
+                SetWalkAnimation(Vector2.up);
+            }
+        }
+
+        myRigidbody.MovePosition(move);
+        return move;
+    }
+
+    protected void SetWalkAnimation(Vector2 v) {
+        animator.SetFloat("moveX", v.x);
+        animator.SetFloat("moveY", v.y);
     }
 }
