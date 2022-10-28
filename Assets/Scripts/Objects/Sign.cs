@@ -8,19 +8,13 @@ using TMPro;
 public class Sign : MonoBehaviour {
     [SerializeField] private GameObject dialogBox;
     [SerializeField] private TextMeshProUGUI dialogText;
-    
     [SerializeField] [TextArea(3, 4)] private string text;
 
     private bool playerInRange;
 
-    // Start is called before the first frame update
-    void Start() {
-
-    }
-
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.E) && playerInRange) {
+        if (Input.GetButtonDown("interact") && playerInRange) {
             if (dialogBox.activeInHierarchy) {
                 dialogBox.SetActive(false);
             } else {
