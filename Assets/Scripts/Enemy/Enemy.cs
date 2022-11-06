@@ -69,7 +69,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
         yield return new WaitForSeconds(duration);
 
         myRigidbody.velocity = Vector2.zero;
-        ChangeState(EnemyState.idle);
+        ChangeState(EnemyState.walk);
     }
 
     // Default Moving implementation, can be overriden in subclass
