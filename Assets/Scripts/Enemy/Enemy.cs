@@ -20,7 +20,6 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
 
     [SerializeField] private int baseAttack;
     [SerializeField] private float knockbackDuration = 0.25f;
-    [SerializeField] private float invincibilityTime = 0.5f;
 
     private EnemyState currentState = EnemyState.idle;
 
