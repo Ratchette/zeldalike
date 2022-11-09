@@ -14,6 +14,8 @@ public class Chicken : Animal {
 
     [SerializeField] private float walkMaxDuration;
 
+    private bool playerTooClose = false;
+
     new void Start() {
         base.Start();
 
@@ -22,7 +24,9 @@ public class Chicken : Animal {
     }
 
     void FixedUpdate() {
-        if (Vector3.Distance(player.position, transform.position) <= fleeRadius) {
+        playerTooClose = Vector3.Distance(player.position, transform.position) <= fleeRadius;
+
+        if (playerTooClose) {
             if (GetState() != AnimalState.stagger) {
                 StartCoroutine(FleeCoroutine(transform.position, player.position));
             }
@@ -57,7 +61,9 @@ public class Chicken : Animal {
         SetWalkAnimation(velocity);
         myRigidbody.velocity = velocity;
 
-        yield return new WaitForSeconds(fleeDuration);
+        while (playerTooClose) {
+            yield return new WaitForSeconds(fleeDuration);
+        }
 
         if (GetState() == AnimalState.stagger) {
             // Let the stagger animation handle movement instead.
