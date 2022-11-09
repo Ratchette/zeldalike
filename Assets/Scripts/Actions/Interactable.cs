@@ -11,8 +11,8 @@ public abstract class Interactable : MonoBehaviour {
     private bool playerInRange = false;
     private int activeText = -1;
 
-    public SignalSender contextClueOn;
-    public SignalSender contextClueOff;
+    public SignalSender interactableInRange;
+    public SignalSender interactableOutOfRange;
 
     public bool CanInteract() {
         return (Input.GetButtonDown("interact") && playerInRange);
@@ -40,14 +40,14 @@ public abstract class Interactable : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             playerInRange = true;
-            contextClueOn.Raise();
+            interactableInRange.Raise();
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             playerInRange = false;
-            contextClueOff.Raise();
+            interactableOutOfRange.Raise();
 
             // If the player walks away while the text is shown
             if (dialogBox.activeInHierarchy && activeText != -1) {
