@@ -26,13 +26,13 @@ public class Chicken : Animal {
     void FixedUpdate() {
         playerTooClose = Vector3.Distance(player.position, transform.position) <= fleeRadius;
 
-        if (playerTooClose) {
+        if (GetState() == AnimalState.flee) {
+            Flee(transform.position, player.position);
+        }
+        else if (playerTooClose) {
             if (GetState() != AnimalState.stagger) {
                 StartCoroutine(FleeCoroutine(transform.position, player.position));
             }
-        } else if (GetState() == AnimalState.flee) {
-            Flee(transform.position, player.position);
-
         } else if(GetState() == AnimalState.idle){ 
             MaybeWalk();
         }
