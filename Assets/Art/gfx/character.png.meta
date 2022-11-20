@@ -489,7 +489,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: character_0
+      name: walk down 1
       rect:
         serializedVersion: 2
         x: 0
@@ -510,7 +510,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_1
+      name: walk down 2
       rect:
         serializedVersion: 2
         x: 16
@@ -531,7 +531,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_2
+      name: walk down 3
       rect:
         serializedVersion: 2
         x: 32
@@ -552,7 +552,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_3
+      name: walk down 4
       rect:
         serializedVersion: 2
         x: 48
@@ -573,10 +573,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_5
+      name: lift down 2
       rect:
         serializedVersion: 2
-        x: 80
+        x: 96
         y: 224
         width: 16
         height: 32
@@ -594,10 +594,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_6
+      name: lift down 3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 112
         y: 224
         width: 16
         height: 32
@@ -615,10 +615,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_7
+      name: carry down 1
       rect:
         serializedVersion: 2
-        x: 112
+        x: 144
         y: 224
         width: 16
         height: 32
@@ -636,10 +636,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_9
+      name: carry down 3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 176
         y: 224
         width: 16
         height: 32
@@ -657,10 +657,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_10
+      name: carry down 4
       rect:
         serializedVersion: 2
-        x: 160
+        x: 192
         y: 224
         width: 16
         height: 32
@@ -678,10 +678,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_11
+      name: pick up item
       rect:
         serializedVersion: 2
-        x: 176
+        x: 216
         y: 224
         width: 16
         height: 32
@@ -699,33 +699,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_12
+      name: walk right 1
       rect:
         serializedVersion: 2
-        x: 192
-        y: 224
+        x: 0
+        y: 192
         width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba57233494135d840800000000000000
-      internalID: 5248155131499935147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_13
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 224
-        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -741,10 +720,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_17
+      name: lift right 1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 80
         y: 192
         width: 16
         height: 32
@@ -762,10 +741,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_18
+      name: lift right 2
       rect:
         serializedVersion: 2
-        x: 16
+        x: 96
         y: 192
         width: 16
         height: 32
@@ -783,10 +762,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_19
+      name: lift right 3
       rect:
         serializedVersion: 2
-        x: 32
+        x: 112
         y: 192
         width: 16
         height: 32
@@ -804,10 +783,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_20
+      name: carry right 1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 144
         y: 192
         width: 16
         height: 32
@@ -825,10 +804,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_22
+      name: carry right 3
       rect:
         serializedVersion: 2
-        x: 80
+        x: 176
         y: 192
         width: 16
         height: 32
@@ -846,10 +825,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_23
+      name: carry right 4
       rect:
         serializedVersion: 2
-        x: 96
+        x: 192
         y: 192
         width: 16
         height: 32
@@ -867,11 +846,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_24
+      name: walk up 1
       rect:
         serializedVersion: 2
-        x: 112
-        y: 192
+        x: 0
+        y: 160
         width: 16
         height: 32
       alignment: 0
@@ -888,11 +867,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_26
+      name: walk up 3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 192
+        x: 32
+        y: 160
         width: 16
         height: 32
       alignment: 0
@@ -909,11 +888,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_27
+      name: walk up 4
       rect:
         serializedVersion: 2
-        x: 160
-        y: 192
+        x: 48
+        y: 160
         width: 16
         height: 32
       alignment: 0
@@ -930,11 +909,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_28
+      name: lift up 1
       rect:
         serializedVersion: 2
-        x: 176
-        y: 192
+        x: 80
+        y: 160
         width: 16
         height: 32
       alignment: 0
@@ -951,11 +930,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_29
+      name: lift up 2
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
+        x: 96
+        y: 160
         width: 16
         height: 32
       alignment: 0
@@ -972,10 +951,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_34
+      name: carry up 4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 192
         y: 160
         width: 16
         height: 32
@@ -993,11 +972,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_35
+      name: walk left 1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 160
+        x: 0
+        y: 128
         width: 16
         height: 32
       alignment: 0
@@ -1014,11 +993,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_36
+      name: walk left 2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 160
+        x: 16
+        y: 128
         width: 16
         height: 32
       alignment: 0
@@ -1035,11 +1014,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_37
+      name: walk left 3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 160
+        x: 32
+        y: 128
         width: 16
         height: 32
       alignment: 0
@@ -1056,11 +1035,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_39
+      name: lift left 1
       rect:
         serializedVersion: 2
         x: 80
-        y: 160
+        y: 128
         width: 16
         height: 32
       alignment: 0
@@ -1077,11 +1056,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_40
+      name: lift left 2
       rect:
         serializedVersion: 2
         x: 96
-        y: 160
+        y: 128
         width: 16
         height: 32
       alignment: 0
@@ -1098,11 +1077,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_41
+      name: lift left 3
       rect:
         serializedVersion: 2
         x: 112
-        y: 160
+        y: 128
         width: 16
         height: 32
       alignment: 0
@@ -1119,11 +1098,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_43
+      name: carry left 2
       rect:
         serializedVersion: 2
-        x: 144
-        y: 160
+        x: 160
+        y: 128
         width: 16
         height: 32
       alignment: 0
@@ -1140,11 +1119,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_44
+      name: carry left 3
       rect:
         serializedVersion: 2
-        x: 160
-        y: 160
+        x: 176
+        y: 128
         width: 16
         height: 32
       alignment: 0
@@ -1161,11 +1140,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_45
+      name: carry left 4
       rect:
         serializedVersion: 2
-        x: 176
-        y: 160
+        x: 192
+        y: 128
         width: 16
         height: 32
       alignment: 0
@@ -1182,12 +1161,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_46
+      name: attack down 1
       rect:
         serializedVersion: 2
-        x: 192
-        y: 160
-        width: 16
+        x: 0
+        y: 96
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1203,33 +1182,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_51
+      name: attack down 4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e3984b2108836d80800000000000000
-      internalID: -8258607753064836120
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_52
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 128
-        width: 16
+        x: 96
+        y: 96
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1245,33 +1203,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_53
+      name: attack up 1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 128
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 966f28ee67fe385d0800000000000000
-      internalID: -3061340027595065751
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_54
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 128
-        width: 16
+        x: 0
+        y: 64
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1287,12 +1224,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_56
+      name: attack up 2
       rect:
         serializedVersion: 2
-        x: 80
-        y: 128
-        width: 16
+        x: 32
+        y: 64
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1308,33 +1245,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_57
+      name: attack up 3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 128
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b4171cd4d2005ad0800000000000000
-      internalID: -2715667462055586634
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_58
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 128
-        width: 16
+        x: 64
+        y: 64
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1350,12 +1266,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_60
+      name: attack up 4
       rect:
         serializedVersion: 2
-        x: 144
-        y: 128
-        width: 16
+        x: 96
+        y: 64
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1371,33 +1287,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_61
+      name: attack right 1
       rect:
         serializedVersion: 2
-        x: 160
-        y: 128
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 141ffe752419f8b40800000000000000
-      internalID: 5444730188643430721
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_62
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 128
-        width: 16
+        x: 0
+        y: 32
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1413,32 +1308,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_63
+      name: attack right 4
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec3b3f22eaa3ef500800000000000000
-      internalID: 431847133859263438
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_68
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
+        x: 96
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -1455,11 +1329,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_70
+      name: attack left 1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
+        x: 0
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -1476,11 +1350,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_72
+      name: attack left 2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
+        x: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -1497,11 +1371,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_74
+      name: attack left 3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
+        x: 64
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -1518,12 +1392,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_79
+      name: lift down 1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
+        x: 80
+        y: 224
+        width: 16
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1532,18 +1406,270 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ba3417aca5d3bef0800000000000000
-      internalID: -93496229730436426
+      spriteID: 5db44ba6c7624794f8dd67c9ddfe1ea7
+      internalID: -75849133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_81
+      name: carry down 2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 732ad2c24eea3bf4d859de462d506848
+      internalID: -2051570748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk right 2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 192
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e16f23aa5562d24ea2f30181a1a376b
+      internalID: 1958140245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk right 3
       rect:
         serializedVersion: 2
         x: 32
-        y: 64
+        y: 192
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f216d9272c00eb498ad3d192bb2e296
+      internalID: -661289641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk right 4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 192
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225a439fd25c13b4c859fb04068402c5
+      internalID: -423432805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carry right 2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68a0c638f09bf94581a4707e52e1d8f
+      internalID: 813113864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk up 2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 160
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35defb55e6ffd047a107f0c93a40db8
+      internalID: -275568042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lift up 3
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 160
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7183143964be3c64aa43782c0cf9474b
+      internalID: 522115719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carry up 1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 160
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6972bcac0fb4c34f975d51e40f3c7b5
+      internalID: -802158916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carry up 2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e389e51639995c4e849d8097d095a40
+      internalID: -673324473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carry up 3
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 160
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87dec33f54cb4c848a74bfe6f9517313
+      internalID: 1145717058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk left 4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 128
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403dd0f19646b574695d831285d0af60
+      internalID: 436945467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: carry left 1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 128
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa2b6a31f13ff264c94489924a78f9a8
+      internalID: -521868571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack down 2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -1553,18 +1679,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2f5eabcaaf7422d0800000000000000
-      internalID: -3304375855044731091
+      spriteID: 2bde4f4fe3ef61c49b7bac2a6e780f39
+      internalID: 2123008799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_83
+      name: attack down 3
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -1574,56 +1700,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9009703aabacf32d0800000000000000
-      internalID: -3296693499264004087
+      spriteID: 2c76c92036ac2864eb6cac6931f5468c
+      internalID: -392829684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_85
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee59777930ff53bc0800000000000000
-      internalID: -3803853919353334290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_90
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e28cd6ea828d3640800000000000000
-      internalID: 5061345089324614376
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_92
+      name: attack right 2
       rect:
         serializedVersion: 2
         x: 32
@@ -1637,14 +1721,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26c6a801f90d7bcd0800000000000000
-      internalID: -2542334083031471006
+      spriteID: f33bccda115371d4d9c094034877f952
+      internalID: 626441599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_94
+      name: attack right 3
       rect:
         serializedVersion: 2
         x: 64
@@ -1658,98 +1742,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 066eededf3d23ff20800000000000000
-      internalID: 3455155091468641888
+      spriteID: bc5a884c1d8fc3f408fee0234242748d
+      internalID: 1858223978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_96
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb5490de9b97a2000800000000000000
-      internalID: 11955788474566078
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_107
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf2e2a4e22681e1c0800000000000000
-      internalID: -4476149070206672133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_109
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ebce787f0302d7ae0800000000000000
-      internalID: -1550047302062183234
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_111
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01a7e91f179520530800000000000000
-      internalID: 3819713779883473424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_113
+      name: attack left 4
       rect:
         serializedVersion: 2
         x: 96
@@ -1763,8 +1763,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96f1ad65db32eeca0800000000000000
-      internalID: -5985807558615883927
+      spriteID: 74d1bc5ef5f31584d9e61ea338a87f1a
+      internalID: -1850169642
       vertices: []
       indices: 
       edges: []
@@ -1780,67 +1780,85 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      character_2: -8401692288953904933
-      character_20: 1822710792970894325
-      character_18: -3181128867261425065
-      character_72: 5775892167768770587
-      character_81: -3304375855044731091
-      character_6: 7456334905099763947
-      character_26: -8627026541424588849
-      character_10: -6835189599539173722
+      carry up 2: -673324473
+      lift left 1: 122268285079091143
+      character_73: -1273975573
+      character_75: 158884706
+      carry up 1: -802158916
       character_51: -8258607753064836120
-      character_19: -4888305619323244325
+      carry left 4: -9078226021229508275
+      attack right 3: 1858223978
+      walk right 4: -423432805
+      walk down 4: 7888922196035610388
       character_12: 5248155131499935147
-      character_94: 3455155091468641888
-      character_90: 5061345089324614376
-      character_28: -4060318028669273776
+      attack down 2: 2123008799
       character_61: 5444730188643430721
-      character_37: 6634202828824015816
-      character_27: -6780520195603233165
-      character_23: -9156188058010517731
-      character_35: -1038918931832879880
-      character_24: -4445699719359273135
-      character_60: -4688742919048642120
-      character_92: -2542334083031471006
-      character_46: 7805661433064171900
-      character_68: 4690120233752323860
-      character_13: -3303779423006393323
-      character_96: 11955788474566078
-      character_3: 7888922196035610388
-      character_52: -7326877051031357324
-      character_29: -6092953325292582070
-      character_107: -4476149070206672133
-      character_111: 3819713779883473424
-      character_7: 5377859178988851676
-      character_41: -6692555241838817836
+      walk left 2: 2690600881683387669
+      attack up 1: 8888318505984086984
+      walk right 2: 1958140245
+      attack up 4: -4688742919048642120
+      carry right 1: 1822710792970894325
+      character_65: 385293373
+      walk down 3: -8401692288953904933
+      attack up 3: -2017960369268865016
+      character_55: 136652563
+      walk right 3: -661289641
+      carry down 3: 4620578802948863353
+      carry down 1: 5377859178988851676
+      carry left 3: -389262940572705114
+      lift up 3: 522115719
+      attack down 4: -7326877051031357324
+      attack right 1: 2982690796557775626
+      walk down 1: 7152930139536384079
       character_63: 431847133859263438
-      character_74: 1826643513625554200
-      character_85: -3803853919353334290
-      character_11: 679739729869728943
-      character_40: 7113705111667027848
+      pick up item: 679739729869728943
+      attack up 2: 3640925608592020196
+      character_49: -633731400
+      carry right 3: 6237780861798913854
+      lift right 1: -1580347878817688430
+      character_69: 1946748525
+      attack down 3: -392829684
+      character_59: -1726254850
+      lift right 3: -4888305619323244325
       character_53: -3061340027595065751
-      character_1: -5725962078152895296
-      character_5: 3445332486847661990
-      character_113: -5985807558615883927
-      character_56: 3640925608592020196
-      character_0: 7152930139536384079
-      character_9: 4620578802948863353
-      character_22: 6237780861798913854
-      character_34: 4365873776659892937
-      character_39: 122268285079091143
-      character_45: -9078226021229508275
-      character_36: 2690600881683387669
-      character_54: 8888318505984086984
-      character_83: -3296693499264004087
-      character_17: -1580347878817688430
-      character_44: -389262940572705114
-      character_58: -2017960369268865016
-      character_43: -4702585941336802017
-      character_70: 7274838496166343488
+      walk up 4: -6780520195603233165
+      character_71: -533787344
+      carry right 4: -9156188058010517731
+      character_77: 1189581901
+      walk down 2: -5725962078152895296
+      walk up 2: -275568042
+      character_67: -1212116924
+      walk up 3: -8627026541424588849
+      attack down 1: 7805661433064171900
+      character_47: 1096544067
+      walk right 1: -3303779423006393323
+      carry down 2: -2051570748
+      carry up 4: 4365873776659892937
+      lift up 2: -6092953325292582070
+      character_0: 506470661
+      lift left 3: -6692555241838817836
+      carry right 2: 813113864
+      lift left 2: 7113705111667027848
+      carry left 1: -521868571
+      attack left 4: -1850169642
+      lift down 3: 7456334905099763947
+      attack right 2: 626441599
+      carry down 4: -6835189599539173722
+      attack right 4: 4690120233752323860
+      attack left 3: 1826643513625554200
+      attack left 1: 7274838496166343488
+      walk left 4: 436945467
+      lift down 1: -75849133
       character_57: -2715667462055586634
-      character_62: 2982690796557775626
-      character_109: -1550047302062183234
-      character_79: -93496229730436426
+      lift right 2: -3181128867261425065
+      carry up 3: 1145717058
+      lift down 2: 3445332486847661990
+      carry left 2: -4702585941336802017
+      walk up 1: -4445699719359273135
+      walk left 1: -1038918931832879880
+      walk left 3: 6634202828824015816
+      lift up 1: -4060318028669273776
+      attack left 2: 5775892167768770587
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
