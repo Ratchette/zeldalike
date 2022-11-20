@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: 72d4a09bda6ac0b4dad03bdb165f9665
+guid: db24c13c242ebdd438c9dedee9622447
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - interactableInRange: {fileID: 11400000, guid: f83fb6dad7085f34b8b89b7f5f4a320d, type: 2}
   - interactableOutOfRange: {fileID: 11400000, guid: 81bd4454317e72645b40a60ac48d18e0, type: 2}
-  - dialogBox: {instanceID: 0}
-  - dialogText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

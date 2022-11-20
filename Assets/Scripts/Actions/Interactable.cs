@@ -4,52 +4,75 @@ using TMPro;
 using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour {
-    [SerializeField] private GameObject dialogBox;
-    [SerializeField] private TextMeshProUGUI dialogText;
-    [SerializeField][TextArea(3, 4)] private List<string> text;
+    public GameObject dialogBox;
+    public TextMeshProUGUI dialogText;
+    [SerializeField][TextArea(3, 4)] public List<string> text;
 
-    private bool playerInRange = false;
-    private int activeText = -1;
+    public int activeText = -1;
+
+    public bool playerInRange = false;
 
     public SignalSender interactableInRange;
     public SignalSender interactableOutOfRange;
 
-    public bool CanInteract() {
-        return (Input.GetButtonDown("interact") && playerInRange);
-    }
-
-    // Cycles through every text field 
-    public void Interact() {
-        if (activeText == -1) {
-            dialogBox.SetActive(true);
-            activeText++;
-            dialogText.SetText(text[activeText]);
-
-        } else if ((activeText + 1) >= text.Count) {
-            // We've cycled through all of the text, so close the dialog.
-            dialogBox.SetActive(false);
-            activeText = -1;
-
-        } else {
-            // Display the next section of text.
-            activeText++;
-            dialogText.SetText(text[activeText]);
+    
+    void Update() {
+        if (InteractButtonDown() && CanInteract()) {
+            _Interact();
         }
     }
+
+    private bool InteractButtonDown() {
+        return Input.GetButtonDown("interact");
+    }
+
+    virtual protected bool CanInteract() {
+        return playerInRange;
+    }
+
+    abstract protected void Interact();
+
+
+    protected void _Interact() {
+        if (text[0].Length > 0) {
+            // Cycles through every text 
+            if (activeText == -1) {
+                dialogBox.SetActive(true);
+                activeText++;
+                dialogText.SetText(text[activeText]);
+
+            } else if ((activeText + 1) >= text.Count) {
+                // We've cycled through all of the text, so close the dialog.
+                dialogBox.SetActive(false);
+                activeText = -1;
+
+            } else {
+                // Display the next section of text.
+                activeText++;
+                dialogText.SetText(text[activeText]);
+            }
+        }
+
+        Interact();
+    }
+
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             playerInRange = true;
-            interactableInRange.Raise();
+
+            if (CanInteract()) {
+                interactableInRange.Raise();
+            }
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             playerInRange = false;
+
             interactableOutOfRange.Raise();
 
-            // If the player walks away while the text is shown
             if (dialogBox.activeInHierarchy && activeText != -1) {
                 dialogBox.SetActive(false);
                 activeText = -1;

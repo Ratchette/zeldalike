@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum PlayerState {
@@ -13,6 +15,9 @@ public class Player : MonoBehaviour, IDamageable {
     public FloatValue health;
     public SignalSender playerHealthSignal;
     public PlayerState currentState;
+
+    public SpriteRenderer receivedItemSprite;
+    public Inventory playerInventory;
 
     private Animator animator;
 
@@ -43,7 +48,7 @@ public class Player : MonoBehaviour, IDamageable {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetButtonDown("attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger) {
+        if (Input.GetButtonDown("attack") && GetState() == PlayerState.walk) {
             StartCoroutine(AttackCoroutine());
         }
     }
@@ -147,6 +152,25 @@ public class Player : MonoBehaviour, IDamageable {
         animator.SetBool("attacking", false);
         yield return new WaitForSeconds(0.33f);
 
+        // FIXME - check if PlayerState != interact?
         currentState = PlayerState.walk;
+    }
+
+    /****************************************************
+     *  Ineraction
+     ****************************************************/
+
+    public void RaiseItem() {
+        // Toggle between raising the item and making the player moveable again
+        if (GetState() == PlayerState.interact) {
+            receivedItemSprite.sprite = null;
+            animator.SetBool("display_item", false);
+            currentState = PlayerState.walk;
+
+        } else {
+            receivedItemSprite.sprite = playerInventory.GetItemToDisplay();
+            animator.SetBool("display_item", true);
+            currentState = PlayerState.interact;
+        }
     }
 }

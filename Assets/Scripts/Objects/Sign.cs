@@ -6,11 +6,5 @@ using UnityEngine.UI;
 using TMPro;
 
 public class Sign : Interactable {
-
-    // Update is called once per frame
-    void Update() {
-        if (CanInteract()) {
-            Interact();
-        }
-    }
+    protected override void Interact() { }
 }
