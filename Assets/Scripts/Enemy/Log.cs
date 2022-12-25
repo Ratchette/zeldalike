@@ -6,12 +6,12 @@ using UnityEngine.UIElements;
 
 public class Log : Enemy {
 
-    [SerializeField] private Transform home;
-    [SerializeField] private Transform target;
+    [SerializeField] protected Transform home;
+    [SerializeField] protected Transform target;
 
-    [SerializeField] private float wakeup_duration = 0.5f;
-    [SerializeField] private float chaseRadius;
-    [SerializeField] private float attackRadius;
+    [SerializeField] protected float wakeup_duration = 0.5f;
+    [SerializeField] protected float chaseRadius = 4;
+    [SerializeField] protected float attackRadius = 0.5f;
 
     new void Start() {
         base.Start();
