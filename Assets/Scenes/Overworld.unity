@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &49875774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4953216013653489051, guid: fef98652fc04bca459d7c580457acd61, type: 3}
+  m_PrefabInstance: {fileID: 1619894091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &56496867 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3850322327166268551, guid: 3d6ebc8cff8db6d4aaa241053b48fa81, type: 3}
@@ -23799,6 +23804,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4953216013653489050, guid: fef98652fc04bca459d7c580457acd61, type: 3}
   m_PrefabInstance: {fileID: 1619894091}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1445232602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49875774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1badd93d11071a447a29cb00b1ff62e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyName: Log on Patrol
+  maxHealth: {fileID: 11400000, guid: 9c5f936dbf09f804cb77922547dd1d2d, type: 2}
+  health: 0
+  speed: 1
+  baseAttack: 0
+  knockbackDuration: 0.25
+  home: {fileID: 1760606779}
+  target: {fileID: 788982581}
+  wakeup_duration: 0.5
+  chaseRadius: 5
+  attackRadius: 0.5
+  path:
+  - {fileID: 1760606779}
+  - {fileID: 502070400}
+  - {fileID: 2071498505}
+  - {fileID: 549152992}
+  - {fileID: 688626757}
+  - {fileID: 1937948183}
+  currentGoal: 0
 --- !u!1 &1596152896 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6092891971631648859, guid: c8c523f915c1e5d4592f9b876137c37a, type: 3}
@@ -24194,7 +24230,7 @@ PrefabInstance:
     - target: {fileID: 4953216013653489031, guid: fef98652fc04bca459d7c580457acd61, type: 3}
       propertyPath: home
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1760606779}
     - target: {fileID: 4953216013653489031, guid: fef98652fc04bca459d7c580457acd61, type: 3}
       propertyPath: target
       value: 
