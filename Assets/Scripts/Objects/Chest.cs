@@ -16,6 +16,8 @@ public class Chest : Interactable {
     public Inventory playerInventory;
 
     public SignalSender raiseItem;
+    public SignalSender keySignal;
+
     private ChestState currentState = ChestState.closed;
 
     private void Start() {
@@ -37,6 +39,10 @@ public class Chest : Interactable {
 
             playerInventory.AddItem(item);
             raiseItem.Raise();
+
+            if(item.isKey) {
+                keySignal.Raise();
+            }
 
         } else if (currentState == ChestState.opening) {
             // If we've scrolled through all of the text:

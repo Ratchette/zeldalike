@@ -6,11 +6,12 @@ using UnityEngine;
 public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
     private Item itemToDisplay = null;
     public List<Item> items = new List<Item>();
-    public int numKeys;
+
+    [SerializeField] private FloatValue numKeys;
 
     public bool AddItem(Item item) {
         if (item.isKey) {
-            numKeys++;
+            numKeys.runtimeValue++;
         } else {
             items.Add(item);
         }
@@ -32,6 +33,6 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
 
     public void OnAfterDeserialize() {
         items.Clear();
-        numKeys = 0;
+        numKeys.runtimeValue = 0;
     }
 }

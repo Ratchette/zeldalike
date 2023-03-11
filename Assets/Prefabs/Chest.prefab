@@ -183,3 +183,4 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: fa5b28eea15929f4ea579b016e4c69a9, type: 2}
   playerInventory: {fileID: 11400000, guid: f89755dde076f7a49b79b2767c269223, type: 2}
   raiseItem: {fileID: 11400000, guid: 119f0b0edb18fd64088ece11bd7481f2, type: 2}
+  keySignal: {fileID: 11400000, guid: 7ce46e0ae0010be438da404893b9292e, type: 2}
