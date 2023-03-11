@@ -3,20 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
-
 public class KeyManager : MonoBehaviour {
     [SerializeField] private Sprite[] numbers;
     [SerializeField] private Image keysUI;
 
-    [SerializeField] private FloatValue numKeys;
+    [SerializeField] private Inventory playerInventory;
 
     private void Start() {
-        keysUI.sprite = numbers[(int)numKeys.runtimeValue];
+        keysUI.sprite = numbers[playerInventory.getNumKeys()];
     }
 
     public void UpdateKeys() {
-        keysUI.sprite = numbers[(int)numKeys.runtimeValue];
+        keysUI.sprite = numbers[playerInventory.getNumKeys()];
     }
 }

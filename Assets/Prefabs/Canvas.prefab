@@ -62,7 +62,7 @@ MonoBehaviour:
   - {fileID: 437299881, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: -787575102, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   keysUI: {fileID: 6092891970999271609}
-  numKeys: {fileID: 11400000, guid: 89a19afbd10a47b4ca1ce0281c566868, type: 2}
+  playerInventory: {fileID: 11400000, guid: f89755dde076f7a49b79b2767c269223, type: 2}
 --- !u!1 &6092891969793915628
 GameObject:
   m_ObjectHideFlags: 0

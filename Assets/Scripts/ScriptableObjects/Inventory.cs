@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -7,11 +8,11 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
     private Item itemToDisplay = null;
     public List<Item> items = new List<Item>();
 
-    [SerializeField] private FloatValue numKeys;
+    [SerializeField] private int numKeys;
 
     public bool AddItem(Item item) {
         if (item.isKey) {
-            numKeys.runtimeValue++;
+            numKeys++;
         } else {
             items.Add(item);
         }
@@ -33,6 +34,10 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
 
     public void OnAfterDeserialize() {
         items.Clear();
-        numKeys.runtimeValue = 0;
+        numKeys = 0;
+    }
+
+    public int getNumKeys() {
+        return numKeys;
     }
 }
