@@ -40,4 +40,8 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
     public int getNumKeys() {
         return numKeys;
     }
+
+    public void UseKey() {
+        numKeys--;
+    }
 }
