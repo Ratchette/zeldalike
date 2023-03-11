@@ -154,5 +154,7 @@ MonoBehaviour:
   dialogBox: {fileID: 0}
   dialogText: {fileID: 0}
   text: []
-  contextClueOn: {fileID: 11400000, guid: f83fb6dad7085f34b8b89b7f5f4a320d, type: 2}
-  contextClueOff: {fileID: 11400000, guid: 81bd4454317e72645b40a60ac48d18e0, type: 2}
+  activeText: -1
+  playerInRange: 0
+  interactableInRange: {fileID: 11400000, guid: f83fb6dad7085f34b8b89b7f5f4a320d, type: 2}
+  interactableOutOfRange: {fileID: 11400000, guid: 81bd4454317e72645b40a60ac48d18e0, type: 2}

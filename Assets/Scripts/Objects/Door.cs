@@ -11,8 +11,8 @@ public class Door : MonoBehaviour {
     public Inventory playerInventory;
 
     public SignalSender keySignal;
-    //public SignalSender doorInRange;
-    //public SignalSender doorOutOfRange;
+    public SignalSender doorInRange;
+    public SignalSender doorOutOfRange;
 
 
     private void Start() {
@@ -23,9 +23,9 @@ public class Door : MonoBehaviour {
         if (other.CompareTag("Player")) {
             playerInRange = true;
 
-            //if (CanInteract()) {
-            //    doorInRange.Raise();
-            //}
+            if (CanInteract()) {
+                doorInRange.Raise();
+            }
         }
     }
 
@@ -33,7 +33,7 @@ public class Door : MonoBehaviour {
         if (other.CompareTag("Player")) {
             playerInRange = false;
 
-            //doorOutOfRange.Raise();
+            doorOutOfRange.Raise();
         }
     }
 
@@ -58,7 +58,7 @@ public class Door : MonoBehaviour {
             playerInventory.UseKey();
             keySignal.Raise();
 
-            //doorOutOfRange.Raise();
+            doorOutOfRange.Raise();
 
             this.gameObject.SetActive(false);
         }

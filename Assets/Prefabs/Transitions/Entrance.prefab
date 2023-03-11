@@ -982,3 +982,5 @@ MonoBehaviour:
   playerInRange: 0
   playerInventory: {fileID: 11400000, guid: f89755dde076f7a49b79b2767c269223, type: 2}
   keySignal: {fileID: 11400000, guid: 7ce46e0ae0010be438da404893b9292e, type: 2}
+  doorInRange: {fileID: 11400000, guid: 68e1a8053dfab0d48880be6c779742a1, type: 2}
+  doorOutOfRange: {fileID: 11400000, guid: f09bfa3c42dfe884eb3d757a3b1e41a8, type: 2}

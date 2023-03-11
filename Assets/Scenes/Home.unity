@@ -5044,6 +5044,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 651834541, guid: cd474b622cc3fb241b9f7f4e9f063e88, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4745879966953100428, guid: cd474b622cc3fb241b9f7f4e9f063e88, type: 3}
       propertyPath: m_Name
       value: Scene Transition
@@ -5071,6 +5075,10 @@ PrefabInstance:
     - target: {fileID: 4745879966953100430, guid: cd474b622cc3fb241b9f7f4e9f063e88, type: 3}
       propertyPath: m_Offset.x
       value: 0.10993862
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745879966953100430, guid: cd474b622cc3fb241b9f7f4e9f063e88, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4745879966953100431, guid: cd474b622cc3fb241b9f7f4e9f063e88, type: 3}
       propertyPath: m_RootOrder

@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 3112598254445620110}
   - component: {fileID: 3112598254445620105}
   - component: {fileID: 3112598254445620111}
+  - component: {fileID: 1823649358}
+  - component: {fileID: 1823649359}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -230,7 +232,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3112598254800557836}
         m_TargetAssemblyTypeName: ContextClue, Assembly-CSharp
-        m_MethodName: Disable
+        m_MethodName: InteractionDisable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -258,7 +260,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3112598254800557836}
         m_TargetAssemblyTypeName: ContextClue, Assembly-CSharp
-        m_MethodName: Enable
+        m_MethodName: InteractionEnable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -287,6 +289,62 @@ MonoBehaviour:
       - m_Target: {fileID: 3112598254445620101}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: RaiseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1823649358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112598254445620096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b6999477f033649821fea43381b507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: f09bfa3c42dfe884eb3d757a3b1e41a8, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3112598254800557836}
+        m_TargetAssemblyTypeName: ContextClue, Assembly-CSharp
+        m_MethodName: doorDisable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1823649359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112598254445620096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b6999477f033649821fea43381b507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 68e1a8053dfab0d48880be6c779742a1, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3112598254800557836}
+        m_TargetAssemblyTypeName: ContextClue, Assembly-CSharp
+        m_MethodName: doorEnable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -556,6 +614,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contextClue: {fileID: 3112598254800557835}
+  contextSprite: {fileID: 3112598254800557833}
+  interactionSprite: {fileID: 827615377, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
+  doorSprite: {fileID: -1374966854, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
 --- !u!1 &3112598255789697377
 GameObject:
   m_ObjectHideFlags: 0
