@@ -758,7 +758,6 @@ SpriteAtlas:
   - {fileID: -135896156, guid: 18e900a3b1635ae44a56beffa565fca1, type: 3}
   - {fileID: 371826389, guid: 18e900a3b1635ae44a56beffa565fca1, type: 3}
   - {fileID: 91401169, guid: 18e900a3b1635ae44a56beffa565fca1, type: 3}
-  - {fileID: -923739266, guid: 18e900a3b1635ae44a56beffa565fca1, type: 3}
   - {fileID: -1777049431, guid: 18e900a3b1635ae44a56beffa565fca1, type: 3}
   - {fileID: -1665843375, guid: 18e900a3b1635ae44a56beffa565fca1, type: 3}
   - {fileID: -559909446, guid: 18e900a3b1635ae44a56beffa565fca1, type: 3}
@@ -844,6 +843,7 @@ SpriteAtlas:
   - {fileID: -1308600989, guid: 18e900a3b1635ae44a56beffa565fca1, type: 3}
   - {fileID: -1720795979, guid: 18e900a3b1635ae44a56beffa565fca1, type: 3}
   - {fileID: -1974464946, guid: 18e900a3b1635ae44a56beffa565fca1, type: 3}
+  - {fileID: -923739266, guid: 18e900a3b1635ae44a56beffa565fca1, type: 3}
   - {fileID: 2093544372, guid: 18e900a3b1635ae44a56beffa565fca1, type: 3}
   - {fileID: -527823492, guid: 18e900a3b1635ae44a56beffa565fca1, type: 3}
   - {fileID: 1174528189, guid: 18e900a3b1635ae44a56beffa565fca1, type: 3}
@@ -2328,7 +2328,6 @@ SpriteAtlas:
   - Overworld_160
   - Overworld_896
   - Overworld_804
-  - Overworld_1047
   - Overworld_1037
   - Overworld_1027
   - Overworld_163
@@ -2414,6 +2413,7 @@ SpriteAtlas:
   - Overworld_650
   - Overworld_1015
   - Overworld_341
+  - Castle Door
   - Overworld_340
   - Overworld_343
   - Overworld_342

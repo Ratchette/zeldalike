@@ -20445,7 +20445,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overworld_1047
+      name: Castle Door
       rect:
         serializedVersion: 2
         x: 80
@@ -22597,6 +22597,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Castle Door: -923739266
       Overworld_0: -1035077721
       Overworld_1: 1831294792
       Overworld_10: -417127237
@@ -22652,7 +22653,6 @@ TextureImporter:
       Overworld_1044: 1824787126
       Overworld_1045: -1686545963
       Overworld_1046: 1456287415
-      Overworld_1047: -923739266
       Overworld_1048: 49591442
       Overworld_1049: -1225394351
       Overworld_105: 1293660879
