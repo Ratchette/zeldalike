@@ -17,11 +17,18 @@ public class Chest : Interactable {
     public SignalSender raiseItem;
     public SignalSender keySignal;
 
-    private ChestState currentState = ChestState.closed;
+    public BooleanValue isOpen;
+
+[SerializeField]  private ChestState currentState = ChestState.closed;
 
     private void Start() {
         this.animator = GetComponent<Animator>();
         this.text.Add(item.description);
+
+        if(isOpen.runtimeValue == true) {
+            currentState = ChestState.opened;
+            animator.SetBool("opened", true);
+        }
     }
 
     protected override bool CanInteract() {
@@ -49,6 +56,7 @@ public class Chest : Interactable {
             //  - Make the chest non-interactable
             if (activeText == -1) {
                 currentState = ChestState.opened;
+                isOpen.runtimeValue = true;
                 raiseItem.Raise();
             }
         }

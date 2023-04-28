@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 
 public class Door : MonoBehaviour {
-    public bool isOpen = false;
+    public BooleanValue isOpen;
 
     public bool playerInRange = false;
     public Inventory playerInventory;
@@ -15,7 +15,9 @@ public class Door : MonoBehaviour {
 
 
     private void Start() {
-        // FIXME - all doors start out locked
+        if (isOpen.runtimeValue) {
+            this.gameObject.SetActive(false);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -37,7 +39,7 @@ public class Door : MonoBehaviour {
     }
 
     void Update() {
-        if (!this.isOpen && InteractButtonDown() && CanInteract()) {
+        if (!this.isOpen.runtimeValue && InteractButtonDown() && CanInteract()) {
             Interact();
         }
     }
@@ -52,8 +54,8 @@ public class Door : MonoBehaviour {
 
 
     protected void Interact() {
-        if (!this.isOpen) {
-            isOpen = true;
+        if (!this.isOpen.runtimeValue) {
+            isOpen.runtimeValue = true;
             playerInventory.UseKey();
             keySignal.Raise();
 
