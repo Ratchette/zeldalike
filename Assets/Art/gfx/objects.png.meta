@@ -978,13 +978,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_41
+      name: heart_idle_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 258
-        width: 11
-        height: 11
+        x: 0
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -999,13 +999,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_42
+      name: heart_idle_2
       rect:
         serializedVersion: 2
-        x: 19
-        y: 258
-        width: 10
-        height: 11
+        x: 16
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1026,7 +1026,7 @@ TextureImporter:
         x: 36
         y: 243
         width: 9
-        height: 26
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1041,13 +1041,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_44
+      name: heart_idle_4
       rect:
         serializedVersion: 2
-        x: 51
-        y: 258
-        width: 10
-        height: 11
+        x: 48
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1209,7 +1209,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_52
+      name: destroy_1
       rect:
         serializedVersion: 2
         x: 175
@@ -1230,7 +1230,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_53
+      name: destroy_2
       rect:
         serializedVersion: 2
         x: 191
@@ -1251,7 +1251,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_54
+      name: destroy_3
       rect:
         serializedVersion: 2
         x: 207
@@ -2889,7 +2889,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_8
+      name: destroy_4
       rect:
         serializedVersion: 2
         x: 223
@@ -2897,7 +2897,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2905,6 +2905,27 @@ TextureImporter:
       bones: []
       spriteID: 90914478baa3c12449615063dbc5a5b0
       internalID: 1875402391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heart_idle_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb580e31ab944144a4b983845da3d2f
+      internalID: 523994437
       vertices: []
       indices: 
       edges: []
@@ -2924,6 +2945,14 @@ TextureImporter:
       chest_large_open: -578802583
       chest_large_opening_1: -595614741
       chest_large_opening_2: -2013032975
+      destroy_1: 294058071
+      destroy_2: -354228454
+      destroy_3: 1644572696
+      destroy_4: 1875402391
+      heart_idle_1: 533570439
+      heart_idle_2: 1773287227
+      heart_idle_3: 523994437
+      heart_idle_4: 1718787061
       objects_0: 289888743
       objects_1: 1663614375
       objects_10: -1067700659
@@ -3000,10 +3029,7 @@ TextureImporter:
       objects_39: 1202832818
       objects_4: -612273881
       objects_40: 1995339842
-      objects_41: 533570439
-      objects_42: 1773287227
       objects_43: -837134599
-      objects_44: 1718787061
       objects_45: -682469612
       objects_46: -1787158375
       objects_47: 449711621
@@ -3012,9 +3038,6 @@ TextureImporter:
       objects_5: -1447029661
       objects_50: 1038700842
       objects_51: 594760552
-      objects_52: 294058071
-      objects_53: -354228454
-      objects_54: 1644572696
       objects_55: 60508934
       objects_56: -1359949615
       objects_57: 1257930686
@@ -3042,7 +3065,6 @@ TextureImporter:
       objects_77: 1605802722
       objects_78: -904380708
       objects_79: 1038342257
-      objects_8: 1875402391
       objects_80: 365486624
       objects_81: -776360597
       objects_82: -500211762
