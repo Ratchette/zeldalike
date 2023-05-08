@@ -1065,10 +1065,10 @@ TextureImporter:
       name: objects_45
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 256
-        width: 13
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1086,10 +1086,10 @@ TextureImporter:
       name: objects_46
       rect:
         serializedVersion: 2
-        x: 81
+        x: 80
         y: 256
-        width: 14
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1107,9 +1107,9 @@ TextureImporter:
       name: objects_47
       rect:
         serializedVersion: 2
-        x: 97
+        x: 96
         y: 256
-        width: 14
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1128,10 +1128,10 @@ TextureImporter:
       name: objects_48
       rect:
         serializedVersion: 2
-        x: 113
+        x: 112
         y: 256
-        width: 14
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1151,8 +1151,8 @@ TextureImporter:
         serializedVersion: 2
         x: 128
         y: 256
-        width: 15
-        height: 18
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1170,9 +1170,9 @@ TextureImporter:
       name: objects_50
       rect:
         serializedVersion: 2
-        x: 145
+        x: 144
         y: 256
-        width: 14
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1191,10 +1191,10 @@ TextureImporter:
       name: objects_51
       rect:
         serializedVersion: 2
-        x: 161
+        x: 160
         y: 256
-        width: 14
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1212,10 +1212,10 @@ TextureImporter:
       name: objects_52
       rect:
         serializedVersion: 2
-        x: 179
-        y: 260
-        width: 8
-        height: 8
+        x: 175
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1233,10 +1233,10 @@ TextureImporter:
       name: objects_53
       rect:
         serializedVersion: 2
-        x: 196
-        y: 260
-        width: 7
-        height: 7
+        x: 191
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1254,10 +1254,10 @@ TextureImporter:
       name: objects_54
       rect:
         serializedVersion: 2
-        x: 213
-        y: 261
-        width: 20
-        height: 5
+        x: 207
+        y: 256
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2888,6 +2888,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: objects_8
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 256
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90914478baa3c12449615063dbc5a5b0
+      internalID: 1875402391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2899,148 +2920,149 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      objects_4: -612273881
-      objects_118: 740500442
-      objects_98: -553519638
-      objects_84: 473415106
-      objects_44: 1718787061
-      objects_45: -682469612
-      objects_78: -904380708
-      objects_113: 1165584986
-      objects_122: -496228760
-      objects_134: 437299881
-      objects_83: -619229665
-      objects_116: -383044712
-      objects_92: -828038323
-      objects_41: 533570439
-      objects_89: 585394517
-      objects_109: -2105828911
-      objects_3: 1799279113
-      objects_119: 1449361253
-      objects_18: -609291259
-      objects_2: 1636181642
-      objects_58: -1099718426
-      objects_57: 1257930686
-      objects_117: -2078216868
-      objects_43: -837134599
-      objects_132: 1927489329
-      objects_81: -776360597
-      objects_124: 1913403053
-      objects_55: 60508934
-      objects_99: -1374966854
-      objects_135: -787575102
-      objects_82: -500211762
-      objects_49: -2085956309
-      objects_5: -1447029661
-      objects_137: -1152572737
-      objects_12: -853479044
-      objects_65: -369077267
-      objects_1: 1663614375
-      objects_35: -1905487770
-      objects_30: -706054003
-      objects_125: -698892114
-      objects_39: 1202832818
-      objects_25: 262110877
-      objects_129: 1527531723
-      objects_24: -642004509
-      objects_96: 768751710
-      objects_93: -601482378
-      objects_94: -1194644129
-      objects_50: 1038700842
-      objects_140: 767725423
-      objects_79: 1038342257
-      objects_102: -1778274555
-      objects_91: 1394719
-      objects_21: -1462448134
-      objects_73: -1276203026
-      objects_95: 1169038365
-      objects_48: -1044732511
-      objects_28: 1829430719
-      objects_70: 526893115
-      objects_106: -460782495
-      objects_131: 1884199335
-      objects_104: 407883300
-      objects_107: -375278857
-      objects_7: 2105574987
-      objects_80: 365486624
-      objects_87: 1685472264
-      objects_47: 449711621
-      objects_42: 1773287227
-      objects_115: -634927741
       chest_large_closed: -778589878
-      objects_59: -1259189126
-      objects_34: -831972857
-      objects_72: -1672710026
-      chest_large_opening_1: -595614741
-      objects_26: 1308637353
-      objects_97: 461625389
-      objects_101: -173885684
-      objects_63: -672758675
-      objects_74: -1809241804
-      objects_105: 1750487499
-      objects_16: 244198351
-      objects_52: 294058071
-      objects_66: 2046638579
-      objects_15: -697954671
-      objects_31: 1099401684
-      objects_136: 309605290
-      objects_90: 2500831
-      chest_large_opening_2: -2013032975
-      objects_120: 2058298692
-      objects_110: 1795227698
-      objects_56: -1359949615
-      objects_13: -696217112
-      objects_33: 1596010784
-      objects_19: -555907152
-      objects_29: 1745037023
-      objects_126: -590942871
       chest_large_open: -578802583
-      objects_67: -1125913877
+      chest_large_opening_1: -595614741
+      chest_large_opening_2: -2013032975
       objects_0: 289888743
-      objects_46: -1787158375
-      objects_6: 1103517675
-      objects_51: 594760552
-      objects_11: 100457026
-      objects_38: 1516075724
-      objects_112: 1466975768
-      objects_40: 1995339842
-      objects_121: -15574429
-      objects_139: -177933181
-      objects_32: 46297847
-      objects_27: -1757343593
-      objects_100: 827615377
-      objects_69: 1955111908
-      objects_53: -354228454
-      objects_76: -1696928094
-      objects_114: 1759267798
-      objects_71: 676342640
-      objects_36: -379556459
-      objects_37: 206653189
-      objects_62: 1865787701
-      objects_64: 88471018
+      objects_1: 1663614375
       objects_10: -1067700659
-      objects_14: 215558136
-      objects_86: -1012990548
-      objects_123: 2060527962
-      objects_75: 1768268420
-      objects_77: 1605802722
-      objects_54: 1644572696
-      objects_133: -1773774705
-      objects_138: -1396823172
+      objects_100: 827615377
+      objects_101: -173885684
+      objects_102: -1778274555
       objects_103: -724941519
-      objects_141: 678147101
-      objects_85: -670973278
-      objects_60: 1281573863
+      objects_104: 407883300
+      objects_105: 1750487499
+      objects_106: -460782495
+      objects_107: -375278857
       objects_108: -1341753483
-      objects_17: 2092560289
-      objects_68: -1685274761
-      objects_130: -189045666
+      objects_109: -2105828911
+      objects_11: 100457026
+      objects_110: 1795227698
       objects_111: -1370816083
-      objects_61: -2015932360
-      objects_88: -105429578
+      objects_112: 1466975768
+      objects_113: 1165584986
+      objects_114: 1759267798
+      objects_115: -634927741
+      objects_116: -383044712
+      objects_117: -2078216868
+      objects_118: 740500442
+      objects_119: 1449361253
+      objects_12: -853479044
+      objects_120: 2058298692
+      objects_121: -15574429
+      objects_122: -496228760
+      objects_123: 2060527962
+      objects_124: 1913403053
+      objects_125: -698892114
+      objects_126: -590942871
       objects_127: 395139332
       objects_128: 217554774
+      objects_129: 1527531723
+      objects_13: -696217112
+      objects_130: -189045666
+      objects_131: 1884199335
+      objects_132: 1927489329
+      objects_133: -1773774705
+      objects_134: 437299881
+      objects_135: -787575102
+      objects_136: 309605290
+      objects_137: -1152572737
+      objects_138: -1396823172
+      objects_139: -177933181
+      objects_14: 215558136
+      objects_140: 767725423
+      objects_141: 678147101
+      objects_15: -697954671
+      objects_16: 244198351
+      objects_17: 2092560289
+      objects_18: -609291259
+      objects_19: -555907152
+      objects_2: 1636181642
       objects_20: -891179963
+      objects_21: -1462448134
+      objects_24: -642004509
+      objects_25: 262110877
+      objects_26: 1308637353
+      objects_27: -1757343593
+      objects_28: 1829430719
+      objects_29: 1745037023
+      objects_3: 1799279113
+      objects_30: -706054003
+      objects_31: 1099401684
+      objects_32: 46297847
+      objects_33: 1596010784
+      objects_34: -831972857
+      objects_35: -1905487770
+      objects_36: -379556459
+      objects_37: 206653189
+      objects_38: 1516075724
+      objects_39: 1202832818
+      objects_4: -612273881
+      objects_40: 1995339842
+      objects_41: 533570439
+      objects_42: 1773287227
+      objects_43: -837134599
+      objects_44: 1718787061
+      objects_45: -682469612
+      objects_46: -1787158375
+      objects_47: 449711621
+      objects_48: -1044732511
+      objects_49: -2085956309
+      objects_5: -1447029661
+      objects_50: 1038700842
+      objects_51: 594760552
+      objects_52: 294058071
+      objects_53: -354228454
+      objects_54: 1644572696
+      objects_55: 60508934
+      objects_56: -1359949615
+      objects_57: 1257930686
+      objects_58: -1099718426
+      objects_59: -1259189126
+      objects_6: 1103517675
+      objects_60: 1281573863
+      objects_61: -2015932360
+      objects_62: 1865787701
+      objects_63: -672758675
+      objects_64: 88471018
+      objects_65: -369077267
+      objects_66: 2046638579
+      objects_67: -1125913877
+      objects_68: -1685274761
+      objects_69: 1955111908
+      objects_7: 2105574987
+      objects_70: 526893115
+      objects_71: 676342640
+      objects_72: -1672710026
+      objects_73: -1276203026
+      objects_74: -1809241804
+      objects_75: 1768268420
+      objects_76: -1696928094
+      objects_77: 1605802722
+      objects_78: -904380708
+      objects_79: 1038342257
+      objects_8: 1875402391
+      objects_80: 365486624
+      objects_81: -776360597
+      objects_82: -500211762
+      objects_83: -619229665
+      objects_84: 473415106
+      objects_85: -670973278
+      objects_86: -1012990548
+      objects_87: 1685472264
+      objects_88: -105429578
+      objects_89: 585394517
+      objects_90: 2500831
+      objects_91: 1394719
+      objects_92: -828038323
+      objects_93: -601482378
+      objects_94: -1194644129
+      objects_95: 1169038365
+      objects_96: 768751710
+      objects_97: 461625389
+      objects_98: -553519638
+      objects_99: -1374966854
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

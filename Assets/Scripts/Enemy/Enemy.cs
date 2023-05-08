@@ -21,6 +21,8 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
     [SerializeField] private int baseAttack;
     [SerializeField] private float knockbackDuration = 0.25f;
 
+    [SerializeField] private GameObject deathEffect;
+
     private EnemyState currentState = EnemyState.idle;
 
     protected void Start() {
@@ -59,7 +61,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
         if (health > 0) {
             StartCoroutine(KnockbackCoroutine(force, knockbackDuration));
         } else {
-            gameObject.SetActive(false);
+            Die();
         }
     }
 
@@ -100,5 +102,14 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
     protected void SetWalkAnimation(Vector2 v) {
         animator.SetFloat("moveX", v.x);
         animator.SetFloat("moveY", v.y);
+    }
+
+    protected void Die() {
+        if (deathEffect) {
+            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.5f);
+        }
+
+        gameObject.SetActive(false);
     }
 }

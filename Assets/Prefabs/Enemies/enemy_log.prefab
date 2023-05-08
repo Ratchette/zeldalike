@@ -176,6 +176,7 @@ MonoBehaviour:
   speed: 1
   baseAttack: 0
   knockbackDuration: 0.25
+  deathEffect: {fileID: 1386500547502049537, guid: ce3b0cbdd4c5d6e4f9278919ef6e14de, type: 3}
   home: {fileID: 0}
   target: {fileID: 0}
   wakeup_duration: 0.5
