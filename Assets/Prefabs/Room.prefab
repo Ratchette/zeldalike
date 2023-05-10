@@ -96,7 +96,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 1
-  m_WithTag: 
+  m_WithTag: Player
   m_WithoutTag: 
   m_SkipFirst: 0
   m_Repeating: 1
