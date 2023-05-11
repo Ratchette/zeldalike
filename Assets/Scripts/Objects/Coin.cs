@@ -7,7 +7,6 @@ public class Coin : MonoBehaviour {
     [SerializeField] private int value;
     [SerializeField] private Inventory playerInventory;
 
-
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player") && !other.isTrigger) {
             playerInventory.AddCoins(value);
