@@ -57,4 +57,6 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
     public void UseKey() {
         numKeys--;
     }
+
+
 }
