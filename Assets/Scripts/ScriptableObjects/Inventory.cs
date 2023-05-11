@@ -5,10 +5,13 @@ using UnityEngine;
 
 [CreateAssetMenu]
 public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
+    private static int MAX_COINS = 999999;
+
     private Item itemToDisplay = null;
     public List<Item> items = new List<Item>();
 
     [SerializeField] private int numKeys;
+    [SerializeField] private int numCoins;
 
     public bool AddItem(Item item) {
         if (item.isKey) {
@@ -19,6 +22,11 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
 
         itemToDisplay = item;
 
+        return true;
+    }
+
+    public bool AddCoins(int coinsToAdd) {
+        numCoins = Mathf.Min(numCoins + coinsToAdd, MAX_COINS);
         return true;
     }
 
@@ -35,6 +43,7 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
     public void OnAfterDeserialize() {
         items.Clear();
         numKeys = 0;
+        numCoins = 0;
     }
 
     public int getNumKeys() {
@@ -43,5 +52,9 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
 
     public void UseKey() {
         numKeys--;
+    }
+
+    public int getNumCoins() {
+        return numCoins;
     }
 }

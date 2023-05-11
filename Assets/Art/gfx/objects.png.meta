@@ -1020,13 +1020,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_43
+      name: coin_3
       rect:
         serializedVersion: 2
-        x: 36
-        y: 243
-        width: 9
-        height: 11
+        x: 32
+        y: 240
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1356,13 +1356,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_59
+      name: coin_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 243
-        width: 11
-        height: 11
+        x: 0
+        y: 240
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1377,13 +1377,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_60
+      name: coin_2
       rect:
         serializedVersion: 2
-        x: 18
-        y: 243
-        width: 10
-        height: 11
+        x: 16
+        y: 240
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1398,13 +1398,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_61
+      name: coin_4
       rect:
         serializedVersion: 2
-        x: 51
-        y: 243
-        width: 10
-        height: 11
+        x: 48
+        y: 240
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2830,9 +2830,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 7
-        y: 4
-        width: 120
-        height: 25
+        y: 10
+        width: 55
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2868,12 +2868,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_140
+      name: Coin Counter
       rect:
         serializedVersion: 2
-        x: 96
-        y: 19
-        width: 32
+        x: 64
+        y: 2
+        width: 64
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2941,10 +2941,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Coin Counter: 767725423
       chest_large_closed: -778589878
       chest_large_open: -578802583
       chest_large_opening_1: -595614741
       chest_large_opening_2: -2013032975
+      coin_1: -1259189126
+      coin_2: 1281573863
+      coin_3: -837134599
+      coin_4: -2015932360
       destroy_1: 294058071
       destroy_2: -354228454
       destroy_3: 1644572696
@@ -3000,7 +3005,6 @@ TextureImporter:
       objects_138: -1396823172
       objects_139: -177933181
       objects_14: 215558136
-      objects_140: 767725423
       objects_141: 678147101
       objects_15: -697954671
       objects_16: 244198351
@@ -3029,7 +3033,6 @@ TextureImporter:
       objects_39: 1202832818
       objects_4: -612273881
       objects_40: 1995339842
-      objects_43: -837134599
       objects_45: -682469612
       objects_46: -1787158375
       objects_47: 449711621
@@ -3042,10 +3045,7 @@ TextureImporter:
       objects_56: -1359949615
       objects_57: 1257930686
       objects_58: -1099718426
-      objects_59: -1259189126
       objects_6: 1103517675
-      objects_60: 1281573863
-      objects_61: -2015932360
       objects_62: 1865787701
       objects_63: -672758675
       objects_64: 88471018

@@ -22,5 +22,4 @@ public class Heart : MonoBehaviour {
             Destroy(this.gameObject);
         }
     }
-
 }
