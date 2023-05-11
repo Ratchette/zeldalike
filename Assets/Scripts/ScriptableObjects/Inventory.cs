@@ -13,6 +13,10 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
     [SerializeField] private int numKeys;
     [SerializeField] private int numCoins;
 
+    public void OnBeforeSerialize() {
+        //throw new System.NotImplementedException();
+    }
+
     public bool AddItem(Item item) {
         if (item.isKey) {
             numKeys++;
@@ -30,14 +34,14 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
         return true;
     }
 
+    public int getNumCoins() {
+        return numCoins;
+    }
+
     public Sprite GetItemToDisplay() {
         Sprite sprite = itemToDisplay.sprite;
         itemToDisplay = null;
         return sprite;
-    }
-
-    public void OnBeforeSerialize() {
-        //throw new System.NotImplementedException();
     }
 
     public void OnAfterDeserialize() {
@@ -52,9 +56,5 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
 
     public void UseKey() {
         numKeys--;
-    }
-
-    public int getNumCoins() {
-        return numCoins;
     }
 }
