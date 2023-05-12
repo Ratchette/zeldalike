@@ -13,6 +13,7 @@ public enum PlayerState {
 public class Player : MonoBehaviour, IDamageable {
     public FloatValue health;
     public SignalSender playerHealthSignal;
+    public SignalSender playerHitSignal;
     public PlayerState currentState;
 
     public SpriteRenderer receivedItemSprite;
@@ -119,6 +120,7 @@ public class Player : MonoBehaviour, IDamageable {
 
         Debug.LogFormat("[{0}][Hit] health={1}, damage={2}, newHealth={3}", "Player", health.runtimeValue, damage, (health.runtimeValue - damage));
         health.runtimeValue -= damage;
+        playerHitSignal.Raise();
         playerHealthSignal.Raise();
 
         if (health.runtimeValue > 0) {

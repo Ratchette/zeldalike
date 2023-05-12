@@ -187,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 11400000, guid: 91986daea68b6d4408865127985c11e7, type: 2}
   playerHealthSignal: {fileID: 11400000, guid: 89f567116c9738d42a977f80e4ca724d, type: 2}
+  playerHitSignal: {fileID: 11400000, guid: 79ce1286fc7517a4c9cb5059c5650a2f, type: 2}
   currentState: 0
   receivedItemSprite: {fileID: 3112598254642053640}
   playerInventory: {fileID: 11400000, guid: f89755dde076f7a49b79b2767c269223, type: 2}

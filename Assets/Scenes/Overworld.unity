@@ -36494,10 +36494,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3112598254445620101, guid: 9012a6eb27b2b45489d85311b3b103fd, type: 3}
-      propertyPath: playerHitSignal
-      value: 
-      objectReference: {fileID: 11400000, guid: 79ce1286fc7517a4c9cb5059c5650a2f, type: 2}
     - target: {fileID: 3112598254445620103, guid: 9012a6eb27b2b45489d85311b3b103fd, type: 3}
       propertyPath: m_RootOrder
       value: 1
