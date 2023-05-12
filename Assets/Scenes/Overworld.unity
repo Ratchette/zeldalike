@@ -11093,6 +11093,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 788982581}
+    - target: {fileID: 4953216013653489031, guid: fef98652fc04bca459d7c580457acd61, type: 3}
+      propertyPath: enemyName
+      value: Log 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4953216013653489050, guid: fef98652fc04bca459d7c580457acd61, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -11163,6 +11167,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 788982581}
+    - target: {fileID: 4953216013653489031, guid: fef98652fc04bca459d7c580457acd61, type: 3}
+      propertyPath: enemyName
+      value: Log 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4953216013653489050, guid: fef98652fc04bca459d7c580457acd61, type: 3}
       propertyPath: m_RootOrder
       value: 0

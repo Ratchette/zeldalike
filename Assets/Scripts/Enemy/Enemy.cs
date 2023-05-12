@@ -39,6 +39,8 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
     }
 
     protected EnemyState ChangeState(EnemyState newState) {
+        Debug.LogFormat("[{0}][ChangeState] prev={1}, new={2}", enemyName, currentState, newState);
+
         if (currentState != newState) {
             EnemyState previousState = currentState;
             currentState = newState;

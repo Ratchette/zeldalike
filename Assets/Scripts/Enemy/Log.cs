@@ -13,6 +13,8 @@ public class Log : Enemy {
     [SerializeField] protected float chaseRadius = 4;
     [SerializeField] protected float attackRadius = 0.5f;
 
+    private Coroutine wakeupCoroutine = null;
+
     new void Start() {
         base.Start();
 
@@ -25,7 +27,9 @@ public class Log : Enemy {
             myRigidbody.bodyType = RigidbodyType2D.Dynamic;
 
             if (GetState() == EnemyState.idle) {
-                StartCoroutine(WakeUpCoroutine());
+                if(wakeupCoroutine == null) {
+                    wakeupCoroutine = StartCoroutine(WakeUpCoroutine());
+                }
             } else if (GetState() == EnemyState.walk) {
                 if (Vector3.Distance(target.position, transform.position) >= attackRadius) {
                     Move(CalculateNewPosition(transform.position, target.position));
@@ -43,6 +47,7 @@ public class Log : Enemy {
         yield return new WaitForSeconds(wakeup_duration);
 
         ChangeState(EnemyState.walk);
+        wakeupCoroutine = null;
     }
 
     private void GoToBackToSleep() {
