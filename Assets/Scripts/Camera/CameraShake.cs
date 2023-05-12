@@ -14,14 +14,6 @@ public class CameraShake : MonoBehaviour {
     public void Awake() {
         _camera = GetComponent<CinemachineVirtualCamera>();
         _channelsPerlin = _camera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-
-        if (_camera == null) {
-            Debug.LogFormat("Camera is null");
-        }
-
-        if ( _channelsPerlin == null) {
-            Debug.LogFormat("Perlin is null");
-        }
     }
 
     public void ShakeScreen() {
@@ -29,8 +21,6 @@ public class CameraShake : MonoBehaviour {
     }
 
     private IEnumerator ShakeCoroutine() {
-        Debug.LogFormat("Perlin {0}", _channelsPerlin);
-
         _channelsPerlin.m_AmplitudeGain = shakeAmplitude;
         yield return new WaitForSeconds(shakeTime);
         _channelsPerlin.m_AmplitudeGain = 0f;
