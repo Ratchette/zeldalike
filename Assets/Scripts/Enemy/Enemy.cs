@@ -50,7 +50,11 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
         }
     }
 
+    virtual protected void TakeDamage_Begin() { }
+
     public void TakeDamage(Vector2 force, float damage) {
+        TakeDamage_Begin();
+
         if (GetState() == EnemyState.stagger) {
             return;
         }

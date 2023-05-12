@@ -62,4 +62,11 @@ public class Log : Enemy {
             Move(CalculateNewPosition(transform.position, home.position));
         }
     }
+
+    override protected void TakeDamage_Begin() {
+        if(wakeupCoroutine != null) {
+            StopCoroutine(wakeupCoroutine);
+            wakeupCoroutine = null;
+        }
+    }
 }
