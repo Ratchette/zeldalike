@@ -7,45 +7,52 @@ using UnityEngine.UIElements;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class Chicken : Animal {
-    [SerializeField] private Transform player;
+    // Continues header "Knockback" from Animal
+    [SerializeField] private int knockbackMultiplier = 2;
+    private bool playerTooClose = false;
+
+    [Header("Walking")]
+    [SerializeField] private float walkMaxDuration;
+
+    [Header("Fleeing")]
     [SerializeField] private float fleeSpeed;
     [SerializeField] private float fleeRadius;
     [SerializeField] private float fleeDuration;
 
-    [SerializeField] private float walkMaxDuration;
-
-    private bool playerTooClose = false;
-
     new void Start() {
         base.Start();
 
-        player = GameObject.FindWithTag("Player").transform;
-        knockbackMultiplier = 2;
+        _knockbackMultiplier = knockbackMultiplier;
     }
 
     void FixedUpdate() {
         playerTooClose = Vector3.Distance(player.position, transform.position) <= fleeRadius;
 
-        if (GetState() == AnimalState.flee) {
+        if (GetState() == AnimalState.Flee) {
             Flee(transform.position, player.position);
         }
         else if (playerTooClose) {
-            if (GetState() != AnimalState.stagger) {
-                StartCoroutine(FleeCoroutine(transform.position, player.position));
+            if (GetState() != AnimalState.Stagger) {
+                fleeCoroutine = StartCoroutine(FleeCoroutine(transform.position, player.position));
             }
-        } else if(GetState() == AnimalState.idle){ 
+        } else if(GetState() == AnimalState.Idle){ 
             MaybeWalk();
         }
     }
 
     private void MaybeWalk() {
         if (Random.value < 0.02) {
-         StartCoroutine(WalkCoroutine(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)), Random.value * walkMaxDuration));
+            walkCoroutine = StartCoroutine(WalkCoroutine(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)), Random.value * walkMaxDuration));
         }
     }
 
 
     private void Flee(Vector3 chicken, Vector3 player) {
+        if (walkCoroutine != null) {
+            StopCoroutine(walkCoroutine);
+            walkCoroutine = null;
+        }
+
         Vector2 velocity = ((player - chicken) * -1).normalized * fleeSpeed;
         SetWalkAnimation(velocity);
         myRigidbody.velocity = velocity;
@@ -55,8 +62,8 @@ public class Chicken : Animal {
     protected private IEnumerator FleeCoroutine(Vector3 animal, Vector3 player) {
         Vector2 velocity = ((player - animal) * -1).normalized * fleeSpeed;
 
-        ChangeState(AnimalState.flee);
-        animator.SetBool("moving", true);
+        ChangeState(AnimalState.Flee);
+        animator.SetBool(ANIMATOR_MOVING, true);
 
         SetWalkAnimation(velocity);
         myRigidbody.velocity = velocity;
@@ -65,13 +72,9 @@ public class Chicken : Animal {
             yield return new WaitForSeconds(fleeDuration);
         }
 
-        if (GetState() == AnimalState.stagger) {
-            // Let the stagger animation handle movement instead.
-            yield break;
-        }
-
-        animator.SetBool("moving", false);
-        ChangeState(AnimalState.idle);
+        animator.SetBool(ANIMATOR_MOVING, false);
+        ChangeState(AnimalState.Idle);
         myRigidbody.velocity = Vector3.zero;
+        fleeCoroutine = null;
     }
 }

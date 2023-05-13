@@ -11,6 +11,8 @@ public enum PlayerState {
 }
 
 public class Player : MonoBehaviour, IDamageable {
+    public static string TAG = "Player";
+
     public FloatValue health;
     public SignalSender playerHealthSignal;
     public SignalSender playerHitSignal;

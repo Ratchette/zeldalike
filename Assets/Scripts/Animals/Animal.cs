@@ -5,28 +5,40 @@ using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 
 public enum AnimalState {
-    idle,
-    walk,
-    stagger,
-    flee
+    Idle,
+    Walk,
+    Stagger,
+    Flee
 }
 
 public class Animal : MonoBehaviour, IDamageable {
+    static protected string ANIMATOR_MOVING = "moving";
+    static protected string ANIMATOR_MOVE_X = "moveX";
+    static protected string ANIMATOR_MOVE_Y = "moveY";
+
     protected Rigidbody2D myRigidbody;
+    protected Transform player;
     protected Animator animator;
-    protected float knockbackMultiplier = 1;
+    protected Coroutine walkCoroutine = null;
+    protected Coroutine fleeCoroutine = null;
+
+    private AnimalState currentState = AnimalState.Idle;
 
     [SerializeField] private float speed;
-    [SerializeField] private float knockbackDuration = 0.25f;
 
-    private AnimalState currentState = AnimalState.idle;
+    [Header("Knockback")]
+    [SerializeField] private float knockbackDuration = 0.25f;
+    protected float _knockbackMultiplier = 1;
+
+    
 
     protected void Start() {
         myRigidbody = gameObject.GetComponent<Rigidbody2D>();
+        player = GameObject.FindWithTag(Player.TAG).transform;
 
         animator = gameObject.GetComponent<Animator>();
-        animator.SetFloat("moveX", 0);
-        animator.SetFloat("moveY", -1);
+        animator.SetFloat(ANIMATOR_MOVE_X, 0);
+        animator.SetFloat(ANIMATOR_MOVE_Y, -1);
     }
 
     public AnimalState GetState() {
@@ -41,23 +53,6 @@ public class Animal : MonoBehaviour, IDamageable {
         } else {
             return currentState;
         }
-    }
-
-    // Animals stagger, but take no damage by default
-    public void TakeDamage(Vector2 force, float damage) {
-        if (GetState() == AnimalState.stagger) {
-            return;
-        }
-        ChangeState(AnimalState.stagger);
-        StartCoroutine(KnockbackCoroutine(force, knockbackDuration));
-    }
-
-    protected IEnumerator KnockbackCoroutine(Vector2 force, float duration) {
-        myRigidbody.velocity = force * knockbackMultiplier;
-        yield return new WaitForSeconds(duration);
-
-        myRigidbody.velocity = Vector2.zero;
-        ChangeState(AnimalState.walk);
     }
 
     protected void SetWalkAnimation(Vector3 delta) {
@@ -77,30 +72,52 @@ public class Animal : MonoBehaviour, IDamageable {
     }
 
     protected void SetWalkAnimationXY(Vector2 v) {
-        animator.SetFloat("moveX", v.x);
-        animator.SetFloat("moveY", v.y);
+        animator.SetFloat(ANIMATOR_MOVE_X, v.x);
+        animator.SetFloat(ANIMATOR_MOVE_Y, v.y);
     }
 
 
     protected IEnumerator WalkCoroutine(Vector2 velocity, float duration) {
-        ChangeState(AnimalState.walk);
-        animator.SetBool("moving", true);
+        ChangeState(AnimalState.Walk);
+        animator.SetBool(ANIMATOR_MOVING, true);
 
         SetWalkAnimation(velocity);
         myRigidbody.velocity = velocity;
 
         yield return new WaitForSeconds(duration);
 
-        if (GetState() == AnimalState.stagger) {
-            // Let the stagger animation handle movement instead.
-            yield break;
-        }
-
-        animator.SetBool("moving", false);
-        ChangeState(AnimalState.idle);
+        animator.SetBool(ANIMATOR_MOVING, false);
+        ChangeState(AnimalState.Idle);
         myRigidbody.velocity = Vector3.zero;
+        walkCoroutine = null;
     }
 
+    // Animals stagger, but take no damage by default
+    public void TakeDamage(Vector2 force, float damage) {
+        if (GetState() == AnimalState.Stagger) {
+            return;
+        }
+        ChangeState(AnimalState.Stagger);
+
+        if(walkCoroutine != null) {
+            StopCoroutine(walkCoroutine);
+            walkCoroutine = null;
+        }
+        if (fleeCoroutine != null) {
+            StopCoroutine(fleeCoroutine);
+            fleeCoroutine = null;
+        }
+
+        StartCoroutine(KnockbackCoroutine(force, knockbackDuration));
+    }
+
+    protected IEnumerator KnockbackCoroutine(Vector2 force, float duration) {
+        myRigidbody.velocity = force * _knockbackMultiplier;
+        yield return new WaitForSeconds(duration);
+
+        myRigidbody.velocity = Vector2.zero;
+        ChangeState(AnimalState.Walk);
+    }
 }
 
 
