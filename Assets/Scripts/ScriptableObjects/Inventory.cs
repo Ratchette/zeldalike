@@ -5,13 +5,19 @@ using UnityEngine;
 
 [CreateAssetMenu]
 public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
-    private static int MAX_COINS = 999999;
+    static private int MAX_COINS = 999999;
 
     private Item itemToDisplay = null;
-    public List<Item> items = new List<Item>();
 
+    [SerializeField] private List<Item> items = new List<Item>();
     [SerializeField] private int numKeys;
     [SerializeField] private int numCoins;
+
+    public void OnAfterDeserialize() {
+        items.Clear();
+        numKeys = 0;
+        numCoins = 0;
+    }
 
     public void OnBeforeSerialize() {
         //throw new System.NotImplementedException();
@@ -29,25 +35,10 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
         return true;
     }
 
-    public bool AddCoins(int coinsToAdd) {
-        numCoins = Mathf.Min(numCoins + coinsToAdd, MAX_COINS);
-        return true;
-    }
-
-    public int getNumCoins() {
-        return numCoins;
-    }
-
     public Sprite GetItemToDisplay() {
         Sprite sprite = itemToDisplay.sprite;
         itemToDisplay = null;
         return sprite;
-    }
-
-    public void OnAfterDeserialize() {
-        items.Clear();
-        numKeys = 0;
-        numCoins = 0;
     }
 
     public int getNumKeys() {
@@ -58,5 +49,12 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
         numKeys--;
     }
 
+    public bool AddCoins(int coinsToAdd) {
+        numCoins = Mathf.Min(numCoins + coinsToAdd, MAX_COINS);
+        return true;
+    }
 
+    public int getNumCoins() {
+        return numCoins;
+    }
 }

@@ -4,44 +4,46 @@ using System.Collections.Generic;
 using UnityEngine;
 
 enum ChestState {
-    closed,
-    opening,
-    opened
+    Closed,
+    Opening,
+    Opened
 }
 
 public class Chest : Interactable {
-    public Animator animator;
-    public Item item;
-    public Inventory playerInventory;
+    static private string ANIMATOR_OPENED = "opened";
 
-    public SignalSender raiseItem;
-    public SignalSender keySignal;
+    private Animator animator;
+    private ChestState currentState = ChestState.Closed;
 
-    public BooleanValue isOpen;
+    [SerializeField] private BooleanValue isOpen;
+    [SerializeField] private Item item;
+    [SerializeField] private SignalSender raiseItem;
+    [SerializeField] private SignalSender keySignal;
 
-[SerializeField]  private ChestState currentState = ChestState.closed;
+    [Header("Player Data")]
+    [SerializeField] private Inventory playerInventory;
 
     private void Start() {
         this.animator = GetComponent<Animator>();
         this.text.Add(item.description);
 
         if(isOpen.runtimeValue == true) {
-            currentState = ChestState.opened;
-            animator.SetBool("opened", true);
+            currentState = ChestState.Opened;
+            animator.SetBool(ANIMATOR_OPENED, true);
         }
     }
 
     protected override bool CanInteract() {
-        return ((currentState != ChestState.opened) && playerInRange);
+        return ((currentState != ChestState.Opened) && playerInRange);
 
     }
 
     protected override void Interact() {
-        if (currentState == ChestState.closed) {
-            currentState = ChestState.opening;
+        if (currentState == ChestState.Closed) {
+            currentState = ChestState.Opening;
 
             interactableOutOfRange.Raise();
-            animator.SetBool("opened", true);
+            animator.SetBool(ANIMATOR_OPENED, true);
 
             playerInventory.AddItem(item);
             raiseItem.Raise();
@@ -50,12 +52,12 @@ public class Chest : Interactable {
                 keySignal.Raise();
             }
 
-        } else if (currentState == ChestState.opening) {
+        } else if (currentState == ChestState.Opening) {
             // If we've scrolled through all of the text:
             //  - Return the player to normal
             //  - Make the chest non-interactable
             if (activeText == -1) {
-                currentState = ChestState.opened;
+                currentState = ChestState.Opened;
                 isOpen.runtimeValue = true;
                 raiseItem.Raise();
             }

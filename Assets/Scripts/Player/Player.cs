@@ -4,32 +4,42 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum PlayerState {
-    walk,
-    attack,
-    interact,
-    stagger
+    Walk,
+    Attack,
+    Interact,
+    Stagger
 }
 
 public class Player : MonoBehaviour, IDamageable {
-    public static string TAG = "Player";
+    static public string TAG = "Player";
 
-    public FloatValue health;
-    public SignalSender playerHealthSignal;
-    public SignalSender playerHitSignal;
-    public PlayerState currentState;
+    static private string ANIMATOR_MOVING = "moving";
+    static private string ANIMATOR_MOVE_X = "moveX";
+    static private string ANIMATOR_MOVE_Y = "moveY";
 
-    public SpriteRenderer receivedItemSprite;
-    public Inventory playerInventory;
+    static private string ANIMATOR_ATTACKING = "attacking";
+    static private string ANIMATOR_DISPLAY_ITEM = "display_item";
 
-    private Animator animator;
+    private PlayerState currentState;
 
-    private Vector3 user_input;
+    [Header("Health")]
+    [SerializeField] private FloatValue health;
+    [SerializeField] private SignalSender playerHealthSignal;
+    [SerializeField] private SignalSender playerHitSignal;
+
+    [Header("Items")]
+    [SerializeField] private Inventory playerInventory;
+    [SerializeField] private SpriteRenderer receivedItemSprite;
+
+    [Header("Movement")]
+    [SerializeField] private Vector2Value startingPosition;
+    [SerializeField] private Vector2Value startingDirection;
+    [SerializeField] private float speed;
     private Rigidbody2D feet_collider;
-    public float speed;
+    private Animator animator;
+    private Vector3 user_input;
 
-    public Vector2Value startingPosition;
-    public Vector2Value startingDirection;
-
+    [Header("Knockback")]
     public float knockbackDuration = 0.25f;
 
     // Start is called before the first frame update
@@ -37,7 +47,7 @@ public class Player : MonoBehaviour, IDamageable {
         feet_collider = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
 
-        currentState = PlayerState.walk;
+        currentState = PlayerState.Walk;
 
         // Vector2.zero == a position hasn't been set, so use the default for that scene.
         if (!startingPosition.runtimeValue.Equals(Vector2.zero)) {
@@ -50,7 +60,7 @@ public class Player : MonoBehaviour, IDamageable {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetButtonDown("attack") && GetState() == PlayerState.walk) {
+        if (Input.GetButtonDown(InputMap.BUTTON_ATTACK) && GetState() == PlayerState.Walk) {
             StartCoroutine(AttackCoroutine());
         }
     }
@@ -60,10 +70,10 @@ public class Player : MonoBehaviour, IDamageable {
         // Called every 0.02 seconds - which may be more or less than once a frame
         user_input = Vector3.zero;
 
-        user_input.x = Input.GetAxisRaw("Horizontal");
-        user_input.y = Input.GetAxisRaw("Vertical");
+        user_input.x = Input.GetAxisRaw(InputMap.INPUT_HORIZONTAL);
+        user_input.y = Input.GetAxisRaw(InputMap.INPUT_VERTICAL);
 
-        if (GetState() == PlayerState.walk) {
+        if (GetState() == PlayerState.Walk) {
             Move();
         }
     }
@@ -96,16 +106,16 @@ public class Player : MonoBehaviour, IDamageable {
         if (user_input != Vector3.zero) {
             feet_collider.MovePosition(transform.position + user_input.normalized * speed * Time.deltaTime);
 
-            animator.SetBool("moving", true);
+            animator.SetBool(ANIMATOR_MOVING, true);
             SetWalkAnimation(user_input);
         } else {
-            animator.SetBool("moving", false);
+            animator.SetBool(ANIMATOR_MOVING, false);
         }
     }
 
     private void SetWalkAnimation(Vector2 v) {
-        animator.SetFloat("moveX", v.x);
-        animator.SetFloat("moveY", v.y);
+        animator.SetFloat(ANIMATOR_MOVE_X, v.x);
+        animator.SetFloat(ANIMATOR_MOVE_Y, v.y);
     }
 
 
@@ -114,11 +124,11 @@ public class Player : MonoBehaviour, IDamageable {
      ****************************************************/
 
     public void TakeDamage(Vector2 force, float damage) {
-        if (GetState() == PlayerState.stagger) {
+        if (GetState() == PlayerState.Stagger) {
             return;
         }
 
-        ChangeState(PlayerState.stagger);
+        ChangeState(PlayerState.Stagger);
 
         Debug.LogFormat("[{0}][Hit] health={1}, damage={2}, newHealth={3}", "Player", health.runtimeValue, damage, (health.runtimeValue - damage));
         health.runtimeValue -= damage;
@@ -138,7 +148,7 @@ public class Player : MonoBehaviour, IDamageable {
         yield return new WaitForSeconds(duration);
 
         feet_collider.velocity = Vector2.zero;
-        ChangeState(PlayerState.walk);
+        ChangeState(PlayerState.Walk);
     }
 
 
@@ -147,16 +157,16 @@ public class Player : MonoBehaviour, IDamageable {
      ****************************************************/
 
     private IEnumerator AttackCoroutine() {
-        animator.SetBool("attacking", true);
-        currentState = PlayerState.attack;
+        animator.SetBool(ANIMATOR_ATTACKING, true);
+        currentState = PlayerState.Attack;
 
         yield return null;
 
-        animator.SetBool("attacking", false);
+        animator.SetBool(ANIMATOR_ATTACKING, false);
         yield return new WaitForSeconds(0.33f);
 
         // FIXME - check if PlayerState != interact?
-        currentState = PlayerState.walk;
+        currentState = PlayerState.Walk;
     }
 
     /****************************************************
@@ -165,15 +175,15 @@ public class Player : MonoBehaviour, IDamageable {
 
     public void RaiseItem() {
         // Toggle between raising the item and making the player moveable again
-        if (GetState() == PlayerState.interact) {
+        if (GetState() == PlayerState.Interact) {
             receivedItemSprite.sprite = null;
-            animator.SetBool("display_item", false);
-            currentState = PlayerState.walk;
+            animator.SetBool(ANIMATOR_DISPLAY_ITEM, false);
+            currentState = PlayerState.Walk;
 
         } else {
             receivedItemSprite.sprite = playerInventory.GetItemToDisplay();
-            animator.SetBool("display_item", true);
-            currentState = PlayerState.interact;
+            animator.SetBool(ANIMATOR_DISPLAY_ITEM, true);
+            currentState = PlayerState.Interact;
         }
     }
 }

@@ -4,17 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour {
+    [Header("New Scene")]
     [SerializeField] private string SceneToLoad;
-    [SerializeField] private Vector2Value playerPosition;
-    [SerializeField] private Vector2Value playerDirection;
-
     [SerializeField] private Vector2 newScenePosition;
     [SerializeField] private Vector2 newSceneDirection;
 
+    [Header("Fade in & out")]
     [SerializeField] private GameObject fadeInPanel;
     [SerializeField] private GameObject fadeOutPanel;
     [SerializeField] private float fadeWait;
-    
+
+    [Header("Player Data")]
+    [SerializeField] private Vector2Value playerPosition;
+    [SerializeField] private Vector2Value playerDirection;
 
     public void Awake() {
         if(fadeInPanel != null) {

@@ -4,14 +4,15 @@ using TMPro;
 using UnityEngine;
 
 public class Door : MonoBehaviour {
-    public BooleanValue isOpen;
+    private bool playerInRange = false;
 
-    public bool playerInRange = false;
-    public Inventory playerInventory;
+    [SerializeField] private BooleanValue isOpen;
+    [SerializeField] private SignalSender keySignal;
+    [SerializeField] private SignalSender doorInRange;
+    [SerializeField] private SignalSender doorOutOfRange;
 
-    public SignalSender keySignal;
-    public SignalSender doorInRange;
-    public SignalSender doorOutOfRange;
+    [Header("Player Data")]
+    [SerializeField] private Inventory playerInventory;
 
 
     private void Start() {
@@ -21,7 +22,7 @@ public class Door : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Player")) {
+        if (other.CompareTag(Player.TAG)) {
             playerInRange = true;
 
             if (CanInteract()) {
@@ -31,7 +32,7 @@ public class Door : MonoBehaviour {
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        if (other.CompareTag("Player")) {
+        if (other.CompareTag(Player.TAG)) {
             playerInRange = false;
 
             doorOutOfRange.Raise();
@@ -45,7 +46,7 @@ public class Door : MonoBehaviour {
     }
 
     private bool InteractButtonDown() {
-        return Input.GetButtonDown("interact");
+        return Input.GetButtonDown(InputMap.BUTTON_INTERACT);
     }
 
     virtual protected bool CanInteract() {

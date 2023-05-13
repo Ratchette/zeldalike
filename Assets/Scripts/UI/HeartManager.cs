@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class HeartManager : MonoBehaviour {
+    [Header("Images")]
     [SerializeField] private Image[] hearts;
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite threeQuartersHeart;
@@ -12,8 +13,9 @@ public class HeartManager : MonoBehaviour {
     [SerializeField] private Sprite quarterHeart;
     [SerializeField] private Sprite emptyHeart;
 
-    [SerializeField] private FloatValue heartContainers;
+    [Header("Player Data")]
     [SerializeField] private FloatValue playerHealth;
+    [SerializeField] private FloatValue heartContainers;
 
     private void Start() {
         InitHearts();

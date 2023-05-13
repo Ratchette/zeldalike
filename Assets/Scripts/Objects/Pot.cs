@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 
 public class Pot : MonoBehaviour, IDamageable {
+    static protected string ANIMATOR_SMASH = "smash";
+
     private Animator animator;
 
     private void Start() {
@@ -11,7 +13,7 @@ public class Pot : MonoBehaviour, IDamageable {
     }
 
     public void TakeDamage(Vector2 force, float damage) {
-        animator.SetBool("smash", true);
+        animator.SetBool(ANIMATOR_SMASH, true);
         StartCoroutine(breakCoroutine());
     }
 

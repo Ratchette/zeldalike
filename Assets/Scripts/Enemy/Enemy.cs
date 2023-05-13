@@ -4,34 +4,47 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public enum EnemyState {
-    idle,
-    walk,
-    attack,
-    stagger
+    Idle,
+    Walk,
+    Attack,
+    Stagger
 }
 public abstract class Enemy : MonoBehaviour, IDamageable {
+    static protected string ANIMATOR_MOVING = "moving";
+    static protected string ANIMATOR_MOVE_X = "moveX";
+    static protected string ANIMATOR_MOVE_Y = "moveY";
+
     protected Rigidbody2D myRigidbody;
+    protected Transform target;
     protected Animator animator;
 
+    private EnemyState currentState = EnemyState.Idle;
+
     [SerializeField] private string enemyName;
-    [SerializeField] private FloatValue maxHealth;
-    [SerializeField] private float health;
-    [SerializeField] private float speed = 1;
-
-    [SerializeField] private int baseAttack;
-    [SerializeField] private float knockbackDuration = 0.25f;
-
     [SerializeField] private GameObject deathEffect;
 
-    private EnemyState currentState = EnemyState.idle;
+    [Header("Health")]
+    [SerializeField] private float health;
+    [SerializeField] private FloatValue maxHealth;
+
+    [Header("Walking", order = 0)]
+    [SerializeField] private float speed = 1;
+
+    [Header("Knockback")]
+    [SerializeField] private float knockbackDuration = 0.25f;
+
+    [Header("Attack")]
+    [SerializeField] private int baseAttack;
+
 
     protected void Start() {
         myRigidbody = gameObject.GetComponent<Rigidbody2D>();
+        target = GameObject.FindWithTag(Player.TAG).transform;
         health = maxHealth.runtimeValue;
 
         animator = gameObject.GetComponent<Animator>();
-        animator.SetFloat("moveX", 0);
-        animator.SetFloat("moveY", -1);
+        animator.SetFloat(ANIMATOR_MOVE_X, 0);
+        animator.SetFloat(ANIMATOR_MOVE_Y, -1);
     }
 
     public EnemyState GetState() {
@@ -39,7 +52,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
     }
 
     protected EnemyState ChangeState(EnemyState newState) {
-        Debug.LogFormat("[{0}][ChangeState] prev={1}, new={2}", enemyName, currentState, newState);
+        //Debug.LogFormat("[{0}][ChangeState] prev={1}, new={2}", enemyName, currentState, newState);
 
         if (currentState != newState) {
             EnemyState previousState = currentState;
@@ -50,37 +63,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
         }
     }
 
-    virtual protected void TakeDamage_Begin() { }
-
-    public void TakeDamage(Vector2 force, float damage) {
-        TakeDamage_Begin();
-
-        if (GetState() == EnemyState.stagger) {
-            return;
-        }
-        ChangeState(EnemyState.stagger);
-
-        // Loose health
-        Debug.LogFormat("[{0}][Hit] health={1}, damage={2}, newHealth={3}", enemyName, health, damage, (health - damage));
-        health = health - damage;
-
-        if (health > 0) {
-            StartCoroutine(KnockbackCoroutine(force, knockbackDuration));
-        } else {
-            Die();
-        }
-    }
-
-    private IEnumerator KnockbackCoroutine(Vector2 force, float duration) {
-        myRigidbody.velocity = force;
-        yield return new WaitForSeconds(duration);
-
-        myRigidbody.velocity = Vector2.zero;
-        ChangeState(EnemyState.walk);
-    }
-
     // Default Moving implementation, can be overriden in subclass
-
     protected Vector2 CalculateNewPosition(Vector3 myPosition, Vector3 targetPosition) {
         return Vector3.MoveTowards(myPosition, targetPosition, speed * Time.deltaTime);
     }
@@ -106,8 +89,37 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
     }
 
     protected void SetWalkAnimation(Vector2 v) {
-        animator.SetFloat("moveX", v.x);
-        animator.SetFloat("moveY", v.y);
+        animator.SetFloat(ANIMATOR_MOVE_X, v.x);
+        animator.SetFloat(ANIMATOR_MOVE_Y, v.y);
+    }
+
+    virtual protected void TakeDamage_Begin() { }
+
+    public void TakeDamage(Vector2 force, float damage) {
+        TakeDamage_Begin();
+
+        if (GetState() == EnemyState.Stagger) {
+            return;
+        }
+        ChangeState(EnemyState.Stagger);
+
+        // Loose health
+        //Debug.LogFormat("[{0}][Hit] health={1}, damage={2}, newHealth={3}", enemyName, health, damage, (health - damage));
+        health = health - damage;
+
+        if (health > 0) {
+            StartCoroutine(KnockbackCoroutine(force, knockbackDuration));
+        } else {
+            Die();
+        }
+    }
+
+    private IEnumerator KnockbackCoroutine(Vector2 force, float duration) {
+        myRigidbody.velocity = force;
+        yield return new WaitForSeconds(duration);
+
+        myRigidbody.velocity = Vector2.zero;
+        ChangeState(EnemyState.Walk);
     }
 
     protected void Die() {

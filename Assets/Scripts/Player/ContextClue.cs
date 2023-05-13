@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ContextClue : MonoBehaviour {
-    public GameObject contextClue;
-    public SpriteRenderer contextSprite;
+    [Header("Context Data")]
+    [SerializeField] private GameObject contextClue;
+    [SerializeField] private SpriteRenderer contextSprite;
 
+    [Header("Interaction Data")]
     [SerializeField] private Sprite interactionSprite;
     [SerializeField] private Sprite doorSprite;
 

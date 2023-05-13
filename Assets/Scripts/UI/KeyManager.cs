@@ -7,6 +7,7 @@ public class KeyManager : MonoBehaviour {
     [SerializeField] private Sprite[] numbers;
     [SerializeField] private Image keysUI;
 
+    [Header("Player Data")]
     [SerializeField] private Inventory playerInventory;
 
     private void Start() {

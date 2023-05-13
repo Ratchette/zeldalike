@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LogPatrol : Log {
 
+    [Header("Walking route")]
     [SerializeField] private Transform[] path;
     [SerializeField] private int currentGoal;
 
@@ -12,8 +13,8 @@ public class LogPatrol : Log {
         base.Start();
 
         // Start the log off in the walking state
-        animator.SetBool("wakeUp", true);
-        ChangeState(EnemyState.walk);
+        animator.SetBool(ANIMATOR_WAKEUP, true);
+        ChangeState(EnemyState.Walk);
         myRigidbody.bodyType = RigidbodyType2D.Dynamic;
 
         // The log will start on goal 0
@@ -22,7 +23,7 @@ public class LogPatrol : Log {
 
     void FixedUpdate() {
         // Stagger behaviour is handled by a coroutine in Enemy.cs
-        if (GetState() == EnemyState.stagger) {
+        if (GetState() == EnemyState.Stagger) {
             return;
         }
 
