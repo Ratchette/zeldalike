@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 288515299}
   - component: {fileID: 288515298}
   - component: {fileID: 288515300}
+  - component: {fileID: 6130435947089169911}
   m_Layer: 5
   m_Name: Coin counter
   m_TagString: Untagged
@@ -33,7 +34,7 @@ RectTransform:
   m_Children:
   - {fileID: 474828912}
   m_Father: {fileID: 6092891971466365360}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -92,6 +93,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: f89755dde076f7a49b79b2767c269223, type: 2}
   coinCounter: {fileID: 474828913}
+--- !u!114 &6130435947089169911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288515296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b6999477f033649821fea43381b507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 93ec0a418da6f6f49a84fe13f6ea3079, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 288515300}
+        m_TargetAssemblyTypeName: CoinCounterManager, Assembly-CSharp
+        m_MethodName: UpdateCoins
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &474828911
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +354,7 @@ RectTransform:
   - {fileID: 6092891971545087800}
   - {fileID: 6092891969643382992}
   m_Father: {fileID: 6092891971466365360}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -913,9 +942,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6092891971631648858}
   - {fileID: 6092891969793915619}
   - {fileID: 288515297}
+  - {fileID: 6092891971631648858}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1216,8 +1245,8 @@ MonoBehaviour:
   halfHeart: {fileID: -1447029661, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   quarterHeart: {fileID: 1103517675, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   emptyHeart: {fileID: 2105574987, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
-  heartContainers: {fileID: 11400000, guid: 0c9cce2729e79f346b7bff305fa517d6, type: 2}
   playerHealth: {fileID: 11400000, guid: 91986daea68b6d4408865127985c11e7, type: 2}
+  heartContainers: {fileID: 11400000, guid: 0c9cce2729e79f346b7bff305fa517d6, type: 2}
 --- !u!1 &6092891971631648859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,7 +1279,7 @@ RectTransform:
   m_Children:
   - {fileID: 6092891971478984300}
   m_Father: {fileID: 6092891971466365360}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}

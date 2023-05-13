@@ -24420,17 +24420,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Log on Patrol
-  maxHealth: {fileID: 11400000, guid: 9c5f936dbf09f804cb77922547dd1d2d, type: 2}
-  health: 0
-  speed: 1
-  baseAttack: 0
-  knockbackDuration: 0.25
   deathEffect: {fileID: 1386500547502049537, guid: ce3b0cbdd4c5d6e4f9278919ef6e14de, type: 3}
+  health: 0
+  maxHealth: {fileID: 11400000, guid: 9c5f936dbf09f804cb77922547dd1d2d, type: 2}
+  speed: 1
+  knockbackDuration: 0.25
+  baseAttack: 0
+  attackRadius: 0.5
   home: {fileID: 1760606779}
-  target: {fileID: 788982581}
   wakeup_duration: 0.5
   chaseRadius: 5
-  attackRadius: 0.5
   path:
   - {fileID: 1760606779}
   - {fileID: 502070400}
