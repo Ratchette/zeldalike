@@ -1987,7 +1987,26 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e889fddc530ae734fad41ff18a6ec478, type: 3}
   - {fileID: 21300000, guid: 2015c6ec03afefe47a23165d59a207d9, type: 3}
   - {fileID: 21300000, guid: a9aa38ecaafd4dc49b9a1d28694df604, type: 3}
-  - {fileID: 21300000, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: 6077602, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: 776039389, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: 1993477283, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: -409105614, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: -1055195523, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: -149697846, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: -1516877180, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: -1473271600, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: -615122947, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: 250559395, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: -833117526, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: 941241205, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: -183833097, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: 1340627042, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: 771638631, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: -1494632402, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: -1443055027, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: -483741339, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: -1434447605, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
+  - {fileID: 934984958, guid: be53000def4b94d45b9aa5099bad2c80, type: 3}
   - {fileID: 21300000, guid: 2bf9230d087b8db4ba76831d82970ed0, type: 3}
   - {fileID: 21300000, guid: 31ce950d3bd7e7748b2be19cd272ee30, type: 3}
   - {fileID: 21300000, guid: d81b470ddbc9f314b9924ad30b2dd431, type: 3}
@@ -4114,7 +4133,26 @@ SpriteAtlas:
   - slime_pink_attack_right
   - flower_summer_red
   - slime_yellow_die_left
-  - bunny_animations
+  - bunny_animations_19
+  - bunny_animations_18
+  - bunny_animations_13
+  - bunny_animations_12
+  - bunny_animations_11
+  - bunny_animations_10
+  - bunny_animations_17
+  - bunny_animations_16
+  - bunny_animations_15
+  - bunny_animations_14
+  - bunny_animations_8
+  - bunny_animations_9
+  - bunny_animations_0
+  - bunny_animations_1
+  - bunny_animations_2
+  - bunny_animations_3
+  - bunny_animations_4
+  - bunny_animations_5
+  - bunny_animations_6
+  - bunny_animations_7
   - slime_purple_attack_up
   - slime_rainbow_die_left
   - slime_orange_attack_up
