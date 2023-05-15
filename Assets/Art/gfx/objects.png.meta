@@ -369,13 +369,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_12
+      name: book_1
       rect:
         serializedVersion: 2
-        x: 247
-        y: 306
-        width: 8
-        height: 10
+        x: 243
+        y: 304
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,13 +390,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_13
+      name: book_2
       rect:
         serializedVersion: 2
-        x: 263
-        y: 306
-        width: 8
-        height: 14
+        x: 259
+        y: 304
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,13 +411,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_14
+      name: book_3
       rect:
         serializedVersion: 2
-        x: 279
-        y: 306
-        width: 8
-        height: 11
+        x: 275
+        y: 304
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -432,13 +432,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_15
+      name: book_4
       rect:
         serializedVersion: 2
-        x: 291
-        y: 306
-        width: 12
-        height: 11
+        x: 289
+        y: 304
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -453,13 +453,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_16
+      name: book_5
       rect:
         serializedVersion: 2
-        x: 305
-        y: 306
-        width: 14
-        height: 9
+        x: 304
+        y: 304
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2942,6 +2942,11 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Coin Counter: 767725423
+      book_1: -853479044
+      book_2: -696217112
+      book_3: 215558136
+      book_4: -697954671
+      book_5: 244198351
       chest_large_closed: -778589878
       chest_large_open: -578802583
       chest_large_opening_1: -595614741
@@ -2982,7 +2987,6 @@ TextureImporter:
       objects_117: -2078216868
       objects_118: 740500442
       objects_119: 1449361253
-      objects_12: -853479044
       objects_120: 2058298692
       objects_121: -15574429
       objects_122: -496228760
@@ -2993,7 +2997,6 @@ TextureImporter:
       objects_127: 395139332
       objects_128: 217554774
       objects_129: 1527531723
-      objects_13: -696217112
       objects_130: -189045666
       objects_131: 1884199335
       objects_132: 1927489329
@@ -3004,10 +3007,7 @@ TextureImporter:
       objects_137: -1152572737
       objects_138: -1396823172
       objects_139: -177933181
-      objects_14: 215558136
       objects_141: 678147101
-      objects_15: -697954671
-      objects_16: 244198351
       objects_17: 2092560289
       objects_18: -609291259
       objects_19: -555907152
