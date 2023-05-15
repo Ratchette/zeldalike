@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour, IDamageable {
-
     [SerializeField] private float speed = 3;
 
     private float decayTime;
@@ -30,6 +29,6 @@ public class Projectile : MonoBehaviour, IDamageable {
     }
 
     public void TakeDamage(Vector2 force, float damage) {
-        Destroy(this.gameObject);
+         Destroy(this.gameObject);
     }
 }

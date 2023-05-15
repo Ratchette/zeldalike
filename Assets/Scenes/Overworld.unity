@@ -14218,7 +14218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8837298722274099981, guid: 31e4b4fb2fcb83f4ba596266c1fd7b75, type: 3}
       propertyPath: m_Name
-      value: Chest
+      value: Chest_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31e4b4fb2fcb83f4ba596266c1fd7b75, type: 3}
@@ -36688,6 +36688,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3427308189920939584, guid: 55a4bfa7960c1dc46a2d46540c973c9c, type: 3}
+      propertyPath: persistedData.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3427308189920939584, guid: 55a4bfa7960c1dc46a2d46540c973c9c, type: 3}
+      propertyPath: persistedData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: f3c537ffcb4a1874a85cc7e8405e1611, type: 2}
+    - target: {fileID: 3427308189920939584, guid: 55a4bfa7960c1dc46a2d46540c973c9c, type: 3}
+      propertyPath: persistedData.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 30b1d348aa6e90144ab51edfdc803fac, type: 2}
+    - target: {fileID: 3427308189920939584, guid: 55a4bfa7960c1dc46a2d46540c973c9c, type: 3}
+      propertyPath: persistedData.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d94db2afcfb6c74991ec735bf72becb, type: 2}
+    - target: {fileID: 3427308189920939584, guid: 55a4bfa7960c1dc46a2d46540c973c9c, type: 3}
+      propertyPath: persistedData.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d94db2afcfb6c74991ec735bf72becb, type: 2}
     - target: {fileID: 3427308189920939586, guid: 55a4bfa7960c1dc46a2d46540c973c9c, type: 3}
       propertyPath: m_Name
       value: GameSave Manager

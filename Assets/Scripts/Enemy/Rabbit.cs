@@ -37,9 +37,12 @@ public class Rabbit : Enemy {
     }
 
     private void Attack() {
-        Vector2 direction = (target.position - this.transform.position).normalized;
+        Vector2 direction = target.position - this.transform.position;
+        float rotationZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
         GameObject attack = Instantiate(projectile, this.transform);
-        attack.GetComponent<Projectile>().SetVelocity(direction);
+        attack.transform.rotation = Quaternion.Euler(0, 0, rotationZ + 90);
+        attack.GetComponent<Projectile>().SetVelocity(direction.normalized);
 
         nextAttackTime = Time.time + attackSpeed;
     }
