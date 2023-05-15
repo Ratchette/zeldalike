@@ -2,27 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour {
+public class Projectile : MonoBehaviour, IDamageable {
 
     [SerializeField] private float speed = 3;
-    [SerializeField] private Vector2 velocity;
 
-    private Rigidbody2D body;
     private float decayTime;
 
     void Start() {
-        body = this.gameObject.GetComponent<Rigidbody2D>();
         decayTime = Time.time + 2.0f;
+    }
 
-        Transform target = GameObject.FindWithTag(Player.TAG).transform;
-        Transform startPoint = this.gameObject.GetComponent<Transform>();
-
-        velocity = (target.position - startPoint.position).normalized * speed;
+    public void SetVelocity(Vector2 direction) {
+        Vector2 velocity = direction * speed;
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = velocity;
     }
 
     private void FixedUpdate() {
-        body.velocity = velocity;
-
         if (decayTime < Time.time) {
             Destroy(this.gameObject);
         }
@@ -34,4 +29,7 @@ public class Projectile : MonoBehaviour {
         }
     }
 
+    public void TakeDamage(Vector2 force, float damage) {
+        Destroy(this.gameObject);
+    }
 }

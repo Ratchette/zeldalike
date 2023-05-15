@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Rabbit : Enemy {
@@ -36,7 +37,10 @@ public class Rabbit : Enemy {
     }
 
     private void Attack() {
+        Vector2 direction = (target.position - this.transform.position).normalized;
         GameObject attack = Instantiate(projectile, this.transform);
+        attack.GetComponent<Projectile>().SetVelocity(direction);
+
         nextAttackTime = Time.time + attackSpeed;
     }
 }
