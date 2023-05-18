@@ -14,14 +14,20 @@ public class Log : Enemy {
     [SerializeField] private float wakeup_duration = 0.5f;
     [SerializeField] protected float chaseRadius = 4;
 
-
     private Coroutine wakeupCoroutine = null;
+
 
     new void Start() {
         base.Start();
 
         myRigidbody.bodyType = RigidbodyType2D.Static;
     }
+
+    private void OnEnable() {
+        this.transform.position = home.position;
+    }
+
+
 
     void FixedUpdate() {
         if (Vector3.Distance(target.position, transform.position) <= chaseRadius) {
