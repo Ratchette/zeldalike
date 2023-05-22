@@ -7,7 +7,8 @@ public enum PlayerState {
     Walk,
     Attack,
     Interact,
-    Stagger
+    Stagger,
+    Dead
 }
 
 public class Player : MonoBehaviour, IDamageable {
@@ -60,12 +61,20 @@ public class Player : MonoBehaviour, IDamageable {
 
     // Update is called once per frame
     void Update() {
+        if(GetState() == PlayerState.Dead) {
+            return;
+        }
+
         if (Input.GetButtonDown(InputMap.BUTTON_ATTACK) && GetState() == PlayerState.Walk) {
             StartCoroutine(AttackCoroutine());
         }
     }
 
     private void FixedUpdate() {
+        if (GetState() == PlayerState.Dead) {
+            return;
+        }
+
         // Use this method for retreiving continuious updates & doing things that involve physics
         // Called every 0.02 seconds - which may be more or less than once a frame
         user_input = Vector3.zero;
@@ -138,9 +147,16 @@ public class Player : MonoBehaviour, IDamageable {
         if (health.runtimeValue > 0) {
             StartCoroutine(KnockbackCoroutine(force, knockbackDuration));
         } else {
-            // FIXME - throw up gameover screen
-            this.gameObject.SetActive(false);
+            Die();
         }
+    }
+
+    public void Die() {
+        ChangeState(PlayerState.Dead);
+
+        feet_collider.bodyType = RigidbodyType2D.Static;
+        animator.SetBool(ANIMATOR_ATTACKING, false);
+        animator.SetBool(ANIMATOR_MOVING, false);
     }
 
     private IEnumerator KnockbackCoroutine(Vector2 force, float duration) {
