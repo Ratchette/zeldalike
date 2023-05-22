@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6914220983008476498}
   - component: {fileID: 6914220983008476499}
   - component: {fileID: 6914220983008476496}
+  - component: {fileID: 3158799241173073623}
   m_Layer: 0
   m_Name: Pot
   m_TagString: breakable
@@ -168,3 +169,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8e0696a8298fd42a995c3c1743e8ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3158799241173073623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6914220983008476510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089a34a36434c544f8ad7460f4a9c806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Loot: {fileID: 11400000, guid: dbc71388985afe74daa12684cb7c55f3, type: 2}
+  RandomDropCount: 1
+  DropRange: 0.5

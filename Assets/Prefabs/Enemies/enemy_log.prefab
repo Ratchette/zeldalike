@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4953216013653489025}
   - component: {fileID: 4953216013653489031}
   - component: {fileID: 4953216013653489037}
+  - component: {fileID: 4934467015742023977}
   m_Layer: 0
   m_Name: enemy_log
   m_TagString: enemy
@@ -170,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb16974262f062840bb222c154451125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: Log 1
+  currentState: 0
   deathEffect: {fileID: 1386500547502049537, guid: ce3b0cbdd4c5d6e4f9278919ef6e14de, type: 3}
   deathSignal: {fileID: 11400000, guid: f6722a6d8574f4a40a4acf16eab6c189, type: 2}
   health: 0
@@ -197,6 +198,21 @@ MonoBehaviour:
   damage: {fileID: 11400000, guid: 422fe00616d27ed46945a5e62c622232, type: 2}
   knockbackThrust: 5
   knockbackTime: 0.25
+--- !u!114 &4934467015742023977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4953216013653489051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089a34a36434c544f8ad7460f4a9c806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Loot: {fileID: 11400000, guid: dffcf7860a896574e9167245f5446797, type: 2}
+  RandomDropCount: 1
+  DropRange: 0.5
 --- !u!1 &6260387638026072092
 GameObject:
   m_ObjectHideFlags: 0

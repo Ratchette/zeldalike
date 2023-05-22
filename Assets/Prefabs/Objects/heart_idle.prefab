@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: 533570439, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -147,6 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSignal: {fileID: 11400000, guid: 89f567116c9738d42a977f80e4ca724d, type: 2}
+  healthIncrease: 4
   heartContainers: {fileID: 11400000, guid: 0c9cce2729e79f346b7bff305fa517d6, type: 2}
   playerHealth: {fileID: 11400000, guid: 91986daea68b6d4408865127985c11e7, type: 2}
-  healthIncrease: 4

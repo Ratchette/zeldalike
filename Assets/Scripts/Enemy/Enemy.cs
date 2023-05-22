@@ -18,6 +18,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
     protected Rigidbody2D myRigidbody;
     protected Transform target;
     protected Animator animator;
+    private LootSpawner lootSpawner;
 
     [SerializeField] private EnemyState currentState = EnemyState.Idle;
 
@@ -46,6 +47,8 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
         animator = gameObject.GetComponent<Animator>();
         animator.SetFloat(ANIMATOR_MOVE_X, 0);
         animator.SetFloat(ANIMATOR_MOVE_Y, -1);
+
+        lootSpawner = gameObject.GetComponent<LootSpawner>();
     }
 
     protected void OnEnable() {
@@ -134,6 +137,9 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
             Destroy(effect, 0.5f);
         }
 
+        if (lootSpawner) {
+            lootSpawner.Drop();
+        }
         gameObject.SetActive(false);
         deathSignal.Raise();
     }

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa80a4f21652164d8ac37ff492439b4, type: 3}
+  m_Name: DefaultLootTable
+  m_EditorClassIdentifier: 
+  GuaranteedLootTable: []
+  OneItemFromList:
+  - Weight: 50
+    Drop: {fileID: 7458452792251312201, guid: d03a28dfcf419734fb69807bb42fb560, type: 3}
+    MinCountItem: 1
+    MaxCountItem: 1
+  - Weight: 25
+    Drop: {fileID: 7458452792251312201, guid: d03a28dfcf419734fb69807bb42fb560, type: 3}
+    MinCountItem: 2
+    MaxCountItem: 2
+  - Weight: 10
+    Drop: {fileID: 7458452792251312201, guid: d03a28dfcf419734fb69807bb42fb560, type: 3}
+    MinCountItem: 3
+    MaxCountItem: 3
+  - Weight: 50
+    Drop: {fileID: 2394907892596743623, guid: e6367731ed64aae4ab0cae467767707c, type: 3}
+    MinCountItem: 1
+    MaxCountItem: 1
+  WeightToNoDrop: 500
