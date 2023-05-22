@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Room : MonoBehaviour {
-    [SerializeField] private Enemy[] enemies;
+    [SerializeField] protected Enemy[] enemies;
     [SerializeField] private Pot[] pots;
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    protected void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.CompareTag(Player.TAG)) {
 
             foreach(Enemy enemy in enemies) {
@@ -18,7 +18,7 @@ public class Room : MonoBehaviour {
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
+    protected void OnTriggerExit2D(Collider2D other) {
         if (other.gameObject.CompareTag(Player.TAG)) {
 
             foreach (Enemy enemy in enemies) {

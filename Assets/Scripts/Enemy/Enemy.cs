@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -18,10 +19,10 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
     protected Transform target;
     protected Animator animator;
 
-    private EnemyState currentState = EnemyState.Idle;
+    [SerializeField] private EnemyState currentState = EnemyState.Idle;
 
-    [SerializeField] private string enemyName;
     [SerializeField] private GameObject deathEffect;
+    [SerializeField] private SignalSender deathSignal;
 
     [Header("Health")]
     [SerializeField] private float health;
@@ -45,6 +46,11 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
         animator = gameObject.GetComponent<Animator>();
         animator.SetFloat(ANIMATOR_MOVE_X, 0);
         animator.SetFloat(ANIMATOR_MOVE_Y, -1);
+    }
+
+    protected void OnEnable() {
+        health = maxHealth.runtimeValue;
+        currentState = EnemyState.Idle;
     }
 
     public EnemyState GetState() {
@@ -129,5 +135,6 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
         }
 
         gameObject.SetActive(false);
+        deathSignal.Raise();
     }
 }

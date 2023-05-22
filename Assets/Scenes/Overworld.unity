@@ -24597,8 +24597,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1badd93d11071a447a29cb00b1ff62e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: Log on Patrol
+  currentState: 0
   deathEffect: {fileID: 1386500547502049537, guid: ce3b0cbdd4c5d6e4f9278919ef6e14de, type: 3}
+  deathSignal: {fileID: 11400000, guid: f6722a6d8574f4a40a4acf16eab6c189, type: 2}
   health: 0
   maxHealth: {fileID: 11400000, guid: 9c5f936dbf09f804cb77922547dd1d2d, type: 2}
   speed: 1
