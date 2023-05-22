@@ -23,11 +23,9 @@ public class Log : Enemy {
         myRigidbody.bodyType = RigidbodyType2D.Static;
     }
 
-    private void OnEnable() {
+    protected void OnEnable() {
         this.transform.position = home.position;
     }
-
-
 
     void FixedUpdate() {
         if (Vector3.Distance(target.position, transform.position) <= chaseRadius) {

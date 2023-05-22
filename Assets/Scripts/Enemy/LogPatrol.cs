@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Timeline;
 using UnityEngine;
 
 public class LogPatrol : Log {
@@ -12,13 +13,19 @@ public class LogPatrol : Log {
     new void Start() {
         base.Start();
 
-        // Start the log off in the walking state
         animator.SetBool(ANIMATOR_WAKEUP, true);
-        ChangeState(EnemyState.Walk);
         myRigidbody.bodyType = RigidbodyType2D.Dynamic;
 
-        // The log will start on goal 0
-        currentGoal = 1;
+        currentGoal = 0;
+    }
+
+    new private void OnEnable() {
+        base.OnEnable();
+
+        if (animator) {
+            animator.SetBool(ANIMATOR_WAKEUP, true);
+        }
+        currentGoal = 0;
     }
 
     void FixedUpdate() {
