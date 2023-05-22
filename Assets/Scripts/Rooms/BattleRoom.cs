@@ -32,7 +32,6 @@ public class BattleRoom : Room {
     private void OpenDoors() {
         foreach (GameObject door in doors) {
             door.SetActive(false);
-            //door.Open();
         }
         Debug.Log("Opening Doors");
         
@@ -41,8 +40,6 @@ public class BattleRoom : Room {
     private void CloseDoors() {
         foreach (GameObject door in doors) {
             door.SetActive(true);
-
-            //door.Close();
         }
         Debug.Log("Closing Doors");
     }
