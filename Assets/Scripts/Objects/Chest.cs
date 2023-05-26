@@ -18,7 +18,6 @@ public class Chest : Interactable {
     [SerializeField] private BooleanValue isOpen;
     [SerializeField] private Item item;
     [SerializeField] private SignalSender raiseItem;
-    [SerializeField] private SignalSender keySignal;
 
     [Header("Player Data")]
     [SerializeField] private Inventory playerInventory;
@@ -48,10 +47,6 @@ public class Chest : Interactable {
             playerInventory.AddItem(item);
             raiseItem.Raise();
 
-            if(item.isKey) {
-                keySignal.Raise();
-            }
-
         } else if (currentState == ChestState.Opening) {
             // If we've scrolled through all of the text:
             //  - Return the player to normal
@@ -60,6 +55,7 @@ public class Chest : Interactable {
                 currentState = ChestState.Opened;
                 isOpen.runtimeValue = true;
                 raiseItem.Raise();
+                item.onPickup();
             }
         }
     }

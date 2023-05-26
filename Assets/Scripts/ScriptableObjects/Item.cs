@@ -8,4 +8,12 @@ public class Item : ScriptableObject {
     public string description;
     public bool isKey;
     public bool isCoin;
+
+    public SignalSender pickupSignal = null;
+    
+    public void onPickup() {
+        if (pickupSignal) {
+            pickupSignal.Raise();
+        }
+    }
 }
