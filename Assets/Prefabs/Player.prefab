@@ -188,12 +188,12 @@ MonoBehaviour:
   health: {fileID: 11400000, guid: 91986daea68b6d4408865127985c11e7, type: 2}
   playerHealthSignal: {fileID: 11400000, guid: 89f567116c9738d42a977f80e4ca724d, type: 2}
   playerHitSignal: {fileID: 11400000, guid: 79ce1286fc7517a4c9cb5059c5650a2f, type: 2}
-  currentState: 0
-  receivedItemSprite: {fileID: 3112598254642053640}
+  gameOverTransition: {fileID: 8861690658263961322, guid: eef3c3d018f6c614ab08ef26d8cff208, type: 3}
   playerInventory: {fileID: 11400000, guid: f89755dde076f7a49b79b2767c269223, type: 2}
-  speed: 5
+  receivedItemSprite: {fileID: 3112598254642053640}
   startingPosition: {fileID: 11400000, guid: ff01318e6ab38db47ac9c36e065981f8, type: 2}
   startingDirection: {fileID: 11400000, guid: 2f3af4ef5ea1f954ba17fcaa67b6144e, type: 2}
+  speed: 5
   knockbackDuration: 0.25
 --- !u!95 &3112598254445620106
 Animator:
@@ -431,9 +431,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22fe540e2d6962458f74253fc9756c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: {fileID: 11400000, guid: fe64d583db55b6c4bbbeb3bd506fceb4, type: 2}
   knockbackThrust: 4
   knockbackTime: 0.25
-  damage: {fileID: 11400000, guid: fe64d583db55b6c4bbbeb3bd506fceb4, type: 2}
 --- !u!1 &3112598254642053642
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,9 +695,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22fe540e2d6962458f74253fc9756c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: {fileID: 11400000, guid: fe64d583db55b6c4bbbeb3bd506fceb4, type: 2}
   knockbackThrust: 4
   knockbackTime: 0.25
-  damage: {fileID: 11400000, guid: fe64d583db55b6c4bbbeb3bd506fceb4, type: 2}
 --- !u!1 &3112598255924710052
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,9 +774,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22fe540e2d6962458f74253fc9756c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: {fileID: 11400000, guid: fe64d583db55b6c4bbbeb3bd506fceb4, type: 2}
   knockbackThrust: 4
   knockbackTime: 0.25
-  damage: {fileID: 11400000, guid: fe64d583db55b6c4bbbeb3bd506fceb4, type: 2}
 --- !u!1 &3112598256345153147
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,6 +852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22fe540e2d6962458f74253fc9756c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: {fileID: 11400000, guid: fe64d583db55b6c4bbbeb3bd506fceb4, type: 2}
   knockbackThrust: 4
   knockbackTime: 0.25
-  damage: {fileID: 11400000, guid: fe64d583db55b6c4bbbeb3bd506fceb4, type: 2}

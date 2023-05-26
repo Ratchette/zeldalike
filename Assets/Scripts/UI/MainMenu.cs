@@ -6,8 +6,15 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
     [SerializeField] private string startScene = "Overworld";
     [SerializeField] private GameObject fadeOutPanel;
+    [SerializeField] private GameObject fadeInPanel;
     [SerializeField] private float fadeWait = 1.0f;
 
+    public void Awake() {
+        if (fadeInPanel != null) {
+            GameObject panel = Instantiate(fadeInPanel, Vector3.zero, Quaternion.identity);
+            Destroy(panel, 1f);
+        }
+    }
 
     public void StartGame() {
         StartCoroutine(StartGameCoroutine());

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum PlayerState {
     Walk,
@@ -21,12 +22,15 @@ public class Player : MonoBehaviour, IDamageable {
     static private string ANIMATOR_ATTACKING = "attacking";
     static private string ANIMATOR_DISPLAY_ITEM = "display_item";
 
+    static private string ANIMATOR_DEATH = "death";
+
     private PlayerState currentState;
 
     [Header("Health")]
     [SerializeField] private FloatValue health;
     [SerializeField] private SignalSender playerHealthSignal;
     [SerializeField] private SignalSender playerHitSignal;
+    [SerializeField] private GameObject gameOverTransition;
 
     [Header("Items")]
     [SerializeField] private Inventory playerInventory;
@@ -151,14 +155,6 @@ public class Player : MonoBehaviour, IDamageable {
         }
     }
 
-    public void Die() {
-        ChangeState(PlayerState.Dead);
-
-        feet_collider.bodyType = RigidbodyType2D.Static;
-        animator.SetBool(ANIMATOR_ATTACKING, false);
-        animator.SetBool(ANIMATOR_MOVING, false);
-    }
-
     private IEnumerator KnockbackCoroutine(Vector2 force, float duration) {
         feet_collider.velocity = force;
         yield return new WaitForSeconds(duration);
@@ -167,6 +163,28 @@ public class Player : MonoBehaviour, IDamageable {
         ChangeState(PlayerState.Walk);
     }
 
+    public void Die() {
+        ChangeState(PlayerState.Dead);
+        feet_collider.bodyType = RigidbodyType2D.Static;
+        animator.SetBool(ANIMATOR_ATTACKING, false);
+        animator.SetBool(ANIMATOR_MOVING, false);
+        animator.SetBool(ANIMATOR_DEATH, true);
+
+        StartCoroutine(DieCoroutine());
+    }
+
+    private IEnumerator DieCoroutine() {
+        // let death animation play
+        yield return new WaitForSeconds(1f);
+
+        Instantiate(gameOverTransition, Vector3.zero, Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
+
+        AsyncOperation loadScene = SceneManager.LoadSceneAsync("GameOver");
+        while (!loadScene.isDone) {
+            yield return null;
+        }
+    }
 
     /****************************************************
      *  Attacking
