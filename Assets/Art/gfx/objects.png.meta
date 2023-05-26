@@ -2049,13 +2049,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_101
+      name: heart_container_1
       rect:
         serializedVersion: 2
-        x: 66
-        y: 177
-        width: 12
-        height: 12
+        x: 64
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2070,13 +2070,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_102
+      name: heart_container_2
       rect:
         serializedVersion: 2
-        x: 83
-        y: 177
-        width: 11
-        height: 12
+        x: 80
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2091,13 +2091,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_103
+      name: heart_container_3
       rect:
         serializedVersion: 2
-        x: 100
-        y: 177
-        width: 10
-        height: 12
+        x: 96
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2112,13 +2112,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_104
+      name: heart_container_4
       rect:
         serializedVersion: 2
-        x: 115
-        y: 177
-        width: 11
-        height: 12
+        x: 112
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2959,6 +2959,10 @@ TextureImporter:
       destroy_2: -354228454
       destroy_3: 1644572696
       destroy_4: 1875402391
+      heart_container_1: -173885684
+      heart_container_2: -1778274555
+      heart_container_3: -724941519
+      heart_container_4: 407883300
       heart_idle_1: 533570439
       heart_idle_2: 1773287227
       heart_idle_3: 523994437
@@ -2967,10 +2971,6 @@ TextureImporter:
       objects_1: 1663614375
       objects_10: -1067700659
       objects_100: 827615377
-      objects_101: -173885684
-      objects_102: -1778274555
-      objects_103: -724941519
-      objects_104: 407883300
       objects_105: 1750487499
       objects_106: -460782495
       objects_107: -375278857

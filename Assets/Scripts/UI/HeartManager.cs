@@ -22,10 +22,14 @@ public class HeartManager : MonoBehaviour {
     }
 
     public void InitHearts() {
-        for (int i=0; i<heartContainers.runtimeValue; i++) {
+        UpdateHeartContainers();
+        UpdateHearts();
+    }
+
+    private void UpdateHeartContainers() {
+        for (int i = 0; i < heartContainers.runtimeValue; i++) {
             hearts[i].gameObject.SetActive(true);
         }
-        UpdateHearts();
     }
 
     public void UpdateHearts() {
@@ -48,5 +52,13 @@ public class HeartManager : MonoBehaviour {
                 hearts[i].sprite = emptyHeart;
             }
         }
+    }
+
+    public void PickupHeartContainer() {
+        heartContainers.runtimeValue++;
+        playerHealth.runtimeValue = heartContainers.runtimeValue * 4;
+
+        UpdateHeartContainers();
+        UpdateHearts();
     }
 }

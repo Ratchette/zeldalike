@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5be0d0e196f704c8f7872c6c0d3c6d, type: 3}
+  m_Name: Heart Container
+  m_EditorClassIdentifier: 
+  sprite: {fileID: -173885684, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
+  description: You found a heart container! Your health has increased by 1.
+  isKey: 0
+  isCoin: 0
+  pickupSignal: {fileID: 11400000, guid: b235e118ab401ee49aa8bbf607d31e90, type: 2}

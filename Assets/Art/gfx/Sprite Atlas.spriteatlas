@@ -320,6 +320,10 @@ SpriteAtlas:
   - {fileID: -496228760, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: -15574429, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: 2058298692, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
+  - {fileID: 407883300, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
+  - {fileID: -173885684, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
+  - {fileID: -1778274555, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
+  - {fileID: -724941519, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: -578802583, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: 2092560289, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: -1044732511, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
@@ -356,17 +360,13 @@ SpriteAtlas:
   - {fileID: -1370816083, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: 1750487499, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: -383044712, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
-  - {fileID: 407883300, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: -2078216868, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: -375278857, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: 1759267798, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: -460782495, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: -634927741, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
-  - {fileID: -173885684, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: 827615377, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
-  - {fileID: -724941519, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: 740500442, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
-  - {fileID: -1778274555, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: 1449361253, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: -1259189126, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
   - {fileID: -2105828911, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
@@ -2555,6 +2555,10 @@ SpriteAtlas:
   - objects_122
   - objects_121
   - objects_120
+  - heart_container_4
+  - heart_container_1
+  - heart_container_2
+  - heart_container_3
   - chest_large_open
   - objects_17
   - objects_48
@@ -2591,17 +2595,13 @@ SpriteAtlas:
   - objects_111
   - objects_105
   - objects_116
-  - objects_104
   - objects_117
   - objects_107
   - objects_114
   - objects_106
   - objects_115
-  - objects_101
   - objects_100
-  - objects_103
   - objects_118
-  - objects_102
   - objects_119
   - coin_1
   - objects_109
