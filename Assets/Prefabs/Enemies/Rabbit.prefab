@@ -227,14 +227,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bfbc94da8f63dd4e8cf5f92be76eb0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: Rabbit
+  currentState: 0
   deathEffect: {fileID: 1386500547502049537, guid: ce3b0cbdd4c5d6e4f9278919ef6e14de, type: 3}
+  deathSignal: {fileID: 11400000, guid: f6722a6d8574f4a40a4acf16eab6c189, type: 2}
   health: 1
   maxHealth: {fileID: 11400000, guid: 32f840b8572ad5a459ff48aadf001fa6, type: 2}
   speed: 1
   knockbackDuration: 0.25
   baseAttack: 0
   attackRadius: 5
-  attackSpeed: 0.8
+  attackDelay: 0.5
   projectile: {fileID: 1465034473881931693, guid: deebbb3350327a3439a80d2d1401adad, type: 3}
   nextAttackTime: 0

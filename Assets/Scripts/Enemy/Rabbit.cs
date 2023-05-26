@@ -7,7 +7,7 @@ public class Rabbit : Enemy {
     static protected string ANIMATOR_ATTACK = "attack";
 
     [SerializeField] private float attackRadius = 5;
-    [SerializeField] private float attackSpeed = 1.0f;
+    [SerializeField] private float attackDelay = 1.0f;
     [SerializeField] private GameObject projectile;
 
     [SerializeField] private float nextAttackTime = 0;
@@ -37,14 +37,14 @@ public class Rabbit : Enemy {
     }
 
     private void Attack() {
-        GameObject attack = Instantiate(projectile, this.transform);
-
         Vector2 direction = target.position - this.transform.position;
+
+        // +90 degrees because the prefab starts with the point facing down -Y axis
+        float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90;
+
+        GameObject attack = Instantiate(projectile, this.transform.position, Quaternion.Euler(0, 0, rotation));
         attack.GetComponent<Projectile>().SetVelocity(direction.normalized);
 
-        float rotationZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        attack.transform.rotation = Quaternion.Euler(0, 0, rotationZ + 90);
-        
-        nextAttackTime = Time.time + attackSpeed;
+        nextAttackTime = Time.time + attackDelay;
     }
 }
