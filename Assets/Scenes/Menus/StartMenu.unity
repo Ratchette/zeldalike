@@ -887,7 +887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startScene: Overworld
   fadeOutPanel: {fileID: 8861690658263961322, guid: eef3c3d018f6c614ab08ef26d8cff208, type: 3}
-  fadeInPanel: {fileID: 0}
+  fadeInPanel: {fileID: 744924178233922937, guid: aa3d574190f766f4fbfff00e24f6b819, type: 3}
   fadeWait: 1
   objectsToReset:
   - {fileID: 11400000, guid: 3d94db2afcfb6c74991ec735bf72becb, type: 2}
