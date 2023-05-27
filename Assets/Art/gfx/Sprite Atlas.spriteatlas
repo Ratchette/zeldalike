@@ -1696,9 +1696,9 @@ SpriteAtlas:
   - {fileID: -357689566, guid: 3b18af980c4a2974b94da5743fb24b3a, type: 3}
   - {fileID: -1456488543, guid: 3b18af980c4a2974b94da5743fb24b3a, type: 3}
   - {fileID: 1013197881, guid: 3b18af980c4a2974b94da5743fb24b3a, type: 3}
-  - {fileID: -1575338328, guid: 3b18af980c4a2974b94da5743fb24b3a, type: 3}
   - {fileID: 294838584, guid: 3b18af980c4a2974b94da5743fb24b3a, type: 3}
   - {fileID: -583164581, guid: 3b18af980c4a2974b94da5743fb24b3a, type: 3}
+  - {fileID: -1575338328, guid: 3b18af980c4a2974b94da5743fb24b3a, type: 3}
   - {fileID: 307509091, guid: 3b18af980c4a2974b94da5743fb24b3a, type: 3}
   - {fileID: 1077679188, guid: 3b18af980c4a2974b94da5743fb24b3a, type: 3}
   - {fileID: 1611376343, guid: 3b18af980c4a2974b94da5743fb24b3a, type: 3}
@@ -3972,9 +3972,9 @@ SpriteAtlas:
   - button maker_0
   - button maker_1
   - button maker_6
-  - button maker_7
   - button maker_8
   - button maker_9
+  - button_back
   - button maker_20
   - button maker_21
   - button maker_22

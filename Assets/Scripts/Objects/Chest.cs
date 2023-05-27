@@ -54,8 +54,8 @@ public class Chest : Interactable {
             if (activeText == -1) {
                 currentState = ChestState.Opened;
                 isOpen.runtimeValue = true;
-                raiseItem.Raise();
                 item.onPickup();
+                raiseItem.Raise();
             }
         }
     }
