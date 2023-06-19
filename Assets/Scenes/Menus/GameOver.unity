@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -163,9 +163,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -416,7 +424,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -757,7 +767,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startScene: Overworld
   fadeOutPanel: {fileID: 8861690658263961322, guid: eef3c3d018f6c614ab08ef26d8cff208, type: 3}
+  fadeInPanel: {fileID: 744924178233922937, guid: aa3d574190f766f4fbfff00e24f6b819, type: 3}
   fadeWait: 1
+  objectsToReset:
+  - {fileID: 11400000, guid: 46fef502a87d82243bc27112f2d5ecc8, type: 2}
+  - {fileID: 11400000, guid: 3d94db2afcfb6c74991ec735bf72becb, type: 2}
+  - {fileID: 11400000, guid: f3c537ffcb4a1874a85cc7e8405e1611, type: 2}
+  - {fileID: 11400000, guid: 9993f0039de637446bb906d7b068bb96, type: 2}
+  - {fileID: 11400000, guid: 30b1d348aa6e90144ab51edfdc803fac, type: 2}
 --- !u!1 &1847936541
 GameObject:
   m_ObjectHideFlags: 0
