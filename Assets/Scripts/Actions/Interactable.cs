@@ -57,8 +57,8 @@ public abstract class Interactable : MonoBehaviour {
     }
 
 
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Player")) {
+    protected void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag(Player.TAG) && !other.isTrigger) {
             playerInRange = true;
 
             if (CanInteract()) {
@@ -67,8 +67,8 @@ public abstract class Interactable : MonoBehaviour {
         }
     }
 
-    void OnTriggerExit2D(Collider2D other) {
-        if (other.CompareTag("Player")) {
+    protected void OnTriggerExit2D(Collider2D other) {
+        if (other.CompareTag(Player.TAG) && !other.isTrigger) {
             playerInRange = false;
 
             interactableOutOfRange.Raise();
