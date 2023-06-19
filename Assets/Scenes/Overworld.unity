@@ -18997,7 +18997,7 @@ Transform:
   - {fileID: 693192174}
   - {fileID: 706927103}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &715682821
 PolygonCollider2D:
@@ -20244,7 +20244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9056865441796447978, guid: 0d5ced8399822ff42b016ee609468256, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9056865441796447978, guid: 0d5ced8399822ff42b016ee609468256, type: 3}
       propertyPath: m_SortingLayerID
@@ -20252,11 +20252,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9056865441796447979, guid: 0d5ced8399822ff42b016ee609468256, type: 3}
       propertyPath: m_Size.y
-      value: 1.1930878
+      value: 0.6929755
       objectReference: {fileID: 0}
     - target: {fileID: 9056865441796447979, guid: 0d5ced8399822ff42b016ee609468256, type: 3}
       propertyPath: m_Offset.y
-      value: -0.028456092
+      value: -0.27851224
       objectReference: {fileID: 0}
     - target: {fileID: 9056865441796447982, guid: 0d5ced8399822ff42b016ee609468256, type: 3}
       propertyPath: m_Name
@@ -24782,18 +24782,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2072547246}
     m_Modifications:
-    - target: {fileID: 81460619309204577, guid: 60f563d61f627e247b742ce62f5aace4, type: 3}
-      propertyPath: m_SortingLayer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1561949317043902271, guid: 60f563d61f627e247b742ce62f5aace4, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1561949317043902271, guid: 60f563d61f627e247b742ce62f5aace4, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2501837855441633082, guid: 60f563d61f627e247b742ce62f5aace4, type: 3}
       propertyPath: dialogBox
       value: 
@@ -24802,18 +24790,6 @@ PrefabInstance:
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1176099448}
-    - target: {fileID: 2501837855441633082, guid: 60f563d61f627e247b742ce62f5aace4, type: 3}
-      propertyPath: text.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2501837855441633082, guid: 60f563d61f627e247b742ce62f5aace4, type: 3}
-      propertyPath: text.Array.data[0]
-      value: "I'm hungry! \nCan you get me some food?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2501837855441633082, guid: 60f563d61f627e247b742ce62f5aace4, type: 3}
-      propertyPath: text.Array.data[1]
-      value: I think I saw some in the castle to the east.
-      objectReference: {fileID: 0}
     - target: {fileID: 6010284223664749771, guid: 60f563d61f627e247b742ce62f5aace4, type: 3}
       propertyPath: m_Name
       value: Dog Holder
@@ -37680,7 +37656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6092891971466365360, guid: c8c523f915c1e5d4592f9b876137c37a, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6092891971466365360, guid: c8c523f915c1e5d4592f9b876137c37a, type: 3}
       propertyPath: m_AnchorMax.x
