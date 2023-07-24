@@ -9,6 +9,7 @@ public enum PlayerState {
     Attack,
     Interact,
     Stagger,
+    Invincible,
     Dead
 }
 
@@ -32,6 +33,14 @@ public class Player : MonoBehaviour, IDamageable {
     [SerializeField] private SignalSender playerHitSignal;
     [SerializeField] private GameObject gameOverTransition;
 
+    [Header("Invincibility")]
+    [SerializeField] private float flashDuration = 0.4f;
+    [SerializeField] private int numFlashes = 3;
+
+    private Color flashColor = new Color(0.6320754f, 0.2593895f, 0.2593895f, 0.8235294f);
+    private Color defaultColor = new Color(1, 1, 1, 1);
+    private SpriteRenderer playerSprite;
+
     [Header("Items")]
     [SerializeField] private Inventory playerInventory;
     [SerializeField] private SpriteRenderer receivedItemSprite;
@@ -49,10 +58,11 @@ public class Player : MonoBehaviour, IDamageable {
 
     // Start is called before the first frame update
     void Start() {
+        playerSprite = gameObject.GetComponent<SpriteRenderer>();
         feet_collider = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
 
-        currentState = PlayerState.Walk;
+        ChangeState(PlayerState.Walk);
 
         // Vector2.zero == a position hasn't been set, so use the default for that scene.
         if (!startingPosition.runtimeValue.Equals(Vector2.zero)) {
@@ -65,30 +75,25 @@ public class Player : MonoBehaviour, IDamageable {
 
     // Update is called once per frame
     void Update() {
-        if(GetState() == PlayerState.Dead) {
+        if(!CanControlPlayer()) {
             return;
         }
 
-        if (Input.GetButtonDown(InputMap.BUTTON_ATTACK) && GetState() == PlayerState.Walk) {
+        if (Input.GetButtonDown(InputMap.BUTTON_ATTACK)) {
             StartCoroutine(AttackCoroutine());
         }
     }
 
     private void FixedUpdate() {
-        if (GetState() == PlayerState.Dead) {
+        if (!CanControlPlayer()) {
             return;
         }
 
         // Use this method for retreiving continuious updates & doing things that involve physics
         // Called every 0.02 seconds - which may be more or less than once a frame
-        user_input = Vector3.zero;
-
         user_input.x = Input.GetAxisRaw(InputMap.INPUT_HORIZONTAL);
         user_input.y = Input.GetAxisRaw(InputMap.INPUT_VERTICAL);
-
-        if (GetState() == PlayerState.Walk) {
-            Move();
-        }
+        Move();
     }
 
 
@@ -108,6 +113,10 @@ public class Player : MonoBehaviour, IDamageable {
         } else {
             return currentState;
         }
+    }
+
+    bool CanControlPlayer() {
+        return (currentState == PlayerState.Walk) || (currentState == PlayerState.Invincible);
     }
 
 
@@ -137,13 +146,13 @@ public class Player : MonoBehaviour, IDamageable {
      ****************************************************/
 
     public void TakeDamage(Vector2 force, float damage) {
-        if (GetState() == PlayerState.Stagger) {
+        if(GetState() == PlayerState.Stagger || GetState() == PlayerState.Invincible) {
             return;
         }
 
+        Debug.LogFormat("[{0}][Hit] health={1}, damage={2}, newHealth={3}", "Player", health.runtimeValue, damage, (health.runtimeValue - damage));
         ChangeState(PlayerState.Stagger);
 
-        Debug.LogFormat("[{0}][Hit] health={1}, damage={2}, newHealth={3}", "Player", health.runtimeValue, damage, (health.runtimeValue - damage));
         health.runtimeValue -= damage;
         playerHitSignal.Raise();
         playerHealthSignal.Raise();
@@ -156,10 +165,28 @@ public class Player : MonoBehaviour, IDamageable {
     }
 
     private IEnumerator KnockbackCoroutine(Vector2 force, float duration) {
+
+        StartCoroutine(InvincibilityCoroutine());
         feet_collider.velocity = force;
         yield return new WaitForSeconds(duration);
 
         feet_collider.velocity = Vector2.zero;
+        ChangeState(PlayerState.Invincible);
+    }
+
+    private IEnumerator InvincibilityCoroutine() {
+        int flashes = 0;
+
+        while (flashes < numFlashes) {
+            playerSprite.color = flashColor;
+            yield return new WaitForSeconds(flashDuration/2);
+
+            playerSprite.color = defaultColor;
+            yield return new WaitForSeconds(flashDuration/2);
+
+            ++flashes;
+        }
+
         ChangeState(PlayerState.Walk);
     }
 
@@ -192,15 +219,13 @@ public class Player : MonoBehaviour, IDamageable {
 
     private IEnumerator AttackCoroutine() {
         animator.SetBool(ANIMATOR_ATTACKING, true);
-        currentState = PlayerState.Attack;
-
+        ChangeState(PlayerState.Attack);
         yield return null;
 
         animator.SetBool(ANIMATOR_ATTACKING, false);
         yield return new WaitForSeconds(0.33f);
 
-        // FIXME - check if PlayerState != interact?
-        currentState = PlayerState.Walk;
+        ChangeState(PlayerState.Walk);
     }
 
     /****************************************************
@@ -212,7 +237,7 @@ public class Player : MonoBehaviour, IDamageable {
         if (GetState() == PlayerState.Interact) {
             receivedItemSprite.sprite = null;
             animator.SetBool(ANIMATOR_DISPLAY_ITEM, false);
-            currentState = PlayerState.Walk;
+            ChangeState(PlayerState.Walk);
 
         } else {
             receivedItemSprite.sprite = playerInventory.GetItemToDisplay();
