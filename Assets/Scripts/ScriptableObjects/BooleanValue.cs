@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "Boolean Value", menuName = "ScriptableObjects/Boolean")]
 public class BooleanValue : ScriptableObject, ISerializationCallbackReceiver {
     public bool initialValue;
     public bool runtimeValue;
