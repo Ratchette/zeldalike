@@ -5,34 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
     [SerializeField] private GameObject pauseMenu;
+    private bool menuOpen = false;
 
     [Header("Exit transition")]
     [SerializeField] private string nextScene = "StartMenu";
     [SerializeField] private float fadeWait = 1.0f;
     [SerializeField] private GameObject fadeOutPanel;
 
-    private bool isPaused = false;
-
-
     // Update is called once per frame
     void Update() {
-        if (!isPaused) {
-            if (Input.GetButtonDown(InputMap.BUTTON_PAUSE)) {
-                PauseTime();
+        if (Input.GetButtonDown(InputMap.BUTTON_ESCAPE)) {
+            if (menuOpen) {
+                CloseMenu();
+            } else if(!isTimePaused()){
+                OpenMenu();
             }
 
-        } else if (Input.GetButtonDown(InputMap.BUTTON_PAUSE) ||
-                    Input.GetButtonDown(InputMap.BUTTON_ESCAPE)) {
-            ResumeTime();
+            // If this menu is NOT open, but time is paused, that means that a different menu is open.
+            // This menu should NOT respond while another menu is open.
         }
     }
 
     public void ResumeGame() {
-        ResumeTime();
+        CloseMenu();
     }
 
     public void ExitToMainMenu() {
-        ResumeTime();
+        CloseMenu();
         StartCoroutine(loadStartMenu());
     }
 
@@ -46,15 +45,19 @@ public class PauseMenu : MonoBehaviour {
         }
     }
 
-    private void PauseTime() {
+    private void OpenMenu() {
         Time.timeScale = 0;
-        isPaused = true;
+        menuOpen = true;
         pauseMenu.SetActive(true);
     }
 
-    private void ResumeTime() {
+    private void CloseMenu() {
         Time.timeScale = 1;
-        isPaused = false;
+        menuOpen = false;
         pauseMenu.SetActive(false);
+    }
+
+    private bool isTimePaused() {
+        return Time.timeScale == 0;
     }
 }

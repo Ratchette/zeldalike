@@ -31,7 +31,6 @@ SpriteAtlas:
       m_CrunchedCompression: 0
       m_AllowsAlphaSplitting: 0
       m_Overridden: 0
-      m_IgnorePlatformSupport: 0
       m_AndroidETC2FallbackOverride: 0
       m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
@@ -215,6 +214,7 @@ SpriteAtlas:
     - 6850fbe1dc3acb349a3e6008b8641fdb: 21300000
     - caf1ffe15830d7743b1a45b01b484968: 21300000
     - b6106af1de7672a4598e6a70d38ca7ca: 21300000
+    - de161a02b1001bd448b9683b6255e29c: -9073339967158028762
     - bf123c02399aee044a98409d8f46f215: 21300000
     - a40c3d02a8cae10439baf090c3408e7b: 21300000
     - 957a7f0217611ef4ab74259256d42519: 21300000
@@ -2526,6 +2526,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 6850fbe1dc3acb349a3e6008b8641fdb, type: 3}
   - {fileID: 21300000, guid: caf1ffe15830d7743b1a45b01b484968, type: 3}
   - {fileID: 21300000, guid: b6106af1de7672a4598e6a70d38ca7ca, type: 3}
+  - {fileID: -9073339967158028762, guid: de161a02b1001bd448b9683b6255e29c, type: 3}
   - {fileID: 21300000, guid: bf123c02399aee044a98409d8f46f215, type: 3}
   - {fileID: 21300000, guid: a40c3d02a8cae10439baf090c3408e7b, type: 3}
   - {fileID: 21300000, guid: 957a7f0217611ef4ab74259256d42519, type: 3}
@@ -4836,6 +4837,7 @@ SpriteAtlas:
   - slime_green_idle_down
   - barn_animal_summer
   - slime_green_walk_left
+  - inventory_background
   - slime_pink_idle_left
   - slime_blue_attack_up
   - greenhouse_summer
