@@ -6,6 +6,11 @@ public class InventoryMenu : MonoBehaviour {
     [SerializeField] private GameObject inventoryMenu;
     private bool menuOpen = false;
 
+
+    //private void Start() {
+    //    for()
+    //}
+
     void Update() {
         if (Input.GetButtonDown(InputMap.BUTTON_INVENTORY)) {
             if (menuOpen) {
