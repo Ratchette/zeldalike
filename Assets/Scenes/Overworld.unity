@@ -25587,6 +25587,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dog Holder
       objectReference: {fileID: 0}
+    - target: {fileID: 8734051194365602845, guid: 60f563d61f627e247b742ce62f5aace4, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 7bf127ea12bb8714badfc6f9348aaa75, type: 2}
+    - target: {fileID: 8734051194365602845, guid: 60f563d61f627e247b742ce62f5aace4, type: 3}
+      propertyPath: dialogBox
+      value: 
+      objectReference: {fileID: 1596152896}
+    - target: {fileID: 8734051194365602845, guid: 60f563d61f627e247b742ce62f5aace4, type: 3}
+      propertyPath: dialogText
+      value: 
+      objectReference: {fileID: 1176099448}
+    - target: {fileID: 8734051194365602845, guid: 60f563d61f627e247b742ce62f5aace4, type: 3}
+      propertyPath: givenAwayItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 5e15b657b75342244b8b9679c3583858, type: 2}
     - target: {fileID: 8843405107454818683, guid: 60f563d61f627e247b742ce62f5aace4, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -38267,6 +38283,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3112598254445620101, guid: 9012a6eb27b2b45489d85311b3b103fd, type: 3}
+      propertyPath: hasSword
+      value: 
+      objectReference: {fileID: 11400000, guid: 5e15b657b75342244b8b9679c3583858, type: 2}
     - target: {fileID: 3112598254445620101, guid: 9012a6eb27b2b45489d85311b3b103fd, type: 3}
       propertyPath: flashDuration
       value: 0.4

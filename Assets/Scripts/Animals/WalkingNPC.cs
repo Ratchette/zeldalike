@@ -103,5 +103,5 @@ public class WalkingNPC : Interactable {
         }
     }
 
-    protected override void Interact() { }
+    protected override void Interact() {}
 }

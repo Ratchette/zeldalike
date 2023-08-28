@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2408934331561564894}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8843405107454818683}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1561949317043902271
 SpriteRenderer:
@@ -93,6 +93,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2408934331561564894}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -116,7 +117,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,7 +129,6 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 0.79, y: 0.65}
   m_EdgeRadius: 0
 --- !u!1 &5663684329734890585
@@ -144,7 +145,7 @@ GameObject:
   - component: {fileID: 281308390252364598}
   - component: {fileID: 4323129855508209235}
   - component: {fileID: 1999414017637265326}
-  - component: {fileID: 2501837855441633082}
+  - component: {fileID: 8734051194365602845}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -159,13 +160,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5663684329734890585}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8843405107454818683}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &81460619309204577
 SpriteRenderer:
@@ -221,7 +222,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &1551664056352840774
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -235,6 +236,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -275,6 +277,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5663684329734890585}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -298,7 +301,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0.0456748, y: -0.21002078}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,7 +313,6 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 3.2804747, y: 3.4773288}
   m_EdgeRadius: 0
 --- !u!61 &1999414017637265326
@@ -320,6 +323,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5663684329734890585}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -343,7 +347,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0.046346128, y: -0.6758789}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -354,10 +359,9 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 1.2442421, y: 0.64824224}
   m_EdgeRadius: 0
---- !u!114 &2501837855441633082
+--- !u!114 &8734051194365602845
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,14 +370,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5663684329734890585}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed2b583c8a5e9a24a9223f910cd88303, type: 3}
+  m_Script: {fileID: 11500000, guid: c6a7c366a860da740a5aefa3e2690f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogBox: {fileID: 0}
   dialogText: {fileID: 0}
   text:
-  - "I'm hungry! \nCan you get me some food?"
+  - 'I''m hungry!
+
+    Can you get me some food?'
   - I think I saw some in the castle to the east.
+  - Take this sword to help you on your journey!
   activeText: -1
   playerInRange: 0
   interactableInRange: {fileID: 11400000, guid: f83fb6dad7085f34b8b89b7f5f4a320d, type: 2}
@@ -382,6 +389,11 @@ MonoBehaviour:
   speed: 7
   walkMaxDuration: 3
   walkChance: 0.02
+  item: {fileID: 11400000, guid: 7bf127ea12bb8714badfc6f9348aaa75, type: 2}
+  canGive: {fileID: 11400000, guid: 5e15b657b75342244b8b9679c3583858, type: 2}
+  raiseItem: {fileID: 11400000, guid: 119f0b0edb18fd64088ece11bd7481f2, type: 2}
+  duration: 3
+  playerInventory: {fileID: 11400000, guid: f89755dde076f7a49b79b2767c269223, type: 2}
 --- !u!1 &6010284223664749771
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +417,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6010284223664749771}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -413,5 +426,4 @@ Transform:
   - {fileID: 2608843641105315085}
   - {fileID: 1200383391352369797}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

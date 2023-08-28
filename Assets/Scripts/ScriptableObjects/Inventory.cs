@@ -14,16 +14,10 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
     [SerializeField] private int numKeys;
     [SerializeField] private int numCoins;
 
-    [SerializeField] private Item sword;
-
     public void OnAfterDeserialize() {
         items = new Dictionary<Item, int>();
         numKeys = 0;
         numCoins = 0;
-    }
-
-    void OnEnable() {
-        items.Add(sword, 1);
     }
 
     public void OnBeforeSerialize() {

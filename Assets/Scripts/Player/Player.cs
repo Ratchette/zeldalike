@@ -27,6 +27,8 @@ public class Player : MonoBehaviour, IDamageable {
 
     private PlayerState currentState;
 
+    [SerializeField] private BooleanValue hasSword;
+
     [Header("Health")]
     [SerializeField] private FloatValue health;
     [SerializeField] private SignalSender playerHealthSignal;
@@ -79,7 +81,7 @@ public class Player : MonoBehaviour, IDamageable {
             return;
         }
 
-        if (Input.GetButtonDown(InputMap.BUTTON_ATTACK)) {
+        if (Input.GetButtonDown(InputMap.BUTTON_ATTACK) && hasSword.runtimeValue) {
             StartCoroutine(AttackCoroutine());
         }
     }
