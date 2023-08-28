@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
@@ -9,14 +10,20 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
 
     private Item itemToDisplay = null;
 
-    [SerializeField] private List<Item> items = new List<Item>();
+    [SerializeField] public Dictionary<Item, int> items;
     [SerializeField] private int numKeys;
     [SerializeField] private int numCoins;
 
+    [SerializeField] private Item sword;
+
     public void OnAfterDeserialize() {
-        items.Clear();
+        items = new Dictionary<Item, int>();
         numKeys = 0;
         numCoins = 0;
+    }
+
+    void OnEnable() {
+        items.Add(sword, 1);
     }
 
     public void OnBeforeSerialize() {
@@ -24,13 +31,31 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
     }
 
     public bool AddItem(Item item) {
-        if (item.isKey) {
+        if(item.isKey) {
             numKeys++;
+
+        } else if (items.ContainsKey(item)) {
+            items[item]++;
+
         } else {
-            items.Add(item);
+            items.Add(item, 1);
         }
 
         itemToDisplay = item;
+        return true;
+    }
+
+    public bool RemoveItem(Item item) {
+        if (!items.ContainsKey(item)) {
+            return false;
+
+        } else {
+            if (items[item] > 1) {
+                items[item]--;
+            } else {
+                items.Remove(item);
+            }
+        }
 
         return true;
     }

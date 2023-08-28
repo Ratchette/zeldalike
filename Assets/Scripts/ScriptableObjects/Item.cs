@@ -4,12 +4,14 @@ using UnityEngine;
 
 [CreateAssetMenu]
 public class Item : ScriptableObject {
-    public Sprite sprite;
     public string description;
-    public bool isKey;
-    public bool isCoin;
+    public Sprite sprite;
 
-    public SignalSender pickupSignal = null;
+    public bool isKey = false;
+    public bool isCoin = false;
+    public bool isUseable = false;
+
+    [SerializeField] private SignalSender pickupSignal = null;
     
     public void onPickup() {
         if (pickupSignal) {

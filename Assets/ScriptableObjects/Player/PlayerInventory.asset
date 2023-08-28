@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d6554b388db9040981c6af42a05dbf, type: 3}
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 11400000, guid: fa5b28eea15929f4ea579b016e4c69a9, type: 2}
   numKeys: 0
   numCoins: 0
+  sword: {fileID: 11400000, guid: 7bf127ea12bb8714badfc6f9348aaa75, type: 2}
+  book: {fileID: 11400000, guid: 5b82a46c1649aa34f91488cd6815c053, type: 2}

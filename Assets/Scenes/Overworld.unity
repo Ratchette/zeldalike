@@ -11563,7 +11563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &445997059
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25443,7 +25443,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda36a3d610ed4a4faa6c0019888beb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryMenu: {fileID: 445997058}
+  inventoryUI: {fileID: 445997058}
+  inventoryItemsUI: {fileID: 1404843973}
+  inventoryMenuItemPrefab: {fileID: 4495074804982880316, guid: af821a846ad68be42a25ac7bb72657a3, type: 3}
+  inventory: {fileID: 11400000, guid: f89755dde076f7a49b79b2767c269223, type: 2}
 --- !u!114 &1437259188
 MonoBehaviour:
   m_ObjectHideFlags: 0

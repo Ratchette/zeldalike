@@ -17,7 +17,7 @@ public class HeartManager : MonoBehaviour {
     [SerializeField] private FloatValue playerHealth;
     [SerializeField] private FloatValue heartContainers;
 
-    private void Start() {
+    void Start() {
         InitHearts();
     }
 
