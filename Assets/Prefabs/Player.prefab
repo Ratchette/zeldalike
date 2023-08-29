@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8f3286efc287c49ae18d820e1e066d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasSword: {fileID: 11400000, guid: 5e15b657b75342244b8b9679c3583858, type: 2}
   health: {fileID: 11400000, guid: 91986daea68b6d4408865127985c11e7, type: 2}
   playerHealthSignal: {fileID: 11400000, guid: 89f567116c9738d42a977f80e4ca724d, type: 2}
   playerHitSignal: {fileID: 11400000, guid: 79ce1286fc7517a4c9cb5059c5650a2f, type: 2}

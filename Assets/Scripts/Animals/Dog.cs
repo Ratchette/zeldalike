@@ -7,7 +7,7 @@ public class Dog : WalkingNPC {
     [SerializeField] private Item item;
     [SerializeField] private BooleanValue givenAwayItem;
     [SerializeField] private SignalSender raiseItem;
-    [SerializeField] private float duration = 3.0f;
+    [SerializeField] private float duration = 2.0f;
 
     [Header("Player Data")]
     [SerializeField] private Inventory playerInventory;

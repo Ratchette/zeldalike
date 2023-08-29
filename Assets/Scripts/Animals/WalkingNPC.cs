@@ -74,7 +74,7 @@ public class WalkingNPC : Interactable {
     }
 
     private void ContinueWalk() {
-        Vector2 nextPosition = myRigidbody.position + direction * speed * Time.deltaTime;
+        Vector2 nextPosition = myRigidbody.position + direction * speed * Time.fixedDeltaTime;
 
         if (bounds.bounds.Contains(nextPosition)) {
             myRigidbody.MovePosition(nextPosition);
