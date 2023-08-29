@@ -128,7 +128,7 @@ public class Player : MonoBehaviour, IDamageable {
 
     void Move() {
         if (user_input != Vector3.zero)  {
-            feet_collider.MovePosition(transform.position + user_input.normalized * speed * Time.deltaTime);
+            feet_collider.MovePosition(transform.position + user_input.normalized * speed * Time.fixedDeltaTime);
 
             animator.SetBool(ANIMATOR_MOVING, true);
             SetWalkAnimation(user_input);

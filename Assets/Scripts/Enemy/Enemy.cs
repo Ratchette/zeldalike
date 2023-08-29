@@ -74,7 +74,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable {
 
     // Default Moving implementation, can be overriden in subclass
     protected Vector2 CalculateNewPosition(Vector3 myPosition, Vector3 targetPosition) {
-        return Vector3.MoveTowards(myPosition, targetPosition, speed * Time.deltaTime);
+        return Vector3.MoveTowards(myPosition, targetPosition, speed * Time.fixedDeltaTime);
     }
 
     protected void Move(Vector3 newPosition) {

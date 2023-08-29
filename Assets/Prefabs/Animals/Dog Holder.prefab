@@ -390,9 +390,9 @@ MonoBehaviour:
   walkMaxDuration: 3
   walkChance: 0.02
   item: {fileID: 11400000, guid: 7bf127ea12bb8714badfc6f9348aaa75, type: 2}
-  canGive: {fileID: 11400000, guid: 5e15b657b75342244b8b9679c3583858, type: 2}
+  givenAwayItem: {fileID: 0}
   raiseItem: {fileID: 11400000, guid: 119f0b0edb18fd64088ece11bd7481f2, type: 2}
-  duration: 3
+  duration: 2
   playerInventory: {fileID: 11400000, guid: f89755dde076f7a49b79b2767c269223, type: 2}
 --- !u!1 &6010284223664749771
 GameObject:

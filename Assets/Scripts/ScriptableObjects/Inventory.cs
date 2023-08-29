@@ -25,8 +25,11 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
     }
 
     public bool AddItem(Item item) {
-        if(item.isKey) {
+        if (item.isKey) {
             numKeys++;
+
+        } else if (item.name == "Heart Container") {
+            // Heart containers are not handled by the inventory
 
         } else if (items.ContainsKey(item)) {
             items[item]++;
