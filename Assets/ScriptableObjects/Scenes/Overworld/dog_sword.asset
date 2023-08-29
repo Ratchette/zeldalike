@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: dog_sword
   m_EditorClassIdentifier: 
   initialValue: 0
-  runtimeValue: 0
+  runtimeValue: 1
