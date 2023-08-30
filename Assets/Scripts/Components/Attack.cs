@@ -7,7 +7,6 @@ public class Attack : MonoBehaviour {
 
     [Header("Knockback")]
     [SerializeField] private float knockbackThrust;
-    [SerializeField] private float knockbackTime;
 
     private void OnTriggerEnter2D(Collider2D other) {
         IDamageable objectHit = (IDamageable)other.gameObject.GetComponent(typeof(IDamageable));

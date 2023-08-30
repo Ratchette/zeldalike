@@ -24764,8 +24764,6 @@ MonoBehaviour:
   currentState: 0
   deathEffect: {fileID: 1386500547502049537, guid: ce3b0cbdd4c5d6e4f9278919ef6e14de, type: 3}
   deathSignal: {fileID: 11400000, guid: f6722a6d8574f4a40a4acf16eab6c189, type: 2}
-  health: 0
-  maxHealth: {fileID: 11400000, guid: 9c5f936dbf09f804cb77922547dd1d2d, type: 2}
   speed: 1
   knockbackDuration: 0.25
   baseAttack: 0

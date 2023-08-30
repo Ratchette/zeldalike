@@ -59,7 +59,6 @@ public class HeartManager : MonoBehaviour {
 
     public void PickupHeartContainer() {
         maxHealth.runtimeValue += 4;
-        playerHealth.runtimeValue = maxHealth.runtimeValue;
 
         UpdateHeartContainers();
         UpdateHearts();

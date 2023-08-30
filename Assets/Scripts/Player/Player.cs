@@ -29,6 +29,7 @@ public class Player : MonoBehaviour, IDamageable {
     private PlayerState currentState;
     private Health health;
     private GameOver gameOver;
+    private Attack attack;
 
     [SerializeField] private BooleanValue hasSword;
 
@@ -137,6 +138,7 @@ public class Player : MonoBehaviour, IDamageable {
             SetWalkAnimation(user_input);
         } else {
             animator.SetBool(ANIMATOR_MOVING, false);
+            feet_collider.velocity = Vector2.zero;
         }
     }
 
@@ -170,6 +172,7 @@ public class Player : MonoBehaviour, IDamageable {
     private IEnumerator KnockbackCoroutine(Vector2 force, float duration) {
 
         StartCoroutine(InvincibilityCoroutine());
+
         feet_collider.velocity = force;
         yield return new WaitForSeconds(duration);
 
