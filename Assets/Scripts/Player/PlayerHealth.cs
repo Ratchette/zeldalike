@@ -6,8 +6,10 @@ public class PlayerHealth : Health {
     [SerializeField] private FloatValue playerHealth;
     [SerializeField] private SignalSender playerHealthSignal;
 
-    void Start() {
-        health = playerHealth.runtimeValue;  
+
+    public override void Reset() {
+        playerHealth.runtimeValue = playerHealth.initialValue;
+        health = playerHealth.runtimeValue;
     }
 
     public override void Heal(float heal_ammount) {

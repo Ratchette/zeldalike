@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3112598254445620104}
   - component: {fileID: 4770314171274521706}
   - component: {fileID: 3112598254445620101}
+  - component: {fileID: 445964491766091335}
   - component: {fileID: 3112598254445620106}
   - component: {fileID: 3112598254445620110}
   - component: {fileID: 3112598254445620105}
@@ -257,6 +258,18 @@ MonoBehaviour:
   numFlashes: 3
   playerHitSignal: {fileID: 11400000, guid: 79ce1286fc7517a4c9cb5059c5650a2f, type: 2}
   knockbackDuration: 0.25
+--- !u!114 &445964491766091335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112598254445620096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4389cd9272c7caa48a9cdd5711e66d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   gameOverTransition: {fileID: 8861690658263961322, guid: eef3c3d018f6c614ab08ef26d8cff208, type: 3}
 --- !u!95 &3112598254445620106
 Animator:

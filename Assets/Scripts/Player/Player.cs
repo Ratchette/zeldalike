@@ -13,7 +13,7 @@ public enum PlayerState {
     Dead
 }
 
-[RequireComponent(typeof(PlayerHealth))]
+[RequireComponent(typeof(PlayerHealth), typeof(GameOver))]
 public class Player : MonoBehaviour, IDamageable {
     static public string TAG = "Player";
 
@@ -27,6 +27,8 @@ public class Player : MonoBehaviour, IDamageable {
     static private string ANIMATOR_DEATH = "death";
 
     private PlayerState currentState;
+    private Health health;
+    private GameOver gameOver;
 
     [SerializeField] private BooleanValue hasSword;
 
@@ -54,14 +56,16 @@ public class Player : MonoBehaviour, IDamageable {
     [Header("Knockback")]
     public float knockbackDuration = 0.25f;
 
-    [Header("Death")]
-    [SerializeField] private GameObject gameOverTransition;
-
     // Start is called before the first frame update
     void Start() {
         playerSprite = gameObject.GetComponent<SpriteRenderer>();
         feet_collider = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
+
+        health = gameObject.GetComponent<Health>();
+        health.Reset();
+
+        gameOver = gameObject.GetComponent<GameOver>();
 
         ChangeState(PlayerState.Walk);
 
@@ -151,7 +155,7 @@ public class Player : MonoBehaviour, IDamageable {
             return;
         }
 
-        bool isAlive = GetComponent<Health>().Damage(damage);
+        bool isAlive = health.Damage(damage);
         ChangeState(PlayerState.Stagger);
 
         playerHitSignal.Raise();
@@ -196,22 +200,7 @@ public class Player : MonoBehaviour, IDamageable {
         animator.SetBool(ANIMATOR_MOVING, false);
         animator.SetBool(ANIMATOR_DEATH, true);
 
-        StartCoroutine(DieCoroutine());
-    }
-
-
-    // move to GameOver.cs
-    private IEnumerator DieCoroutine() {
-        // let death animation play
-        yield return new WaitForSeconds(1f);
-
-        Instantiate(gameOverTransition, Vector3.zero, Quaternion.identity);
-        yield return new WaitForSeconds(0.5f);
-
-        AsyncOperation loadScene = SceneManager.LoadSceneAsync("GameOver");
-        while (!loadScene.isDone) {
-            yield return null;
-        }
+        gameOver.Play();
     }
 
     /****************************************************

@@ -10,7 +10,7 @@ public class Health : MonoBehaviour {
         Reset();
     }
 
-    public void Reset() {
+    public virtual void Reset() {
         health = maxHealth.runtimeValue;
     }
 
