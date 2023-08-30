@@ -13,6 +13,7 @@ public enum PlayerState {
     Dead
 }
 
+[RequireComponent(typeof(PlayerHealth))]
 public class Player : MonoBehaviour, IDamageable {
     static public string TAG = "Player";
 
@@ -29,20 +30,6 @@ public class Player : MonoBehaviour, IDamageable {
 
     [SerializeField] private BooleanValue hasSword;
 
-    [Header("Health")]
-    [SerializeField] private FloatValue health;
-    [SerializeField] private SignalSender playerHealthSignal;
-    [SerializeField] private SignalSender playerHitSignal;
-    [SerializeField] private GameObject gameOverTransition;
-
-    [Header("Invincibility")]
-    [SerializeField] private float flashDuration = 0.4f;
-    [SerializeField] private int numFlashes = 3;
-
-    private Color flashColor = new Color(0.6320754f, 0.2593895f, 0.2593895f, 0.8235294f);
-    private Color defaultColor = new Color(1, 1, 1, 1);
-    private SpriteRenderer playerSprite;
-
     [Header("Items")]
     [SerializeField] private Inventory playerInventory;
     [SerializeField] private SpriteRenderer receivedItemSprite;
@@ -55,8 +42,20 @@ public class Player : MonoBehaviour, IDamageable {
     private Animator animator;
     private Vector3 user_input;
 
+    [Header("Invincibility")]
+    [SerializeField] private float flashDuration = 0.4f;
+    [SerializeField] private int numFlashes = 3;
+
+    private Color flashColor = new Color(0.6320754f, 0.2593895f, 0.2593895f, 0.8235294f);
+    private Color defaultColor = new Color(1, 1, 1, 1);
+    private SpriteRenderer playerSprite;
+    [SerializeField] private SignalSender playerHitSignal;
+
     [Header("Knockback")]
     public float knockbackDuration = 0.25f;
+
+    [Header("Death")]
+    [SerializeField] private GameObject gameOverTransition;
 
     // Start is called before the first frame update
     void Start() {
@@ -152,14 +151,12 @@ public class Player : MonoBehaviour, IDamageable {
             return;
         }
 
-        Debug.LogFormat("[{0}][Hit] health={1}, damage={2}, newHealth={3}", "Player", health.runtimeValue, damage, (health.runtimeValue - damage));
+        bool isAlive = GetComponent<Health>().Damage(damage);
         ChangeState(PlayerState.Stagger);
 
-        health.runtimeValue -= damage;
         playerHitSignal.Raise();
-        playerHealthSignal.Raise();
 
-        if (health.runtimeValue > 0) {
+        if (isAlive) {
             StartCoroutine(KnockbackCoroutine(force, knockbackDuration));
         } else {
             Die();
@@ -202,6 +199,8 @@ public class Player : MonoBehaviour, IDamageable {
         StartCoroutine(DieCoroutine());
     }
 
+
+    // move to GameOver.cs
     private IEnumerator DieCoroutine() {
         // let death animation play
         yield return new WaitForSeconds(1f);

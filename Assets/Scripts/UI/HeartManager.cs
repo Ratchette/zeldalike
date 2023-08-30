@@ -15,7 +15,7 @@ public class HeartManager : MonoBehaviour {
 
     [Header("Player Data")]
     [SerializeField] private FloatValue playerHealth;
-    [SerializeField] private FloatValue heartContainers;
+    [SerializeField] private FloatValue maxHealth;
 
     void Start() {
         InitHearts();
@@ -27,15 +27,18 @@ public class HeartManager : MonoBehaviour {
     }
 
     private void UpdateHeartContainers() {
-        for (int i = 0; i < heartContainers.runtimeValue; i++) {
+        int numHeartContainers = (int) maxHealth.runtimeValue / 4;
+
+        for (int i = 0; i < numHeartContainers; i++) {
             hearts[i].gameObject.SetActive(true);
         }
     }
 
     public void UpdateHearts() {
         float fullHearts = playerHealth.runtimeValue / 4;
+        float numHeartContainers = maxHealth.runtimeValue / 4;
 
-        for (int i = 0; i < heartContainers.runtimeValue; i++) {
+        for (int i = 0; i < numHeartContainers; i++) {
             if (fullHearts - i >= 1) {
                 hearts[i].sprite = fullHeart;
 
@@ -55,8 +58,8 @@ public class HeartManager : MonoBehaviour {
     }
 
     public void PickupHeartContainer() {
-        heartContainers.runtimeValue++;
-        playerHealth.runtimeValue = heartContainers.runtimeValue * 4;
+        maxHealth.runtimeValue += 4;
+        playerHealth.runtimeValue = maxHealth.runtimeValue;
 
         UpdateHeartContainers();
         UpdateHearts();

@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177814602558207510}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1234897838983780958}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &829299323484217321
 BoxCollider2D:
@@ -40,6 +40,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177814602558207510}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -63,7 +64,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0.0013103485, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -74,7 +76,6 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 0.76675797, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1234897838983780957
@@ -91,6 +92,7 @@ GameObject:
   - component: {fileID: 1734956362}
   - component: {fileID: 1734956361}
   - component: {fileID: 1734956360}
+  - component: {fileID: 821651306776230878}
   m_Layer: 0
   m_Name: Rabbit
   m_TagString: Untagged
@@ -105,6 +107,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234897838983780957}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 44.468, y: 4.822, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -112,7 +115,6 @@ Transform:
   m_Children:
   - {fileID: 8738804156077110031}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1234897838983780959
 SpriteRenderer:
@@ -168,7 +170,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &1234897838983780956
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -182,6 +184,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -222,6 +225,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234897838983780957}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -245,7 +249,8 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0.0013103485, y: -0.027020931}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,7 +261,6 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 0.76675797, y: 0.94595814}
   m_EdgeRadius: 0
 --- !u!114 &1734956360
@@ -274,8 +278,6 @@ MonoBehaviour:
   currentState: 0
   deathEffect: {fileID: 1386500547502049537, guid: ce3b0cbdd4c5d6e4f9278919ef6e14de, type: 3}
   deathSignal: {fileID: 11400000, guid: f6722a6d8574f4a40a4acf16eab6c189, type: 2}
-  health: 1
-  maxHealth: {fileID: 11400000, guid: 32f840b8572ad5a459ff48aadf001fa6, type: 2}
   speed: 1
   knockbackDuration: 0.25
   baseAttack: 0
@@ -283,3 +285,16 @@ MonoBehaviour:
   attackDelay: 0.5
   projectile: {fileID: 1465034473881931693, guid: deebbb3350327a3439a80d2d1401adad, type: 3}
   nextAttackTime: 0
+--- !u!114 &821651306776230878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234897838983780957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c690b02287117e4991e369546b068a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: {fileID: 11400000, guid: 32f840b8572ad5a459ff48aadf001fa6, type: 2}

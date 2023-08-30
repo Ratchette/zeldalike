@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3112598254445620097}
   - component: {fileID: 3112598254445620100}
   - component: {fileID: 3112598254445620104}
+  - component: {fileID: 4770314171274521706}
   - component: {fileID: 3112598254445620101}
   - component: {fileID: 3112598254445620106}
   - component: {fileID: 3112598254445620110}
@@ -219,6 +220,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6625159, y: 0.78352624}
   m_EdgeRadius: 0
+--- !u!114 &4770314171274521706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112598254445620096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f98e6388cbff444c876d15dc596874d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: {fileID: 11400000, guid: bcd6f08679853ec469627b617d265eec, type: 2}
+  playerHealth: {fileID: 11400000, guid: 91986daea68b6d4408865127985c11e7, type: 2}
+  playerHealthSignal: {fileID: 11400000, guid: 89f567116c9738d42a977f80e4ca724d, type: 2}
 --- !u!114 &3112598254445620101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,18 +248,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasSword: {fileID: 11400000, guid: 5e15b657b75342244b8b9679c3583858, type: 2}
-  health: {fileID: 11400000, guid: 91986daea68b6d4408865127985c11e7, type: 2}
-  playerHealthSignal: {fileID: 11400000, guid: 89f567116c9738d42a977f80e4ca724d, type: 2}
-  playerHitSignal: {fileID: 11400000, guid: 79ce1286fc7517a4c9cb5059c5650a2f, type: 2}
-  gameOverTransition: {fileID: 8861690658263961322, guid: eef3c3d018f6c614ab08ef26d8cff208, type: 3}
-  flashDuration: 0.4
-  numFlashes: 3
   playerInventory: {fileID: 11400000, guid: f89755dde076f7a49b79b2767c269223, type: 2}
   receivedItemSprite: {fileID: 3112598254642053640}
   startingPosition: {fileID: 11400000, guid: ff01318e6ab38db47ac9c36e065981f8, type: 2}
   startingDirection: {fileID: 11400000, guid: 2f3af4ef5ea1f954ba17fcaa67b6144e, type: 2}
   speed: 5
+  flashDuration: 0.4
+  numFlashes: 3
+  playerHitSignal: {fileID: 11400000, guid: 79ce1286fc7517a4c9cb5059c5650a2f, type: 2}
   knockbackDuration: 0.25
+  gameOverTransition: {fileID: 8861690658263961322, guid: eef3c3d018f6c614ab08ef26d8cff208, type: 3}
 --- !u!95 &3112598254445620106
 Animator:
   serializedVersion: 7

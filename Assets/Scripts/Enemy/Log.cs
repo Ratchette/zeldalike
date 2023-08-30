@@ -23,7 +23,7 @@ public class Log : Enemy {
         myRigidbody.bodyType = RigidbodyType2D.Static;
     }
 
-    new protected void OnEnable() {
+    protected override void OnEnable() {
         base.OnEnable();
         this.transform.position = home.position;
     }
