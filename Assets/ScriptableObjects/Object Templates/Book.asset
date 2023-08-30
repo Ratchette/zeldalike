@@ -12,7 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5be0d0e196f704c8f7872c6c0d3c6d, type: 3}
   m_Name: Book
   m_EditorClassIdentifier: 
+  description: A book filled with powerful spells.
   sprite: {fileID: -853479044, guid: 83c2c143003e7a94a85a01b19ca43b2d, type: 3}
-  description: You found a secret book!
   isKey: 0
   isCoin: 0
+  isUseable: 1
+  useEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  pickupSignal: {fileID: 0}

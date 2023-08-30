@@ -1,15 +1,31 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour {
     [SerializeField] private GameObject inventoryUI;
     [SerializeField] private GameObject inventoryItemsUI;
     [SerializeField] private GameObject inventoryMenuItemPrefab;
 
+    [SerializeField] private TextMeshProUGUI descriptionBox;
+    [SerializeField] private Button useButton;
+    private Color buttonDisabledColor = new Color(177 / 255f, 177 / 255f, 177 / 255f);
+
     [SerializeField] private Inventory inventory;
+    private InventoryMenuItem selectedMenuItem = null;
+    private Item selectedItem = null;
+
     private bool menuOpen = false;
+
+    private void Start() {
+        useButton.enabled = false;
+        useButton.image.color = buttonDisabledColor;
+        useButton.GetComponentInChildren<TextMeshProUGUI>().color = buttonDisabledColor;
+    }
 
     void Update() {
         if (Input.GetButtonDown(InputMap.BUTTON_INVENTORY)) {
@@ -24,6 +40,10 @@ public class InventoryManager : MonoBehaviour {
         }
     }
 
+    private bool isTimePaused() {
+        return Time.timeScale == 0;
+    }
+
     private void OpenMenu() {
         Time.timeScale = 0;
         menuOpen = true;
@@ -36,7 +56,7 @@ public class InventoryManager : MonoBehaviour {
     private void createItems() {
         foreach (KeyValuePair<Item, int> i in inventory.items) {
             GameObject menuItem = Instantiate(inventoryMenuItemPrefab);
-            menuItem.GetComponent<InventoryMenuItem>().Init(i.Key, i.Value);
+            menuItem.GetComponent<InventoryMenuItem>().Init(this, i.Key, i.Value);
             menuItem.transform.SetParent(inventoryItemsUI.transform);
         }
     }
@@ -56,7 +76,30 @@ public class InventoryManager : MonoBehaviour {
         }
     }
 
-    private bool isTimePaused() {
-        return Time.timeScale == 0;
+    public void SetChosenItem(InventoryMenuItem menuItem, Item item) {
+        selectedMenuItem = menuItem;
+        selectedItem = item;
+        descriptionBox.text = item.description;
+
+        if (item.isUseable) {
+            useButton.enabled = true;
+            useButton.image.color = Color.white;
+            useButton.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
+
+        } else {
+            useButton.enabled = false;
+            useButton.image.color = buttonDisabledColor;
+            useButton.GetComponentInChildren<TextMeshProUGUI>().color = buttonDisabledColor;
+        }
+    }
+
+    public void UseClicked() {
+        selectedItem.onUse();
+        selectedMenuItem.UseItem();
+        
+        int numItems = inventory.RemoveItem(selectedItem);
+        if(numItems < 1) {
+            Destroy(selectedMenuItem.gameObject);
+        }
     }
 }

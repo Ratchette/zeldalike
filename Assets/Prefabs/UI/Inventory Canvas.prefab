@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 2779880137158144222}
   - component: {fileID: 4611592046514711514}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,8 +141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Testing this is a description with a lot of text to it. I want it to be
-    able to support up to three lines.
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dae5ac352b832ca4e96f0e91df4cec8b, type: 2}
   m_sharedMaterial: {fileID: -7896207999467967831, guid: dae5ac352b832ca4e96f0e91df4cec8b, type: 2}
@@ -880,7 +879,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 477269588833756242}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3814322553706873019}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: UseClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8828232565401028515
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,4 +1010,6 @@ MonoBehaviour:
   inventoryUI: {fileID: 1788562461353992450}
   inventoryItemsUI: {fileID: 4358976200576037887}
   inventoryMenuItemPrefab: {fileID: 4495074804982880316, guid: af821a846ad68be42a25ac7bb72657a3, type: 3}
+  descriptionBox: {fileID: 4611592046514711514}
+  useButton: {fileID: 1108353379811387619}
   inventory: {fileID: 11400000, guid: f89755dde076f7a49b79b2767c269223, type: 2}

@@ -13,7 +13,10 @@ public class InventoryMenuItem : MonoBehaviour {
     private Image displayImage;
     private TextMeshProUGUI displayNumber;
 
-    public void Init(Item i, int number) {
+    private InventoryManager inventoryManager;
+
+    public void Init(InventoryManager manager, Item i, int number) {
+        inventoryManager = manager;
         item = i;
         quantity = number;
 
@@ -26,13 +29,17 @@ public class InventoryMenuItem : MonoBehaviour {
         }
     }
 
-    public void UseItem() {
-        quantity--;
+    public void AddItem(int num) {
+        quantity += num;
         displayNumber.text = "x " + quantity;
     }
 
-    public void AddItem(int num) {
-        quantity += num;
+    public void OnClick() {
+        inventoryManager.SetChosenItem(this, item);
+    }
+
+    public void UseItem() {
+        quantity--;
         displayNumber.text = "x " + quantity;
     }
 }

@@ -42,19 +42,19 @@ public class Inventory : ScriptableObject, ISerializationCallbackReceiver {
         return true;
     }
 
-    public bool RemoveItem(Item item) {
+    public int RemoveItem(Item item) {
         if (!items.ContainsKey(item)) {
-            return false;
+            return -1;
 
         } else {
             if (items[item] > 1) {
-                items[item]--;
+                return --(items[item]);
+                               
             } else {
                 items.Remove(item);
+                return 0;
             }
         }
-
-        return true;
     }
 
     public Sprite GetItemToDisplay() {
