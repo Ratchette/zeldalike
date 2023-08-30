@@ -49,6 +49,7 @@ public class InventoryManager : MonoBehaviour {
         menuOpen = true;
 
         createItems();
+        SetChosenItem(null, null);
 
         inventoryUI.SetActive(true);
     }
@@ -79,18 +80,31 @@ public class InventoryManager : MonoBehaviour {
     public void SetChosenItem(InventoryMenuItem menuItem, Item item) {
         selectedMenuItem = menuItem;
         selectedItem = item;
-        descriptionBox.text = item.description;
 
-        if (item.isUseable) {
-            useButton.enabled = true;
-            useButton.image.color = Color.white;
-            useButton.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
-
-        } else {
-            useButton.enabled = false;
-            useButton.image.color = buttonDisabledColor;
-            useButton.GetComponentInChildren<TextMeshProUGUI>().color = buttonDisabledColor;
+        if (menuItem == null || item == null) {
+            DisableUseButton();
+            descriptionBox.text = "";
+            return;
         }
+
+        descriptionBox.text = item.description;
+        if (item.isUseable) {
+            EnableUseButton();
+        } else {
+            DisableUseButton();
+        }
+    }
+
+    private void DisableUseButton() {
+        useButton.enabled = false;
+        useButton.image.color = buttonDisabledColor;
+        useButton.GetComponentInChildren<TextMeshProUGUI>().color = buttonDisabledColor;
+    }
+
+    private void EnableUseButton() {
+        useButton.enabled = true;
+        useButton.image.color = Color.white;
+        useButton.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
     }
 
     public void UseClicked() {
@@ -100,6 +114,7 @@ public class InventoryManager : MonoBehaviour {
         int numItems = inventory.RemoveItem(selectedItem);
         if(numItems < 1) {
             Destroy(selectedMenuItem.gameObject);
+            SetChosenItem(null, null);
         }
     }
 }
